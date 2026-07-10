@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="FREE Keto Success Planner helps you track groceries, plan meals, calculate macros, and unlock premium keto product recommendations."
+    />
+    <title>FREE Keto Success Planner</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#">
+          <span class="brand-mark">K</span>
+          <span>FREE Keto Success Planner</span>
+        </a>
+        <div class="topbar-actions">
+          <button id="themeToggle" class="ghost-btn" type="button">🌙 Dark mode</button>
+          <button id="printBtn" class="ghost-btn" type="button">🖨 Print</button>
+        </div>
+      </header>
+
+      <main class="app-shell">
+        <section class="hero card">
+          <div class="hero-copy">
+            <p class="eyebrow">Premium keto operating system</p>
+            <h1>Lose Weight Faster with Your FREE Keto Success Planner</h1>
+            <p>
+              Build a healthier keto routine with a beautiful planner, smart grocery guidance, macro insights, and expert product recommendations that help you stay consistent and motivated.
+            </p>
+            <div class="hero-actions">
+              <a class="btn cta-green" href="http://bit.ly/4aIbQci" target="_blank" rel="noreferrer">🥑 Build My Keto Plan</a>
+              <a class="btn cta-green secondary-cta" href="http://bit.ly/4aIbQci" target="_blank" rel="noreferrer">🎁 Find My Best Keto Program</a>
+            </div>
+            <ul class="hero-badges">
+              <li>120+ keto staples</li>
+              <li>Live search</li>
+              <li>Smart recommendations</li>
+            </ul>
+            <div class="hero-highlights">
+              <span class="highlight-pill">⚡ Live insights</span>
+              <span class="highlight-pill">🎯 Goal-based XP</span>
+              <span class="highlight-pill">🏆 Achievement rewards</span>
+            </div>
+          </div>
+
+          <div class="hero-panel">
+            <div class="hero-illustration">
+              <div class="illustration-card">
+                <div class="illustration-bowl">🥑</div>
+                <div class="illustration-copy">
+                  <h3>Healthy keto, made simple</h3>
+                  <p>Plan smarter meals, track progress, and discover the right keto tools for your goals.</p>
+                </div>
+              </div>
+            </div>
+            <div class="hero-ring-card">
+              <div id="heroProgressRing" class="hero-ring">
+                <div class="hero-ring-inner">
+                  <strong id="heroRingPercent">0%</strong>
+                  <span>Complete</span>
+                </div>
+              </div>
+              <div>
+                <p class="eyebrow">Momentum snapshot</p>
+                <h3>Level <span id="heroLevel">1</span></h3>
+                <p id="heroSubtitle">Your keto journey is building momentum.</p>
+              </div>
+            </div>
+            <div class="stats-grid">
+              <div class="metric-card">
+                <span>Keto score</span>
+                <strong id="heroScore">0</strong>
+              </div>
+              <div class="metric-card">
+                <span>XP</span>
+                <strong id="heroXp">0</strong>
+              </div>
+              <div class="metric-card">
+                <span>Level</span>
+                <strong id="heroLevelMini">1</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card achievement-card">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Milestones</p>
+              <h2>Achievement badges</h2>
+            </div>
+          </div>
+          <div id="achievementBadges" class="achievement-list"></div>
+        </section>
+
+        <section class="card" id="grocery-section">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Smart pantry planner</p>
+              <h2>Grocery checklist</h2>
+            </div>
+            <div class="section-meta">
+              <span id="checklistSummary">0 of 0 items checked</span>
+              <div class="progress-track" aria-hidden="true">
+                <div id="progressBar" class="progress-fill"></div>
+              </div>
+              <span id="scoreBadge">Keto score 0/100</span>
+            </div>
+          </div>
+
+          <input id="searchInput" class="search-input" type="search" placeholder="Search keto items, brands, or foods..." />
+          <div class="legend-row">
+            <span class="legend-pill">🥩 Proteins</span>
+            <span class="legend-pill">🧈 Fats</span>
+            <span class="legend-pill">🥬 Vegetables</span>
+            <span class="legend-pill">🥜 Nuts & Seeds</span>
+          </div>
+          <ul id="groceryList" class="grocery-list"></ul>
+        </section>
+
+        <section class="grid-2">
+          <section class="card xp-card-shell">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Momentum</p>
+                <h2>XP & level</h2>
+              </div>
+            </div>
+            <div class="xp-card">
+              <div id="xpRing" class="xp-ring">
+                <span id="xpPercent">0%</span>
+              </div>
+              <div class="xp-copy">
+                <div class="xp-pill-row">
+                  <span class="pill">XP <strong id="xpValue">0</strong></span>
+                  <span class="pill">Level <strong id="xpLevelValue">1</strong></span>
+                </div>
+                <p id="levelLabel">Level 1 • Next goal: 250 XP</p>
+                <p id="xpDescription">Every checked item sharpens your streak.</p>
+                <button id="xpBoostBtn" class="btn secondary small" type="button">Fuel +25 XP</button>
+              </div>
+            </div>
+            <div id="achievementMini" class="achievement-inline"></div>
+          </section>
+
+          <section class="card planner-card">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Weekly flow</p>
+                <h2>Meal planner</h2>
+              </div>
+            </div>
+            <div id="mealPlanner" class="planner-grid"></div>
+          </section>
+        </section>
+
+        <section class="grid-2">
+          <section class="card calculator-card">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Personal metrics</p>
+                <h2>Calculators</h2>
+              </div>
+            </div>
+            <form id="calculatorForm" class="calculator-form">
+              <label>
+                Weight (kg)
+                <input id="weight" type="number" min="30" step="0.1" required />
+              </label>
+              <label>
+                Height (cm)
+                <input id="height" type="number" min="120" step="0.1" required />
+              </label>
+              <label>
+                Age
+                <input id="age" type="number" min="16" required />
+              </label>
+              <label>
+                Gender
+                <select id="gender">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </label>
+              <label>
+                Activity
+                <select id="activity">
+                  <option value="1.2">Low</option>
+                  <option value="1.375">Moderate</option>
+                  <option value="1.55">Active</option>
+                  <option value="1.725">Very active</option>
+                </select>
+              </label>
+              <button class="btn primary full" type="submit">Calculate</button>
+            </form>
+
+            <div class="calculator-results">
+              <div class="result-pill">BMI <strong id="bmiResult">--</strong></div>
+              <div class="result-pill">Calories <strong id="calorieResult">--</strong></div>
+              <div class="result-pill">Water <strong id="waterResult">--</strong></div>
+              <div class="result-pill">Macros <strong id="macroResult">--</strong></div>
+            </div>
+          </section>
+
+          <section class="card quiz-card">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Smart coaching</p>
+                <h2>5-question quiz</h2>
+              </div>
+            </div>
+            <form id="quizForm" class="quiz-form">
+              <div id="quizContainer"></div>
+              <button class="btn primary full" type="submit">Reveal my pick</button>
+            </form>
+            <div id="quizResult" class="quiz-result"></div>
+          </section>
+        </section>
+
+        <section class="card recommendation-card">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Recommendation engine</p>
+              <h2>Tailored keto picks</h2>
+            </div>
+          </div>
+          <div class="recommendation-box">
+            <p id="recommendationText">Complete the quiz to unlock your next favorite keto companion.</p>
+            <a id="recommendationCTA" class="btn cta-green" href="http://bit.ly/4aIbQci" target="_blank" rel="noreferrer">Claim your match</a>
+          </div>
+          <div id="recommendationCards" class="recommendation-cards"></div>
+        </section>
+
+        <section class="card recipes-card">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Recipe inspiration</p>
+              <h2>Easy keto recipes</h2>
+            </div>
+          </div>
+          <div class="recipe-grid">
+            <article class="recipe-card">
+              <h3>🥚 Breakfast</h3>
+              <p>Avocado egg scramble with herbs and feta for a satisfying morning start.</p>
+              <a class="btn cta-green" href="http://bit.ly/4aIbQci" target="_blank" rel="noreferrer">Get the recipe</a>
+            </article>
+            <article class="recipe-card">
+              <h3>🥗 Lunch</h3>
+              <p>Greek salad bowls packed with protein, olive oil, and fresh crunch.</p>
+              <a class="btn cta-green" href="http://bit.ly/4aIbQci" target="_blank" rel="noreferrer">Get the recipe</a>
+            </article>
+            <article class="recipe-card">
+              <h3>🍲 Dinner</h3>
+              <p>Garlic butter salmon with roasted asparagus for a simple evening win.</p>
+              <a class="btn cta-green" href="http://bit.ly/4aIbQci" target="_blank" rel="noreferrer">Get the recipe</a>
+            </article>
+            <article class="recipe-card">
+              <h3>🍰 Desserts</h3>
+              <p>Low-carb cheesecake bites and cocoa mousse for a decadent finish.</p>
+              <a class="btn cta-green" href="http://bit.ly/4aIbQci" target="_blank" rel="noreferrer">Get the recipe</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="card testimonials-card">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Loved by keto seekers</p>
+              <h2>What members are saying</h2>
+            </div>
+          </div>
+          <div class="testimonial-grid">
+            <article class="testimonial-card">
+              <p>“This planner made keto feel organized and motivating. I finally have a system that works.”</p>
+              <strong>— Maya, 34</strong>
+            </article>
+            <article class="testimonial-card">
+              <p>“The weekly meal layout and recommendations helped me stay on track without feeling overwhelmed.”</p>
+              <strong>— Daniel, 41</strong>
+            </article>
+            <article class="testimonial-card">
+              <p>“The plan is beautiful, simple, and actually helped me create better habits.”</p>
+              <strong>— Renee, 38</strong>
+            </article>
+          </div>
+        </section>
+
+        <section class="card faq-card">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Questions answered</p>
+              <h2>Frequently asked questions</h2>
+            </div>
+          </div>
+          <div class="faq-list">
+            <details open>
+              <summary>Is this planner beginner-friendly?</summary>
+              <p>Yes. The design is simple, clear, and built to help first-time keto users stay consistent.</p>
+            </details>
+            <details>
+              <summary>Can I use this with my existing keto routine?</summary>
+              <p>Absolutely. It complements your current routine and makes your meal prep and shopping simpler.</p>
+            </details>
+            <details>
+              <summary>Do the recommendations link to real products?</summary>
+              <p>Yes, every recommendation can be explored directly through the affiliate link included in the experience.</p>
+            </details>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer card">
+        <div>
+          <p class="eyebrow">FREE Keto Success Planner</p>
+          <h3>Built for consistency, clarity, and calm progress.</h3>
+          <p class="footer-small">Affiliate Disclosure: This site may contain affiliate links, which means we may earn a commission if you purchase through them.</p>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+        <a class="btn cta-green" href="http://bit.ly/4aIbQci" target="_blank" rel="noreferrer">Explore the premium toolkit</a>
+      </footer>
+    </div>
+
+    <a id="floatingCta" class="floating-cta" href="http://bit.ly/4aIbQci" target="_blank" rel="noreferrer">🥑 Get My Personalized Keto Plan</a>
+    <div class="mobile-bottom-bar">
+      <a class="btn cta-green" href="http://bit.ly/4aIbQci" target="_blank" rel="noreferrer">🥑 Claim My Plan</a>
+    </div>
+
+    <div id="milestoneModal" class="modal hidden" aria-hidden="true">
+      <div class="modal-card">
+        <p class="eyebrow">75% milestone unlocked</p>
+        <h3>You're building a serious keto system.</h3>
+        <p>Your checklist is thriving, your momentum is rising, and your plan is ready to scale with a premium toolkit.</p>
+        <div class="modal-actions">
+          <a class="btn cta-green" href="http://bit.ly/4aIbQci" target="_blank" rel="noreferrer">Open the premium collection</a>
+          <button id="closeModal" class="btn secondary" type="button">Keep planning</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="progressModal" class="modal hidden" aria-hidden="true">
+      <div class="modal-card">
+        <p class="eyebrow">80% grocery momentum</p>
+        <h3>You're almost fully stocked.</h3>
+        <p>Keep going and unlock a personalized keto plan designed around your goals.</p>
+        <div class="modal-actions">
+          <a class="btn cta-green" href="http://bit.ly/4aIbQci" target="_blank" rel="noreferrer">Claim My Plan</a>
+          <button id="closeProgressModal" class="btn secondary" type="button">Continue planning</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="exitModal" class="modal hidden" aria-hidden="true">
+      <div class="modal-card">
+        <p class="eyebrow">Wait! Before You Go...</p>
+        <h3>Get your personalized keto meal plan designed for your goals.</h3>
+        <div class="modal-actions">
+          <a class="btn cta-green" href="http://bit.ly/4aIbQci" target="_blank" rel="noreferrer">Claim My Plan</a>
+          <button id="closeExitModal" class="btn secondary" type="button">Stay here</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="confettiLayer" class="confetti-layer" aria-hidden="true"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
