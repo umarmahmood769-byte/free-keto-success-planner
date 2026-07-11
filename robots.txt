@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://umarmahmood769-byte.github.io/free-keto-success-planner/sitemap.xml
