@@ -94,8 +94,6 @@ textarea {
 
 .topbar {
   position: fixed !important;
-top: 0 !important;
-left: 0 !important;
   display: flex;
   justify-content: space-between;
   align-items: center;
