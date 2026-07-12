@@ -1089,7 +1089,7 @@ h3 {
 .top-nav{
     display:flex;
     gap:18px;
-    flex-wrap:wrap;
+    flex-wrap: nowrap;
     justify-content:center;
     align-items:center;
     margin-top:15px;
