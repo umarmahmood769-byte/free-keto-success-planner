@@ -110,7 +110,27 @@ textarea {
   width: min(1100px, calc(100% - 32px));
   z-index: 1000;
 }
+.topbar {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1280px, calc(100% - 32px));
 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  padding: 16px 24px;
+  background: rgba(255,255,255,.9);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+
+  z-index: 9999;
+}
 .brand {
   display: flex;
   align-items: center;
