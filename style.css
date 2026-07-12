@@ -64,7 +64,7 @@ textarea {
 .page-shell {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 24px;
+  padding: 140px 24px 24px;
   position: relative;
   z-index: 1;
 }
