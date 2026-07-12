@@ -108,7 +108,6 @@ textarea {
   position: fixed;
   top: 16px;
   left: 50%;
-  transform: translateX(-50%);
   width: min(1100px, calc(100% - 32px));
   z-index: 1000;
 }
