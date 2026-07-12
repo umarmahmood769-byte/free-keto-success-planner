@@ -1106,3 +1106,50 @@ h3 {
     color:#1f5c33;
     transform:translateY(-2px);
 }
+/* ===== Premium Navbar ===== */
+
+.page-shell{
+    max-width:1280px;
+    margin:0 auto;
+    padding:120px 24px 24px;
+    position:relative;
+    z-index:1;
+}
+
+.top-nav{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    flex:1;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.top-nav a{
+    text-decoration:none;
+    color:var(--text);
+    font-weight:600;
+    transition:.3s;
+}
+
+.top-nav a:hover{
+    color:#2d7d46;
+}
+
+.topbar-actions{
+    display:flex;
+    gap:10px;
+}
+
+@media (max-width:900px){
+
+.topbar{
+    flex-direction:column;
+    gap:15px;
+}
+
+.top-nav{
+    justify-content:center;
+}
+
+}
