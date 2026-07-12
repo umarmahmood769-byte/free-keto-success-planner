@@ -1061,3 +1061,25 @@ h3 {
 .fa-blogger{
     color:#ff6600;
 }
+/* Top Navigation */
+
+.top-nav{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    margin-top:15px;
+}
+
+.top-nav a{
+    text-decoration:none;
+    color:#2d7d46;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.top-nav a:hover{
+    color:#1f5c33;
+    transform:translateY(-2px);
+}
