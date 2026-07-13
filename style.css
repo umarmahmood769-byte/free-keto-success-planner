@@ -115,7 +115,7 @@ textarea {
     border:1px solid var(--border);
     border-radius:20px;
 
-    backdrop-filter:blur(18px);
+    background: #ffffff;
 
     box-shadow:var(--shadow);
 
