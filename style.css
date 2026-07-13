@@ -97,33 +97,19 @@ textarea {
 
 .topbar{
     position:fixed;
-    top:16px;
-
-    left:16px;
-    right:16px;
-
-    max-width:1280px;
-    margin:0 auto;
-
+    top:0;
+    left:0;
+    width:100%;
+    padding:16px 24px;
     display:flex;
     justify-content:space-between;
     align-items:center;
     gap:20px;
-
-    padding:16px 24px;
-
-    background:rgba(255,255,255,.92);
-
-    border:1px solid var(--border);
-    border-radius:20px;
-
-    background: #ffffff;
-
+    background:#ffffff;
+    border-bottom:1px solid var(--border);
     box-shadow:var(--shadow);
-
     z-index:99999;
 }
-
 .brand-mark {
   display: grid;
   place-items: center;
