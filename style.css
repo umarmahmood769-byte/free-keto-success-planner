@@ -70,6 +70,7 @@ textarea {
   z-index: 1;
 }
 
+/*
 .background-glow {
   position: fixed;
   width: 320px;
@@ -92,7 +93,7 @@ textarea {
   bottom: 20px;
   background: var(--accent-2);
 }
-
+*/
 
 .topbar{
     position:fixed;
