@@ -92,25 +92,7 @@ textarea {
   background: var(--accent-2);
 }
 
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 22px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  backdrop-filter: blur(20px);
-  border-radius: 26px;
-  box-shadow: var(--shadow);
-    position: fixed !important;
-  z-index: 99999 !important;
 
-  position: fixed;
-  top: 16px;
-  left: 50%;
-  width: min(1100px, calc(100% - 32px));
-  z-index: 1000;
-}
 .topbar {
   position: fixed;
   top: 16px;
