@@ -143,7 +143,7 @@ if (!quizState) {
 
 let milestoneShown = localStorage.getItem(storageKeys.milestone) === "true";
 let progressPopupShown = localStorage.getItem("keto-progress-popup-shown") === "true";
-let exitPopupShown = localStorage.getItem("keto-exit-popup-shown") === "true";
+let exitPopupShown = false;
 
 const groceryList = document.getElementById("groceryList");
 const searchInput = document.getElementById("searchInput");
@@ -552,7 +552,7 @@ closeExitModalBtn.addEventListener("click", () => closeModal(exitModal));
 window.addEventListener("mouseout", (event) => {
   if (!exitPopupShown && event.relatedTarget === null) {
     exitPopupShown = true;
-    localStorage.setItem("keto-exit-popup-shown", "true");
+    
     exitModal.classList.remove("hidden");
     exitModal.setAttribute("aria-hidden", "false");
   }
