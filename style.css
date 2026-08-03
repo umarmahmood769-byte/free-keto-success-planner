@@ -1062,6 +1062,8 @@ h3 {
     justify-content:center;
     align-items:center;
     margin-top:15px;
+  overflow-x:auto;
+white-space:nowrap;
 }
 
 .top-nav a{
