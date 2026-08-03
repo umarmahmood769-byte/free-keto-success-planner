@@ -1058,7 +1058,7 @@ h3 {
 .top-nav{
     display:flex;
     gap:18px;
-    flex-wrap: nowrap;
+    flex-wrap:wrap;
     justify-content:center;
     align-items:center;
     margin-top:15px;
@@ -1071,6 +1071,8 @@ white-space:nowrap;
     color:#2d7d46;
     font-weight:600;
     transition:0.3s;
+  font-size:13px;
+padding:4px;
 }
 
 .top-nav a:hover{
