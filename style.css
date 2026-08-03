@@ -1093,7 +1093,7 @@ white-space:nowrap;
     gap:18px;
     flex:1;
     justify-content:center;
-    flex-wrap:wrap;
+    flex-wrap:nowrap;
 }
 
 .top-nav a{
