@@ -203,7 +203,17 @@ h3 {
   margin: 0;
   list-style: none;
 }
-
+.ebook-note {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding: 10px 16px;
+  display: inline-block;
+  border-radius: 999px;
+  background: rgba(34, 197, 94, 0.12);
+  color: #16a34a;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
 .hero-badges li,
 .highlight-pill,
 .legend-pill,
