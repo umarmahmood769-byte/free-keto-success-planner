@@ -566,3 +566,34 @@ updateRecommendation();
 
 const savedTheme = localStorage.getItem(storageKeys.theme) || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
 applyTheme(savedTheme);
+const ketoFoods = {
+  "banana": "❌ Not Keto Friendly<br>Net Carbs: 23g<br><br>🥑 Better Choice: Avocado",
+  "rice": "❌ Not Keto Friendly<br>Net Carbs: 45g<br><br>🥦 Better Choice: Cauliflower Rice",
+  "bread": "❌ Not Keto Friendly<br>Net Carbs: 25g<br><br>🥬 Better Choice: Lettuce Wrap",
+  "apple": "❌ Not Keto Friendly<br>Net Carbs: 25g<br><br>🥑 Better Choice: Berries",
+  "potato": "❌ Not Keto Friendly<br>Net Carbs: 37g<br><br>🥦 Better Choice: Cauliflower",
+  "egg": "✅ Keto Friendly<br>Net Carbs: 0.6g",
+  "eggs": "✅ Keto Friendly<br>Net Carbs: 0.6g",
+  "chicken": "✅ Keto Friendly<br>Net Carbs: 0g",
+  "salmon": "✅ Keto Friendly<br>Net Carbs: 0g",
+  "beef": "✅ Keto Friendly<br>Net Carbs: 0g",
+  "avocado": "✅ Keto Friendly<br>Net Carbs: 2g"
+};
+const checkFoodBtn = document.getElementById("checkFoodBtn");
+const foodInput = document.getElementById("foodInput");
+const foodResult = document.getElementById("foodResult");
+
+if (checkFoodBtn) {
+  checkFoodBtn.addEventListener("click", function () {
+
+    const food = foodInput.value.trim().toLowerCase();
+
+    if (ketoFoods[food]) {
+      foodResult.innerHTML = ketoFoods[food];
+    } else {
+      foodResult.innerHTML =
+        "❓ Food not found.<br>We're adding more keto foods soon!";
+    }
+
+  });
+}
