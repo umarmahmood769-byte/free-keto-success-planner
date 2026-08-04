@@ -1,6 +1,6 @@
 :root {  
   color-scheme: light;
-  --bg: #f4f1ff;
+  --bg: #f4f1ff;.hero-panel {
   --bg-accent: #ece4ff;
   --surface: rgba(255, 255, 255, 0.72);
   --surface-strong: rgba(255, 255, 255, 0.94);
@@ -809,6 +809,36 @@ h3 {
   color: var(--accent);
   text-decoration: none;
   font-weight: 600;
+}
+  .keto-checker {
+  margin: 30px 0;
+  text-align: center;
+  padding: 30px;
+}
+
+.keto-checker h2 {
+  margin-bottom: 10px;
+}
+
+.keto-checker p {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.keto-checker input {
+  width: 100%;
+  max-width: 350px;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+#foodResult {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .floating-cta {
