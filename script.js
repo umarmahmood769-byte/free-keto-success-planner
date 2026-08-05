@@ -881,8 +881,66 @@ if (generateMealBtn) {
 ];
 
   const snackMeals = [
-    "🧀 Cheese Cubes & Almonds"
-  ];
+`<h4>🧀 Cheese Cubes & Almonds</h4>
+
+<strong>Ingredients:</strong>
+<ul>
+<li>Cheese Cubes</li>
+<li>Almonds</li>
+<li>Salt (Optional)</li>
+</ul>
+
+<strong>Instructions:</strong>
+<ol>
+<li>Cut cheese into small cubes.</li>
+<li>Add almonds on the side.</li>
+<li>Serve as a quick keto snack.</li>
+</ol>
+
+<p><strong>Calories:</strong> 250 kcal</p>
+<p><strong>Net Carbs:</strong> 3g</p>`,
+
+`<h4>🥚 Keto Deviled Eggs</h4>
+
+<strong>Ingredients:</strong>
+<ul>
+<li>Boiled Eggs</li>
+<li>Mayonnaise</li>
+<li>Mustard</li>
+<li>Salt & Pepper</li>
+</ul>
+
+<strong>Instructions:</strong>
+<ol>
+<li>Cut boiled eggs into halves.</li>
+<li>Remove yolks and mix with mayonnaise.</li>
+<li>Add seasoning.</li>
+<li>Fill the egg whites with mixture.</li>
+</ol>
+
+<p><strong>Calories:</strong> 220 kcal</p>
+<p><strong>Net Carbs:</strong> 2g</p>`,
+
+`<h4>🥜 Peanut Butter Keto Bites</h4>
+
+<strong>Ingredients:</strong>
+<ul>
+<li>Natural Peanut Butter</li>
+<li>Coconut Flour</li>
+<li>Chia Seeds</li>
+<li>Coconut Oil</li>
+</ul>
+
+<strong>Instructions:</strong>
+<ol>
+<li>Mix all ingredients together.</li>
+<li>Make small bite-sized balls.</li>
+<li>Chill before serving.</li>
+</ol>
+
+<p><strong>Calories:</strong> 280 kcal</p>
+<p><strong>Net Carbs:</strong> 4g</p>`
+];
 
   generateMealBtn.addEventListener("click", function () {
 
