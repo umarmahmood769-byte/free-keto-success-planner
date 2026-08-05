@@ -671,3 +671,52 @@ if (checkFoodBtn) {
 
   });
 }
+// ================================
+// Generate My Keto Meal
+// ================================
+
+const generateMealBtn = document.getElementById("generateMealBtn");
+
+if (generateMealBtn) {
+
+  const breakfastMeals = [
+    "🥚 Avocado Egg Scramble",
+    "🧀 Cheesy Spinach Omelette",
+    "🥓 Bacon & Eggs"
+  ];
+
+  const lunchMeals = [
+    "🥗 Grilled Chicken Caesar Salad",
+    "🥑 Tuna Avocado Salad",
+    "🥬 Keto Chicken Lettuce Wraps"
+  ];
+
+  const dinnerMeals = [
+    "🍽️ Garlic Butter Salmon",
+    "🥩 Beef Steak with Broccoli",
+    "🍗 Creamy Garlic Chicken"
+  ];
+
+  const snackMeals = [
+    "🧀 Cheese Cubes & Almonds"
+  ];
+
+  generateMealBtn.addEventListener("click", function () {
+
+    document.getElementById("mealResult").style.display = "block";
+
+    document.getElementById("breakfastMeal").innerHTML =
+      breakfastMeals[Math.floor(Math.random() * breakfastMeals.length)];
+
+    document.getElementById("lunchMeal").innerHTML =
+      lunchMeals[Math.floor(Math.random() * lunchMeals.length)];
+
+    document.getElementById("dinnerMeal").innerHTML =
+      dinnerMeals[Math.floor(Math.random() * dinnerMeals.length)];
+
+    document.getElementById("snackMeal").innerHTML =
+      snackMeals[Math.floor(Math.random() * snackMeals.length)];
+
+  });
+
+}
