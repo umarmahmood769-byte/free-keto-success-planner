@@ -812,10 +812,73 @@ if (generateMealBtn) {
 ];
 
   const dinnerMeals = [
-    "🍽️ Garlic Butter Salmon",
-    "🥩 Beef Steak with Broccoli",
-    "🍗 Creamy Garlic Chicken"
-  ];
+`<h4>🍗 Creamy Garlic Chicken</h4>
+
+<strong>Ingredients:</strong>
+<ul>
+<li>Chicken Breast</li>
+<li>Heavy Cream</li>
+<li>Garlic</li>
+<li>Butter</li>
+<li>Spinach</li>
+</ul>
+
+<strong>Instructions:</strong>
+<ol>
+<li>Cook chicken in butter until golden.</li>
+<li>Add garlic and cook for 1 minute.</li>
+<li>Pour heavy cream and simmer.</li>
+<li>Add spinach and mix well.</li>
+<li>Serve hot.</li>
+</ol>
+
+<p><strong>Calories:</strong> 520 kcal</p>
+<p><strong>Net Carbs:</strong> 6g</p>`,
+
+`<h4>🥩 Keto Steak with Vegetables</h4>
+
+<strong>Ingredients:</strong>
+<ul>
+<li>Beef Steak</li>
+<li>Butter</li>
+<li>Broccoli</li>
+<li>Olive Oil</li>
+<li>Salt & Pepper</li>
+</ul>
+
+<strong>Instructions:</strong>
+<ol>
+<li>Season the steak.</li>
+<li>Cook steak according to preference.</li>
+<li>Sauté vegetables with olive oil.</li>
+<li>Serve together.</li>
+</ol>
+
+<p><strong>Calories:</strong> 600 kcal</p>
+<p><strong>Net Carbs:</strong> 7g</p>`,
+
+`<h4>🐟 Garlic Butter Salmon</h4>
+
+<strong>Ingredients:</strong>
+<ul>
+<li>Salmon Fillet</li>
+<li>Butter</li>
+<li>Garlic</li>
+<li>Lemon</li>
+<li>Asparagus</li>
+</ul>
+
+<strong>Instructions:</strong>
+<ol>
+<li>Season salmon with salt and pepper.</li>
+<li>Add garlic butter.</li>
+<li>Bake until fully cooked.</li>
+<li>Serve with vegetables.</li>
+</ol>
+
+<p><strong>Calories:</strong> 550 kcal</p>
+<p><strong>Net Carbs:</strong> 3g</p>`
+];
 
   const snackMeals = [
     "🧀 Cheese Cubes & Almonds"
