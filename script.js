@@ -680,10 +680,67 @@ console.log(generateMealBtn);
 if (generateMealBtn) {
 
   const breakfastMeals = [
-    "🥚 Avocado Egg Scramble",
-    "🧀 Cheesy Spinach Omelette",
-    "🥓 Bacon & Eggs"
-  ];
+`<h4>🥚 Avocado Egg Scramble</h4>
+<strong>Ingredients:</strong>
+<ul>
+<li>2 Eggs</li>
+<li>1/2 Avocado</li>
+<li>1 tbsp Butter</li>
+<li>Salt & Black Pepper</li>
+</ul>
+
+<strong>Instructions:</strong>
+<ol>
+<li>Melt butter in a pan.</li>
+<li>Scramble the eggs.</li>
+<li>Add sliced avocado.</li>
+<li>Season and serve.</li>
+</ol>
+
+<p><strong>Calories:</strong> 340 kcal</p>
+<p><strong>Net Carbs:</strong> 3g</p>`,
+
+`<h4>🧀 Cheesy Spinach Omelette</h4>
+
+<strong>Ingredients:</strong>
+<ul>
+<li>2 Eggs</li>
+<li>1 tbsp Butter</li>
+<li>1/2 Cup Spinach</li>
+<li>1/4 Cup Cheddar Cheese</li>
+</ul>
+
+<strong>Instructions:</strong>
+<ol>
+<li>Melt butter.</li>
+<li>Cook spinach.</li>
+<li>Add beaten eggs.</li>
+<li>Top with cheddar cheese.</li>
+<li>Fold and serve.</li>
+</ol>
+
+<p><strong>Calories:</strong> 380 kcal</p>
+<p><strong>Net Carbs:</strong> 3g</p>`,
+
+`<h4>🥓 Bacon & Eggs</h4>
+
+<strong>Ingredients:</strong>
+<ul>
+<li>2 Eggs</li>
+<li>2 Bacon Strips</li>
+<li>1 tsp Butter</li>
+</ul>
+
+<strong>Instructions:</strong>
+<ol>
+<li>Cook bacon until crispy.</li>
+<li>Fry eggs in butter.</li>
+<li>Serve together.</li>
+</ol>
+
+<p><strong>Calories:</strong> 410 kcal</p>
+<p><strong>Net Carbs:</strong> 1g</p>`
+];
 
   const lunchMeals = [
     "🥗 Grilled Chicken Caesar Salad",
