@@ -671,3 +671,64 @@ if (checkFoodBtn) {
 
   });
 }
+/* =========================
+   Breakfast Recipe Popup
+========================= */
+
+const recipeBtn = document.querySelector('.recipe-btn');
+const recipeModal = document.getElementById('recipeModal');
+const recipeBody = document.getElementById('recipeBody');
+const closeRecipeModal = document.getElementById('closeRecipeModal');
+
+if (recipeBtn) {
+  recipeBtn.addEventListener('click', function () {
+
+    recipeBody.innerHTML = `
+      <h2>🥚 Avocado Egg Scramble</h2>
+
+      <p><strong>⭐ Rating:</strong> ★★★★★</p>
+
+      <p>⏱️ <strong>Prep Time:</strong> 10 min</p>
+      <p>🍳 <strong>Cook Time:</strong> 8 min</p>
+      <p>🔥 <strong>Calories:</strong> 320</p>
+      <p>🥑 <strong>Net Carbs:</strong> 3g</p>
+
+      <h3>Ingredients</h3>
+      <ul>
+        <li>2 Eggs</li>
+        <li>½ Avocado</li>
+        <li>1 tbsp Butter</li>
+        <li>Salt</li>
+        <li>Black Pepper</li>
+      </ul>
+
+      <h3>Instructions</h3>
+      <ol>
+        <li>Melt butter in a pan.</li>
+        <li>Scramble the eggs.</li>
+        <li>Add sliced avocado.</li>
+        <li>Season with salt and pepper.</li>
+        <li>Serve immediately.</li>
+      </ol>
+
+      <p><strong>💡 Keto Tip:</strong> Add cheddar cheese for extra healthy fats.</p>
+    `;
+
+    recipeModal.classList.remove('hidden');
+
+  });
+}
+
+if (closeRecipeModal) {
+  closeRecipeModal.addEventListener('click', function () {
+    recipeModal.classList.add('hidden');
+  });
+}
+
+if (recipeModal) {
+  recipeModal.addEventListener('click', function (e) {
+    if (e.target === recipeModal) {
+      recipeModal.classList.add('hidden');
+    }
+  });
+}
