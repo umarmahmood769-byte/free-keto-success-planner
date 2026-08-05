@@ -743,10 +743,73 @@ if (generateMealBtn) {
 ];
 
   const lunchMeals = [
-    "🥗 Grilled Chicken Caesar Salad",
-    "🥑 Tuna Avocado Salad",
-    "🥬 Keto Chicken Lettuce Wraps"
-  ];
+`<h4>🥗 Grilled Chicken Caesar Salad</h4>
+
+<strong>Ingredients:</strong>
+<ul>
+<li>Grilled Chicken Breast</li>
+<li>Romaine Lettuce</li>
+<li>Parmesan Cheese</li>
+<li>Caesar Dressing</li>
+<li>Olive Oil</li>
+</ul>
+
+<strong>Instructions:</strong>
+<ol>
+<li>Slice the grilled chicken.</li>
+<li>Add lettuce to a bowl.</li>
+<li>Mix with dressing and olive oil.</li>
+<li>Top with Parmesan cheese.</li>
+<li>Serve fresh.</li>
+</ol>
+
+<p><strong>Calories:</strong> 480 kcal</p>
+<p><strong>Net Carbs:</strong> 5g</p>`,
+
+`<h4>🥑 Tuna Avocado Salad</h4>
+
+<strong>Ingredients:</strong>
+<ul>
+<li>1 Can Tuna</li>
+<li>1 Avocado</li>
+<li>Olive Oil</li>
+<li>Lemon Juice</li>
+<li>Salt & Pepper</li>
+</ul>
+
+<strong>Instructions:</strong>
+<ol>
+<li>Drain the tuna.</li>
+<li>Dice the avocado.</li>
+<li>Mix everything together.</li>
+<li>Add lemon juice and seasoning.</li>
+<li>Serve chilled.</li>
+</ol>
+
+<p><strong>Calories:</strong> 420 kcal</p>
+<p><strong>Net Carbs:</strong> 4g</p>`,
+
+`<h4>🥬 Keto Chicken Lettuce Wraps</h4>
+
+<strong>Ingredients:</strong>
+<ul>
+<li>Cooked Chicken</li>
+<li>Lettuce Leaves</li>
+<li>Cheddar Cheese</li>
+<li>Mayonnaise</li>
+</ul>
+
+<strong>Instructions:</strong>
+<ol>
+<li>Fill lettuce leaves with chicken.</li>
+<li>Add cheese.</li>
+<li>Top with mayonnaise.</li>
+<li>Wrap and enjoy.</li>
+</ol>
+
+<p><strong>Calories:</strong> 450 kcal</p>
+<p><strong>Net Carbs:</strong> 4g</p>`
+];
 
   const dinnerMeals = [
     "🍽️ Garlic Butter Salmon",
