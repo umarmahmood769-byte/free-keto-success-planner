@@ -1,3 +1,4 @@
+```javascript
 // ============================================================
 // KETO APP - FINAL CLEAN SCRIPT
 // ============================================================
@@ -393,9 +394,7 @@ function getItemMeta(itemName) {
   const value = itemName.toLowerCase();
 
   if (
-    /(bacon|beef|chicken|salmon|shrimp|turkey|tuna|ham|sausage|meatballs|prosciutto|salami|pork|lamb|egg|anchovies|pepperoni|chorizo|ground beef|ground turkey|white fish|smoked salmon)/.test(
-      value
-    )
+    /(bacon|beef|chicken|salmon|shrimp|turkey|tuna|ham|sausage|meatballs|prosciutto|salami|pork|lamb|egg|anchovies|pepperoni|chorizo|ground beef|ground turkey|white fish|smoked salmon)/.test(value)
   ) {
     return {
       icon: "🥩",
@@ -404,9 +403,7 @@ function getItemMeta(itemName) {
   }
 
   if (
-    /(butter|cream|cheese|ghee|mayo|olive oil|coconut cream|coconut milk|coconut oil|avocado|olives|tallow|feta|parmesan|mozzarella|brie|blue cheese|cheddar|swiss|cream cheese|cottage cheese|greek yogurt|sour cream)/.test(
-      value
-    )
+    /(butter|cream|cheese|ghee|mayo|olive oil|coconut cream|coconut milk|coconut oil|avocado|olives|tallow|feta|parmesan|mozzarella|brie|blue cheese|cheddar|swiss|cream cheese|cottage cheese|greek yogurt|sour cream)/.test(value)
   ) {
     return {
       icon: "🧈",
@@ -415,9 +412,7 @@ function getItemMeta(itemName) {
   }
 
   if (
-    /(spinach|kale|lettuce|cabbage|broccoli|cauliflower|zucchini|cucumber|pepper|radish|carrot|asparagus|mushroom|celery|bok choy|arugula|watercress|sprouts|green beans|eggplant|collard|okra|leek|onion)/.test(
-      value
-    )
+    /(spinach|kale|lettuce|cabbage|broccoli|cauliflower|zucchini|cucumber|pepper|radish|carrot|asparagus|mushroom|celery|bok choy|arugula|watercress|sprouts|green beans|eggplant|collard|okra|leek|onion)/.test(value)
   ) {
     return {
       icon: "🥬",
@@ -426,9 +421,7 @@ function getItemMeta(itemName) {
   }
 
   if (
-    /(almond|cashew|pecan|walnut|pistachio|peanut|sunflower|pumpkin|chia|flax|hemp|sesame|macadamia|pine|nut|seed)/.test(
-      value
-    )
+    /(almond|cashew|pecan|walnut|pistachio|peanut|sunflower|pumpkin|chia|flax|hemp|sesame|macadamia|pine|nut|seed)/.test(value)
   ) {
     return {
       icon: "🥜",
@@ -437,9 +430,7 @@ function getItemMeta(itemName) {
   }
 
   if (
-    /(broth|sauce|seasoning|mustard|pickle|syrup|sweetener|spice|herb|paprika|oregano|cumin|curry|dijon|worcestershire|salsa|taco|tomato|miso|nori|seaweed|kimchi|cocoa|coconut flour|xanthan|psyllium|yeast)/.test(
-      value
-    )
+    /(broth|sauce|seasoning|mustard|pickle|syrup|sweetener|spice|herb|paprika|oregano|cumin|curry|dijon|worcestershire|salsa|taco|tomato|miso|nori|seaweed|kimchi|cocoa|coconut flour|xanthan|psyllium|yeast)/.test(value)
   ) {
     return {
       icon: "🧂",
@@ -680,8 +671,8 @@ function updateScoreboard() {
       100,
       Math.round(
         (xpState.points % 250) /
-          250 *
-          100
+        250 *
+        100
       )
     );
 
@@ -863,7 +854,7 @@ function showMealPlan(day) {
   if (!meals) return;
 
   mealPlanResult.innerHTML = `
-    <div class="meal-result">
+    <div class="meal-result-content">
       <h3>${day} Keto Plan</h3>
 
       <p>Your Meal Plan for ${day}</p>
@@ -978,6 +969,214 @@ if (mealPlanResult) {
         message.textContent =
           `✅ ${meal} added to your ${day} plan!`;
       }
+    }
+  );
+}
+
+// ============================================================
+// CALCULATOR - FIXED
+// ============================================================
+
+if (calculatorForm) {
+  calculatorForm.addEventListener(
+    "submit",
+    (event) => {
+      event.preventDefault();
+
+      const weightInput =
+        document.getElementById("weight");
+
+      const heightInput =
+        document.getElementById("height");
+
+      const ageInput =
+        document.getElementById("age");
+
+      const genderInput =
+        document.getElementById("gender");
+
+      const activityInput =
+        document.getElementById("activity");
+
+      if (
+        !weightInput ||
+        !heightInput ||
+        !ageInput ||
+        !genderInput ||
+        !activityInput
+      ) {
+        return;
+      }
+
+      const weight =
+        parseFloat(weightInput.value);
+
+      const height =
+        parseFloat(heightInput.value);
+
+      const age =
+        parseInt(ageInput.value, 10);
+
+      const gender =
+        genderInput.value;
+
+      const activity =
+        parseFloat(activityInput.value);
+
+      if (
+        !Number.isFinite(weight) ||
+        !Number.isFinite(height) ||
+        !Number.isFinite(age) ||
+        !Number.isFinite(activity) ||
+        weight <= 0 ||
+        height <= 0 ||
+        age <= 0
+      ) {
+        if (bmiResult) {
+          bmiResult.textContent = "--";
+        }
+
+        if (calorieResult) {
+          calorieResult.textContent = "--";
+        }
+
+        if (waterResult) {
+          waterResult.textContent = "--";
+        }
+
+        if (macroResult) {
+          macroResult.textContent = "--";
+        }
+
+        return;
+      }
+
+      // ----------------------------
+      // BMI
+      // ----------------------------
+
+      const heightMeters =
+        height / 100;
+
+      const bmi =
+        weight /
+        (heightMeters * heightMeters);
+
+      let bmiCategory = "";
+
+      if (bmi < 18.5) {
+        bmiCategory = "Underweight";
+      } else if (bmi < 25) {
+        bmiCategory = "Healthy";
+      } else if (bmi < 30) {
+        bmiCategory = "Overweight";
+      } else {
+        bmiCategory = "Obesity range";
+      }
+
+      if (bmiResult) {
+        bmiResult.textContent =
+          `${bmi.toFixed(1)} (${bmiCategory})`;
+      }
+
+      // ----------------------------
+      // BMR - Mifflin St Jeor
+      // ----------------------------
+
+      let bmr;
+
+      if (gender === "female") {
+        bmr =
+          (10 * weight) +
+          (6.25 * height) -
+          (5 * age) -
+          161;
+      } else {
+        bmr =
+          (10 * weight) +
+          (6.25 * height) -
+          (5 * age) +
+          5;
+      }
+
+      // ----------------------------
+      // DAILY CALORIES
+      // ----------------------------
+
+      const maintenanceCalories =
+        bmr * activity;
+
+      const dailyCalories =
+        Math.max(
+          1200,
+          Math.round(
+            maintenanceCalories
+          )
+        );
+
+      if (calorieResult) {
+        calorieResult.textContent =
+          `${dailyCalories} kcal/day`;
+      }
+
+      // ----------------------------
+      // WATER
+      // Approx. 35 ml per kg
+      // ----------------------------
+
+      const waterMl =
+        Math.round(weight * 35);
+
+      const waterLiters =
+        (waterMl / 1000).toFixed(1);
+
+      if (waterResult) {
+        waterResult.textContent =
+          `${waterLiters} L/day`;
+      }
+
+      // ----------------------------
+      // KETO MACROS
+      //
+      // Protein = 1.6g per kg
+      // Net carbs = 25g
+      // Fat = remaining calories
+      // ----------------------------
+
+      const proteinGrams =
+        Math.round(weight * 1.6);
+
+      const carbGrams = 25;
+
+      const proteinCalories =
+        proteinGrams * 4;
+
+      const carbCalories =
+        carbGrams * 4;
+
+      const remainingCalories =
+        Math.max(
+          0,
+          dailyCalories -
+          proteinCalories -
+          carbCalories
+        );
+
+      const fatGrams =
+        Math.round(
+          remainingCalories / 9
+        );
+
+      if (macroResult) {
+        macroResult.textContent =
+          `P ${proteinGrams}g • C ${carbGrams}g • F ${fatGrams}g`;
+      }
+
+      // ----------------------------
+      // Add XP for using calculator
+      // ----------------------------
+
+      addXp(10);
     }
   );
 }
@@ -1129,6 +1328,14 @@ function launchConfetti() {
 
   confettiLayer.innerHTML = "";
 
+  const confettiColors = [
+    "#7c3aed",
+    "#38bdf8",
+    "#f59e0b",
+    "#f43f5e",
+    "#34d399"
+  ];
+
   for (let i = 0; i < 60; i += 1) {
     const piece =
       document.createElement("span");
@@ -1138,14 +1345,6 @@ function launchConfetti() {
 
     piece.style.left =
       `${Math.random() * 100}%`;
-
-    const confettiColors = [
-      "#7c3aed",
-      "#38bdf8",
-      "#f59e0b",
-      "#f43f5e",
-      "#34d399"
-    ];
 
     piece.style.background =
       confettiColors[
@@ -1295,8 +1494,10 @@ if (groceryList) {
         event.target;
 
       if (
-        !(checkbox instanceof
-          HTMLInputElement) ||
+        !(
+          checkbox instanceof
+          HTMLInputElement
+        ) ||
         checkbox.type !==
           "checkbox"
       ) {
@@ -1362,7 +1563,7 @@ if (themeToggle) {
     () => {
       const nextTheme =
         document.body.dataset.theme ===
-        "dark"
+          "dark"
           ? "light"
           : "dark";
 
@@ -1647,7 +1848,10 @@ if (checkFoodBtn) {
   checkFoodBtn.addEventListener(
     "click",
     () => {
-      if (!foodInput || !foodResult) {
+      if (
+        !foodInput ||
+        !foodResult
+      ) {
         return;
       }
 
@@ -1851,11 +2055,6 @@ if (buildDayBtn) {
 // ============================================================
 // REVEAL MY PICK
 // ============================================================
-//
-// IMPORTANT:
-// This is the ONLY Reveal My Pick handler.
-// There are NO duplicate quiz submit handlers below.
-// ============================================================
 
 const revealPickBtn =
   document.getElementById(
@@ -2001,11 +2200,6 @@ if (revealPickBtn) {
 // ============================================================
 // QUIZ FORM SUBMIT
 // ============================================================
-//
-// This is intentionally ONE submit handler only.
-// If the Reveal My Pick button is inside the form,
-// type="button" in HTML is recommended.
-// ============================================================
 
 if (quizForm) {
   quizForm.addEventListener(
@@ -2087,4 +2281,5 @@ const savedTheme =
       : "light"
   );
 
-
+applyTheme(savedTheme);
+```
