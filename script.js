@@ -393,7 +393,9 @@ function getItemMeta(itemName) {
   const value = itemName.toLowerCase();
 
   if (
-    /(bacon|beef|chicken|salmon|shrimp|turkey|tuna|ham|sausage|meatballs|prosciutto|salami|pork|lamb|egg|anchovies|pepperoni|chorizo|ground beef|ground turkey|white fish|smoked salmon)/.test(value)
+    /(bacon|beef|chicken|salmon|shrimp|turkey|tuna|ham|sausage|meatballs|prosciutto|salami|pork|lamb|egg|anchovies|pepperoni|chorizo|ground beef|ground turkey|white fish|smoked salmon)/.test(
+      value
+    )
   ) {
     return {
       icon: "🥩",
@@ -402,7 +404,9 @@ function getItemMeta(itemName) {
   }
 
   if (
-    /(butter|cream|cheese|ghee|mayo|olive oil|coconut cream|coconut milk|coconut oil|avocado|olives|tallow|feta|parmesan|mozzarella|brie|blue cheese|cheddar|swiss|cream cheese|cottage cheese|greek yogurt|sour cream)/.test(value)
+    /(butter|cream|cheese|ghee|mayo|olive oil|coconut cream|coconut milk|coconut oil|avocado|olives|tallow|feta|parmesan|mozzarella|brie|blue cheese|cheddar|swiss|cream cheese|cottage cheese|greek yogurt|sour cream)/.test(
+      value
+    )
   ) {
     return {
       icon: "🧈",
@@ -411,7 +415,9 @@ function getItemMeta(itemName) {
   }
 
   if (
-    /(spinach|kale|lettuce|cabbage|broccoli|cauliflower|zucchini|cucumber|pepper|radish|carrot|asparagus|mushroom|celery|bok choy|arugula|watercress|sprouts|green beans|eggplant|collard|okra|leek|onion)/.test(value)
+    /(spinach|kale|lettuce|cabbage|broccoli|cauliflower|zucchini|cucumber|pepper|radish|carrot|asparagus|mushroom|celery|bok choy|arugula|watercress|sprouts|green beans|eggplant|collard|okra|leek|onion)/.test(
+      value
+    )
   ) {
     return {
       icon: "🥬",
@@ -420,7 +426,9 @@ function getItemMeta(itemName) {
   }
 
   if (
-    /(almond|cashew|pecan|walnut|pistachio|peanut|sunflower|pumpkin|chia|flax|hemp|sesame|macadamia|pine|nut|seed)/.test(value)
+    /(almond|cashew|pecan|walnut|pistachio|peanut|sunflower|pumpkin|chia|flax|hemp|sesame|macadamia|pine|nut|seed)/.test(
+      value
+    )
   ) {
     return {
       icon: "🥜",
@@ -429,7 +437,9 @@ function getItemMeta(itemName) {
   }
 
   if (
-    /(broth|sauce|seasoning|mustard|pickle|syrup|sweetener|spice|herb|paprika|oregano|cumin|curry|dijon|worcestershire|salsa|taco|tomato|miso|nori|seaweed|kimchi|cocoa|coconut flour|xanthan|psyllium|yeast)/.test(value)
+    /(broth|sauce|seasoning|mustard|pickle|syrup|sweetener|spice|herb|paprika|oregano|cumin|curry|dijon|worcestershire|salsa|taco|tomato|miso|nori|seaweed|kimchi|cocoa|coconut flour|xanthan|psyllium|yeast)/.test(
+      value
+    )
   ) {
     return {
       icon: "🧂",
@@ -670,8 +680,8 @@ function updateScoreboard() {
       100,
       Math.round(
         (xpState.points % 250) /
-        250 *
-        100
+          250 *
+          100
       )
     );
 
@@ -696,79 +706,76 @@ function updateScoreboard() {
         ? "Your system is operating at premium speed."
         : "Your keto journey is building momentum.";
   }
-}
-// ================================
-// CONTINUE SCOREBOARD
-// ================================
 
-if (xpDescription) {
-  xpDescription.textContent =
-    checkedCount > 0
-      ? `You are ${checkedCount} items away from a full pantry reset.`
-      : "Every checked item sharpens your streak.";
-}
+  if (xpDescription) {
+    xpDescription.textContent =
+      checkedCount > 0
+        ? `You are ${checkedCount} items away from a full pantry reset.`
+        : "Every checked item sharpens your streak.";
+  }
 
-if (xpPercent) {
-  xpPercent.textContent =
-    `${percentToNext}%`;
-}
+  if (xpPercent) {
+    xpPercent.textContent =
+      `${percentToNext}%`;
+  }
 
-if (xpRing) {
-  xpRing.style.background =
-    `conic-gradient(
-      var(--accent)
-      ${percentToNext}%,
-      rgba(124, 58, 237, 0.16) 0%
-    )`;
-}
+  if (xpRing) {
+    xpRing.style.background =
+      `conic-gradient(
+        var(--accent)
+        ${percentToNext}%,
+        rgba(124, 58, 237, 0.16) 0%
+      )`;
+  }
 
-renderAchievements();
+  renderAchievements();
 
-if (
-  progressPercent >= 75 &&
-  !milestoneShown &&
-  milestoneModal
-) {
-  milestoneShown = true;
+  if (
+    progressPercent >= 75 &&
+    !milestoneShown &&
+    milestoneModal
+  ) {
+    milestoneShown = true;
 
-  localStorage.setItem(
-    storageKeys.milestone,
-    "true"
-  );
+    localStorage.setItem(
+      storageKeys.milestone,
+      "true"
+    );
 
-  milestoneModal.classList.remove("hidden");
-  milestoneModal.setAttribute(
-    "aria-hidden",
-    "false"
-  );
+    milestoneModal.classList.remove("hidden");
+    milestoneModal.setAttribute(
+      "aria-hidden",
+      "false"
+    );
 
-  launchConfetti();
-}
+    launchConfetti();
+  }
 
-if (
-  progressPercent >= 80 &&
-  !progressPopupShown &&
-  progressModal
-) {
-  progressPopupShown = true;
+  if (
+    progressPercent >= 80 &&
+    !progressPopupShown &&
+    progressModal
+  ) {
+    progressPopupShown = true;
 
-  localStorage.setItem(
-    "keto-progress-popup-shown",
-    "true"
-  );
+    localStorage.setItem(
+      "keto-progress-popup-shown",
+      "true"
+    );
 
-  progressModal.classList.remove("hidden");
-  progressModal.setAttribute(
-    "aria-hidden",
-    "false"
-  );
-}
+    progressModal.classList.remove("hidden");
+    progressModal.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+  }
 
-if (
-  checkedCount === total &&
-  !quizState.completed
-) {
-  launchConfetti();
+  if (
+    checkedCount === total &&
+    !quizState.completed
+  ) {
+    launchConfetti();
+  }
 }
 
 // ================================
@@ -856,7 +863,7 @@ function showMealPlan(day) {
   if (!meals) return;
 
   mealPlanResult.innerHTML = `
-    <div class="meal-result-content">
+    <div class="meal-result">
       <h3>${day} Keto Plan</h3>
 
       <p>Your Meal Plan for ${day}</p>
@@ -971,195 +978,6 @@ if (mealPlanResult) {
         message.textContent =
           `✅ ${meal} added to your ${day} plan!`;
       }
-    }
-  );
-}
-
-// ============================================================
-// CALCULATOR - FIXED
-// ============================================================
-
-if (calculatorForm) {
-  calculatorForm.addEventListener(
-    "submit",
-    (event) => {
-      event.preventDefault();
-
-      const weightInput =
-        document.getElementById("weight");
-
-      const heightInput =
-        document.getElementById("height");
-
-      const ageInput =
-        document.getElementById("age");
-
-      const genderInput =
-        document.getElementById("gender");
-
-      const activityInput =
-        document.getElementById("activity");
-
-      if (
-        !weightInput ||
-        !heightInput ||
-        !ageInput ||
-        !genderInput ||
-        !activityInput
-      ) {
-        return;
-      }
-
-      const weight =
-        parseFloat(weightInput.value);
-
-      const height =
-        parseFloat(heightInput.value);
-
-      const age =
-        parseInt(ageInput.value, 10);
-
-      const gender =
-        genderInput.value;
-
-      const activity =
-        parseFloat(activityInput.value);
-
-      if (
-        !Number.isFinite(weight) ||
-        !Number.isFinite(height) ||
-        !Number.isFinite(age) ||
-        !Number.isFinite(activity) ||
-        weight <= 0 ||
-        height <= 0 ||
-        age <= 0
-      ) {
-        if (bmiResult) {
-          bmiResult.textContent = "--";
-        }
-
-        if (calorieResult) {
-          calorieResult.textContent = "--";
-        }
-
-        if (waterResult) {
-          waterResult.textContent = "--";
-        }
-
-        if (macroResult) {
-          macroResult.textContent = "--";
-        }
-
-        return;
-      }
-
-      // BMI
-
-      const heightMeters =
-        height / 100;
-
-      const bmi =
-        weight /
-        (heightMeters * heightMeters);
-
-      let bmiCategory = "";
-
-      if (bmi < 18.5) {
-        bmiCategory = "Underweight";
-      } else if (bmi < 25) {
-        bmiCategory = "Healthy";
-      } else if (bmi < 30) {
-        bmiCategory = "Overweight";
-      } else {
-        bmiCategory = "Obesity range";
-      }
-
-      if (bmiResult) {
-        bmiResult.textContent =
-          `${bmi.toFixed(1)} (${bmiCategory})`;
-      }
-
-      // BMR
-
-      let bmr;
-
-      if (gender === "female") {
-        bmr =
-          (10 * weight) +
-          (6.25 * height) -
-          (5 * age) -
-          161;
-      } else {
-        bmr =
-          (10 * weight) +
-          (6.25 * height) -
-          (5 * age) +
-          5;
-      }
-
-      // DAILY CALORIES
-
-      const maintenanceCalories =
-        bmr * activity;
-
-      const dailyCalories =
-        Math.max(
-          1200,
-          Math.round(
-            maintenanceCalories
-          )
-        );
-
-      if (calorieResult) {
-        calorieResult.textContent =
-          `${dailyCalories} kcal/day`;
-      }
-
-      // WATER
-
-      const waterMl =
-        Math.round(weight * 35);
-
-      const waterLiters =
-        (waterMl / 1000).toFixed(1);
-
-      if (waterResult) {
-        waterResult.textContent =
-          `${waterLiters} L/day`;
-      }
-
-      // KETO MACROS
-
-      const proteinGrams =
-        Math.round(weight * 1.6);
-
-      const carbGrams = 25;
-
-      const proteinCalories =
-        proteinGrams * 4;
-
-      const carbCalories =
-        carbGrams * 4;
-
-      const remainingCalories =
-        Math.max(
-          0,
-          dailyCalories -
-          proteinCalories -
-          carbCalories
-        );
-
-      const fatGrams =
-        Math.round(
-          remainingCalories / 9
-        );
-
-      if (macroResult) {
-        macroResult.textContent =
-          `P ${proteinGrams}g • C ${carbGrams}g • F ${fatGrams}g`;
-      }
-
-      addXp(10);
     }
   );
 }
@@ -1311,14 +1129,6 @@ function launchConfetti() {
 
   confettiLayer.innerHTML = "";
 
-  const confettiColors = [
-    "#7c3aed",
-    "#38bdf8",
-    "#f59e0b",
-    "#f43f5e",
-    "#34d399"
-  ];
-
   for (let i = 0; i < 60; i += 1) {
     const piece =
       document.createElement("span");
@@ -1328,6 +1138,14 @@ function launchConfetti() {
 
     piece.style.left =
       `${Math.random() * 100}%`;
+
+    const confettiColors = [
+      "#7c3aed",
+      "#38bdf8",
+      "#f59e0b",
+      "#f43f5e",
+      "#34d399"
+    ];
 
     piece.style.background =
       confettiColors[
@@ -1453,6 +1271,568 @@ if (challengeBtn) {
     }
   );
 }
+
+// ================================
+// SEARCH
+// ================================
+
+if (searchInput) {
+  searchInput.addEventListener(
+    "input",
+    renderChecklist
+  );
+}
+
+// ================================
+// GROCERY CHECKBOX
+// ================================
+
+if (groceryList) {
+  groceryList.addEventListener(
+    "change",
+    (event) => {
+      const checkbox =
+        event.target;
+
+      if (
+        !(checkbox instanceof
+          HTMLInputElement) ||
+        checkbox.type !==
+          "checkbox"
+      ) {
+        return;
+      }
+
+      const itemName =
+        checkbox.dataset.name;
+
+      const target =
+        checklistState.find(
+          (item) =>
+            item.name === itemName
+        );
+
+      if (!target) return;
+
+      target.checked =
+        checkbox.checked;
+
+      saveChecklist();
+
+      if (checkbox.checked) {
+        addXp(12);
+      } else {
+        addXp(-12);
+      }
+
+      renderChecklist();
+      updateScoreboard();
+
+      if (
+        checklistState.every(
+          (item) => item.checked
+        )
+      ) {
+        launchConfetti();
+      }
+    }
+  );
+}
+
+// ================================
+// XP BOOST BUTTON
+// ================================
+
+if (xpBoostBtn) {
+  xpBoostBtn.addEventListener(
+    "click",
+    () => {
+      addXp(25);
+    }
+  );
+}
+
+// ================================
+// THEME BUTTON
+// ================================
+
+if (themeToggle) {
+  themeToggle.addEventListener(
+    "click",
+    () => {
+      const nextTheme =
+        document.body.dataset.theme ===
+        "dark"
+          ? "light"
+          : "dark";
+
+      applyTheme(nextTheme);
+    }
+  );
+}
+
+// ================================
+// PRINT
+// ================================
+
+if (printBtn) {
+  printBtn.addEventListener(
+    "click",
+    () => window.print()
+  );
+}
+
+// ============================================================
+// KETO FOOD CHECKER
+// ============================================================
+
+const ketoFoods = {
+  banana:
+    "❌ Not Keto Friendly<br>Net Carbs: 23g<br>🥑 Better Choice: Avocado",
+
+  rice:
+    "❌ Not Keto Friendly<br>Net Carbs: 45g<br>🥦 Better Choice: Cauliflower Rice",
+
+  bread:
+    "❌ Not Keto Friendly<br>Net Carbs: 25g<br>🥬 Better Choice: Lettuce Wrap",
+
+  apple:
+    "❌ Not Keto Friendly<br>Net Carbs: 25g<br>🥑 Better Choice: Berries",
+
+  potato:
+    "❌ Not Keto Friendly<br>Net Carbs: 37g<br>🥦 Better Choice: Cauliflower",
+
+  egg:
+    "✅ Keto Friendly<br>Net Carbs: 0.6g",
+
+  eggs:
+    "✅ Keto Friendly<br>Net Carbs: 0.6g",
+
+  chicken:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  salmon:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  beef:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  avocado:
+    "✅ Keto Friendly<br>Net Carbs: 2g",
+
+  broccoli:
+    "✅ Keto Friendly<br>Net Carbs: 4g",
+
+  cauliflower:
+    "✅ Keto Friendly<br>Net Carbs: 3g",
+
+  spinach:
+    "✅ Keto Friendly<br>Net Carbs: 1g",
+
+  kale:
+    "✅ Keto Friendly<br>Net Carbs: 5g",
+
+  lettuce:
+    "✅ Keto Friendly<br>Net Carbs: 2g",
+
+  cabbage:
+    "✅ Keto Friendly<br>Net Carbs: 3g",
+
+  zucchini:
+    "✅ Keto Friendly<br>Net Carbs: 3g",
+
+  asparagus:
+    "✅ Keto Friendly<br>Net Carbs: 2g",
+
+  cucumber:
+    "✅ Keto Friendly<br>Net Carbs: 3g",
+
+  celery:
+    "✅ Keto Friendly<br>Net Carbs: 2g",
+
+  mushrooms:
+    "✅ Keto Friendly<br>Net Carbs: 2g",
+
+  "bell pepper":
+    "⚠️ Keto Friendly in Moderation<br>Net Carbs: 6g",
+
+  "green beans":
+    "⚠️ Keto Friendly in Moderation<br>Net Carbs: 7g",
+
+  onion:
+    "⚠️ Use in Small Amounts<br>Net Carbs: 9g",
+
+  garlic:
+    "⚠️ Use in Small Amounts<br>Net Carbs: 33g",
+
+  strawberries:
+    "✅ Keto Friendly in Moderation<br>Net Carbs: 6g",
+
+  blueberries:
+    "⚠️ Limited on Keto<br>Net Carbs: 12g",
+
+  blackberries:
+    "✅ Keto Friendly<br>Net Carbs: 5g",
+
+  raspberries:
+    "✅ Keto Friendly<br>Net Carbs: 5g",
+
+  lemon:
+    "✅ Keto Friendly<br>Net Carbs: 6g",
+
+  lime:
+    "✅ Keto Friendly<br>Net Carbs: 5g",
+
+  watermelon:
+    "❌ Not Keto Friendly<br>Net Carbs: 11g<br>🥑 Better Choice: Strawberries",
+
+  mango:
+    "❌ Not Keto Friendly<br>Net Carbs: 15g<br>🥑 Better Choice: Avocado",
+
+  grapes:
+    "❌ Not Keto Friendly<br>Net Carbs: 17g<br>🥑 Better Choice: Blackberries",
+
+  orange:
+    "❌ Not Keto Friendly<br>Net Carbs: 12g<br>🥑 Better Choice: Lemon",
+
+  pineapple:
+    "❌ Not Keto Friendly<br>Net Carbs: 13g<br>🥑 Better Choice: Raspberries",
+
+  pear:
+    "❌ Not Keto Friendly<br>Net Carbs: 22g<br>🥑 Better Choice: Berries",
+
+  peach:
+    "❌ Not Keto Friendly<br>Net Carbs: 13g<br>🥑 Better Choice: Strawberries",
+
+  kiwi:
+    "⚠️ Limited on Keto<br>Net Carbs: 9g",
+
+  coconut:
+    "✅ Keto Friendly<br>Net Carbs: 6g",
+
+  bacon:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  "beef steak":
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  "ground beef":
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  lamb:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  pork:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  "pork chops":
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  "pork belly":
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  ham:
+    "✅ Keto Friendly<br>Net Carbs: 1g",
+
+  sausage:
+    "⚠️ Check Ingredients<br>Net Carbs: 2g",
+
+  pepperoni:
+    "✅ Keto Friendly<br>Net Carbs: 1g",
+
+  salami:
+    "✅ Keto Friendly<br>Net Carbs: 1g",
+
+  turkey:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  "turkey bacon":
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  duck:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  shrimp:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  prawns:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  tuna:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  cod:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  "white fish":
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  sardines:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  anchovies:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  crab:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  lobster:
+    "✅ Keto Friendly<br>Net Carbs: 1g",
+
+  "cheddar cheese":
+    "✅ Keto Friendly<br>Net Carbs: 1g",
+
+  mozzarella:
+    "✅ Keto Friendly<br>Net Carbs: 2g",
+
+  parmesan:
+    "✅ Keto Friendly<br>Net Carbs: 1g",
+
+  "cream cheese":
+    "✅ Keto Friendly<br>Net Carbs: 2g",
+
+  feta:
+    "✅ Keto Friendly<br>Net Carbs: 1g",
+
+  "blue cheese":
+    "✅ Keto Friendly<br>Net Carbs: 1g",
+
+  brie:
+    "✅ Keto Friendly<br>Net Carbs: 1g",
+
+  "swiss cheese":
+    "✅ Keto Friendly<br>Net Carbs: 1g",
+
+  butter:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  ghee:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  "heavy cream":
+    "✅ Keto Friendly<br>Net Carbs: 1g",
+
+  "sour cream":
+    "✅ Keto Friendly<br>Net Carbs: 2g",
+
+  "greek yogurt":
+    "⚠️ Choose Full-Fat Unsweetened<br>Net Carbs: 4g",
+
+  "cottage cheese":
+    "⚠️ Keto Friendly in Moderation<br>Net Carbs: 4g",
+
+  "egg yolk":
+    "✅ Keto Friendly<br>Net Carbs: 0.2g",
+
+  "egg white":
+    "✅ Keto Friendly<br>Net Carbs: 0.2g"
+};
+
+const checkFoodBtn =
+  document.getElementById(
+    "checkFoodBtn"
+  );
+
+const foodInput =
+  document.getElementById(
+    "foodInput"
+  );
+
+const foodResult =
+  document.getElementById(
+    "foodResult"
+  );
+
+if (checkFoodBtn) {
+  checkFoodBtn.addEventListener(
+    "click",
+    () => {
+      if (!foodInput || !foodResult) {
+        return;
+      }
+
+      const food =
+        foodInput.value
+          .trim()
+          .toLowerCase();
+
+      if (ketoFoods[food]) {
+        foodResult.innerHTML =
+          ketoFoods[food];
+      } else {
+        foodResult.innerHTML =
+          "❓ Food not found.<br>We're adding more keto foods soon!";
+      }
+    }
+  );
+}
+
+// ============================================================
+// BUILD MY DAY
+// ============================================================
+
+const buildDayBtn =
+  document.getElementById(
+    "buildDayBtn"
+  );
+
+if (buildDayBtn) {
+  buildDayBtn.addEventListener(
+    "click",
+    () => {
+      const goal =
+        document.getElementById(
+          "ketoGoal"
+        )?.value || "weight";
+
+      const hunger =
+        document.getElementById(
+          "hungerLevel"
+        )?.value || "medium";
+
+      const activity =
+        document.getElementById(
+          "activityLevel"
+        )?.value || "medium";
+
+      const breakfastPlan =
+        document.getElementById(
+          "breakfastPlan"
+        );
+
+      const lunchPlan =
+        document.getElementById(
+          "lunchPlan"
+        );
+
+      const dinnerPlan =
+        document.getElementById(
+          "dinnerPlan"
+        );
+
+      const snackPlan =
+        document.getElementById(
+          "snackPlan"
+        );
+
+      const dayTip =
+        document.getElementById(
+          "dayTip"
+        );
+
+      if (
+        !breakfastPlan ||
+        !lunchPlan ||
+        !dinnerPlan ||
+        !snackPlan ||
+        !dayTip
+      ) {
+        return;
+      }
+
+      let breakfast =
+        "🥚 Eggs with avocado and spinach";
+
+      let lunch =
+        "🥗 Grilled chicken salad with olive oil";
+
+      let dinner =
+        "🐟 Garlic butter salmon with broccoli";
+
+      let snack =
+        "🥜 Almonds with cheese";
+
+      let tip =
+        "Plan your meals before you get hungry and keep keto-friendly foods ready.";
+
+      if (goal === "weight") {
+        breakfast =
+          "🍳 Scrambled eggs with avocado and spinach";
+
+        lunch =
+          "🥗 Grilled chicken Caesar salad";
+
+        dinner =
+          "🐟 Salmon with roasted broccoli";
+
+        snack =
+          "🥚 Two boiled eggs";
+
+        tip =
+          "For weight-loss goals, focus on protein, low-carb vegetables and sensible portions.";
+      }
+
+      if (goal === "maintenance") {
+        breakfast =
+          "🥑 Avocado egg scramble with cheese";
+
+        lunch =
+          "🍗 Chicken lettuce wraps with avocado";
+
+        dinner =
+          "🥩 Steak with broccoli and butter";
+
+        snack =
+          "🧀 Cheese cubes with almonds";
+
+        tip =
+          "Keep your meals balanced and maintain a consistent eating routine.";
+      }
+
+      if (goal === "energy") {
+        breakfast =
+          "🍳 Eggs with spinach, avocado and cheese";
+
+        lunch =
+          "🐟 Tuna avocado salad";
+
+        dinner =
+          "🍗 Garlic butter chicken with vegetables";
+
+        snack =
+          "🥜 Almonds with Greek yogurt";
+
+        tip =
+          "Prioritize protein, healthy fats, vegetables and adequate hydration.";
+      }
+
+      if (hunger === "high") {
+        snack =
+          "🥑 Avocado with boiled eggs and a small handful of nuts";
+
+        tip +=
+          " Since you usually feel hungry, choose protein- and fiber-rich foods to improve satiety.";
+      }
+
+      if (activity === "high") {
+        breakfast =
+          "🍳 Eggs, avocado and Greek yogurt";
+
+        lunch =
+          "🍗 Grilled chicken salad with avocado";
+
+        dinner =
+          "🥩 Steak with broccoli and butter";
+
+        tip +=
+          " On active days, make sure your meals provide enough protein and energy.";
+      }
+
+      breakfastPlan.textContent =
+        breakfast;
+
+      lunchPlan.textContent =
+        lunch;
+
+      dinnerPlan.textContent =
+        dinner;
+
+      snackPlan.textContent =
+        snack;
+
+      dayTip.textContent =
+        tip;
+
       const result =
         document.getElementById(
           "mealResult"
@@ -1470,6 +1850,11 @@ if (challengeBtn) {
 
 // ============================================================
 // REVEAL MY PICK
+// ============================================================
+//
+// IMPORTANT:
+// This is the ONLY Reveal My Pick handler.
+// There are NO duplicate quiz submit handlers below.
 // ============================================================
 
 const revealPickBtn =
@@ -1615,6 +2000,11 @@ if (revealPickBtn) {
 
 // ============================================================
 // QUIZ FORM SUBMIT
+// ============================================================
+//
+// This is intentionally ONE submit handler only.
+// If the Reveal My Pick button is inside the form,
+// type="button" in HTML is recommended.
 // ============================================================
 
 if (quizForm) {
