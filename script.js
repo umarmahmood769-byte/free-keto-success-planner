@@ -340,13 +340,13 @@ function updateScoreboard() {
   }
 }
 
-ffunction renderPlanner() {
+function renderPlanner() {
   mealPlanner.innerHTML = plannerDays
     .map(
       (day) => `
         <button type="button" class="planner-day" data-day="${day}">
           <strong>${day}</strong>
-          <span>${plannerState[day] || "Click to choose a meal"}</span>
+          <span>${plannerState[day] || "🍽️ Click to get a keto meal"}</span>
         </button>
       `
     )
