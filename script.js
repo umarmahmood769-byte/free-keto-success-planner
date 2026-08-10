@@ -655,15 +655,18 @@ calculatorForm.addEventListener("submit", (event) => {
   bmiResult.textContent = bmi;
   calorieResult.textContent = `${calories} kcal`;
   waterResult.textContent = `${water} ml`;
-  macroResult.textContent = `${protein}g P / ${fat}g F / ${carbs}g C`;
-});
 
-
+  quizContainer.addEventListener("change", (event) => {
   const option = event.target.closest(".quiz-option");
+
   if (!option) return;
 
   const allOptions = quizContainer.querySelectorAll(".quiz-option");
-  allOptions.forEach((item) => item.classList.remove("selected"));
+
+  allOptions.forEach((item) => {
+    item.classList.remove("selected");
+  });
+
   option.classList.add("selected");
 });
 
