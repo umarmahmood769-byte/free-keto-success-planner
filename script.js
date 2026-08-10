@@ -826,3 +826,54 @@ if (buildDayBtn) {
     addXp(25);
   });
 }
+// ================================
+// QUIZ SUBMIT
+// ================================
+
+if (quizForm) {
+  quizForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const answers = quizQuestions.map((question, index) => {
+      const selected = document.querySelector(
+        `input[name="q${index + 1}"]:checked`
+      );
+
+      return selected ? selected.value : null;
+    });
+
+    if (answers.includes(null)) {
+      quizResult.textContent = "Please answer all questions first.";
+      return;
+    }
+
+    const counts = {};
+
+    answers.forEach((answer) => {
+      counts[answer] = (counts[answer] || 0) + 1;
+    });
+
+    const recommendation = Object.keys(counts).reduce((a, b) =>
+      counts[a] >= counts[b] ? a : b
+    );
+
+    quizState.completed = true;
+    quizState.score = 100;
+    quizState.recommendation =
+      productMap[recommendation] || "Keto Journey";
+
+    saveQuiz();
+    updateRecommendation();
+    updateScoreboard();
+
+    quizResult.textContent =
+      `Your personalized pick: ${quizState.recommendation}`;
+
+    setTimeout(() => {
+      quizResult.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+    }, 100);
+  });
+}
