@@ -719,8 +719,80 @@ if (checkFoodBtn) {
   });
 }
 // ================================
+// Build My Day
+// ================================
 
 const buildDayBtn = document.getElementById("buildDayBtn");
 
+if (buildDayBtn) {
+  buildDayBtn.addEventListener("click", function () {
+    const goal = document.getElementById("ketoGoal")?.value || "weight";
+    const hunger = document.getElementById("hungerLevel")?.value || "medium";
+    const activity = document.getElementById("activityLevel")?.value || "medium";
 
+    const breakfastPlan = document.getElementById("breakfastPlan");
+    const lunchPlan = document.getElementById("lunchPlan");
+    const dinnerPlan = document.getElementById("dinnerPlan");
+    const snackPlan = document.getElementById("snackPlan");
+    const dayTip = document.getElementById("dayTip");
+
+    if (!breakfastPlan || !lunchPlan || !dinnerPlan || !snackPlan || !dayTip) {
+      return;
+    }
+
+    let breakfast = "🥚 Eggs with avocado and spinach";
+    let lunch = "🥗 Grilled chicken salad with olive oil";
+    let dinner = "🐟 Garlic butter salmon with broccoli";
+    let snack = "🥜 Almonds with cheese";
+    let tip = "Plan your meals before you get hungry and keep keto-friendly foods ready.";
+
+    if (goal === "weight") {
+      breakfast = "🍳 Scrambled eggs with avocado and spinach";
+      lunch = "🥗 Grilled chicken Caesar salad";
+      dinner = "🐟 Salmon with roasted broccoli";
+      snack = "🥚 Two boiled eggs";
+      tip = "For weight-loss goals, focus on protein, low-carb vegetables and sensible portions.";
+    }
+
+    if (goal === "maintenance") {
+      breakfast = "🥑 Avocado egg scramble with cheese";
+      lunch = "🍗 Chicken lettuce wraps with avocado";
+      dinner = "🥩 Steak with broccoli and butter";
+      snack = "🧀 Cheese cubes with almonds";
+      tip = "Keep your meals balanced and maintain a consistent eating routine.";
+    }
+
+    if (goal === "energy") {
+      breakfast = "🍳 Eggs with spinach, avocado and cheese";
+      lunch = "🐟 Tuna avocado salad";
+      dinner = "🍗 Garlic butter chicken with vegetables";
+      snack = "🥜 Almonds with Greek yogurt";
+      tip = "Prioritize protein, healthy fats, vegetables and adequate hydration.";
+    }
+
+    if (hunger === "high") {
+      snack = "🥑 Avocado with boiled eggs and a small handful of nuts";
+      tip += " Since you usually feel hungry, choose protein- and fiber-rich foods to improve satiety.";
+    }
+
+    if (activity === "high") {
+      breakfast = "🍳 Eggs, avocado and Greek yogurt";
+      lunch = "🍗 Grilled chicken salad with avocado";
+      dinner = "🥩 Steak with broccoli and butter";
+      tip += " On active days, make sure your meals provide enough protein and energy.";
+    }
+
+    breakfastPlan.textContent = breakfast;
+    lunchPlan.textContent = lunch;
+    dinnerPlan.textContent = dinner;
+    snackPlan.textContent = snack;
+    dayTip.textContent = tip;
+
+    const result = document.getElementById("mealResult");
+    if (result) {
+      result.style.display = "block";
+    }
+
+    addXp(25);
+  });
 }
