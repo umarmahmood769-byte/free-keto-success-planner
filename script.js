@@ -857,7 +857,7 @@ if (generateMealBtn) {
 <p><strong>Net Carbs:</strong> 4g</p>`
 ];
 
-  const dinnerMeals = [
+    const dinnerMeals = [
 `<h4>🍗 Creamy Garlic Chicken</h4>
 
 <strong>Ingredients:</strong>
@@ -897,10 +897,11 @@ if (generateMealBtn) {
 <li>Season the steak.</li>
 <li>Cook steak according to preference.</li>
 <li>Sauté vegetables with olive oil.</li>
-<li>Serve together.</li>
+<li>Add butter and seasoning.</li>
+<li>Serve hot.</li>
 </ol>
 
-<p><strong>Calories:</strong> 600 kcal</p>
+<p><strong>Calories:</strong> 550 kcal</p>
 <p><strong>Net Carbs:</strong> 7g</p>`,
 
 `<h4>🐟 Garlic Butter Salmon</h4>
@@ -910,20 +911,21 @@ if (generateMealBtn) {
 <li>Salmon Fillet</li>
 <li>Butter</li>
 <li>Garlic</li>
-<li>Lemon</li>
-<li>Asparagus</li>
+<li>Lemon Juice</li>
+<li>Salt & Pepper</li>
 </ul>
 
 <strong>Instructions:</strong>
 <ol>
-<li>Season salmon with salt and pepper.</li>
-<li>Add garlic butter.</li>
-<li>Bake until fully cooked.</li>
-<li>Serve with vegetables.</li>
+<li>Season the salmon.</li>
+<li>Melt butter in a pan.</li>
+<li>Add garlic and cook briefly.</li>
+<li>Cook salmon until done.</li>
+<li>Add lemon juice and serve.</li>
 </ol>
 
-<p><strong>Calories:</strong> 550 kcal</p>
-<p><strong>Net Carbs:</strong> 3g</p>`
+<p><strong>Calories:</strong> 500 kcal</p>
+<p><strong>Net Carbs:</strong> 2g</p>`
 ];
 
   const snackMeals = [
@@ -984,8 +986,8 @@ if (generateMealBtn) {
 <li>Chill before serving.</li>
 </ol>
 
-<p><strong>Calories:</strong> 280 kcal</p>
-<p><strong>Net Carbs:</strong> 4g</p>`
+<p><strong>Calories:</strong> 180 kcal</p>
+<p><strong>Net Carbs:</strong> 3g</p>`
 ];
 
   generateMealBtn.addEventListener("click", function () {
