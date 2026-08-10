@@ -159,15 +159,7 @@ const productCards = [
     rating: "★★★★★",
     bestFor: "Best for: keto baking success"
   },
-  {
-    name: "Keto Journey",
-    tag: "Shared progress",
-    description: "A supportive companion for every milestone in your transformation.",
-    accent: "Long-term momentum",
-    image: "🌿",
-    rating: "★★★★★",
-    bestFor: "Best for: staying motivated long-term"
-  }
+  
 ];
 
 // ================================
