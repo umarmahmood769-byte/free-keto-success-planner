@@ -930,3 +930,49 @@ if (quizForm) {
     }, 100);
   });
 }
+quizForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const answers = [...new FormData(quizForm).values()];
+
+  if (answers.length < quizQuestions.length) {
+    quizResult.textContent = "Please answer all 5 questions first.";
+    return;
+  }
+
+  const counts = {
+    plan: 0,
+    dessert: 0,
+    dna: 0,
+    pot: 0,
+    baking: 0
+  };
+
+  answers.forEach((answer) => {
+    if (counts[answer] !== undefined) {
+      counts[answer]++;
+    }
+  });
+
+  const recommendation = Object.keys(counts).reduce((a, b) =>
+    counts[a] >= counts[b] ? a : b
+  );
+
+  quizState.completed = true;
+  quizState.score = Math.round(
+    (Math.max(...Object.values(counts)) / quizQuestions.length) * 100
+  );
+  quizState.recommendation = productMap[recommendation];
+
+  saveQuiz();
+  updateRecommendation();
+  updateScoreboard();
+
+  quizResult.textContent =
+    `🎉 Your pick: ${quizState.recommendation}`;
+
+  quizResult.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+});
