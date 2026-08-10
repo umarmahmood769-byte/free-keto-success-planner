@@ -689,29 +689,26 @@ quizForm.addEventListener("submit", (event) => {
     Object.values(scores).reduce((sum, value) => sum + value, 0) * 20
   );
 
-  quizState = {
-    completed: true,
     score: score,
-    recommendation: recommendation
-  };
+  recommendation: recommendation
+};
 
-  saveQuiz();
-  updateScoreboard();
-  updateRecommendation();
+saveQuiz();
+updateScoreboard();
+updateRecommendation();
 
-  quizResult.innerHTML = `
-    <div class="quiz-result-card">
-      <strong>Your Best Match: ${recommendation}</strong>
-      <p>
-        Based on your answers, this keto option may be a good fit
-        for your current routine and goals.
-      </p>
-    </div>
-  `;
+quizResult.innerHTML = `
+  <div class="quiz-result-card">
+    <strong>Your Best Match: ${recommendation}</strong>
+    <p>
+      Based on your answers, this keto option may be a good fit
+      for your current routine and goals.
+    </p>
+  </div>
+`;
 
-  launchConfetti();
+launchConfetti();
 });
-
   quizQuestions.forEach((question, index) => {
     const answer = formData.get(`q${index + 1}`);
 
