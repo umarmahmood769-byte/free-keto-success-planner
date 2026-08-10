@@ -722,52 +722,5 @@ if (checkFoodBtn) {
 
 const buildDayBtn = document.getElementById("buildDayBtn");
 
-if (buildDayBtn) {
-  buildDayBtn.addEventListener("click", function () {
-    const goal = document.getElementById("ketoGoal").value;
-    const hunger = document.getElementById("hungerLevel").value;
-    const activity = document.getElementById("activityLevel").value;
 
-    let breakfast = "";
-    let lunch = "";
-    let dinner = "";
-    let snack = "";
-    let tip = "";
-
-    if (goal === "weight") {
-      breakfast = "Eggs with avocado and spinach";
-      lunch = "Grilled chicken salad with olive oil";
-      dinner = "Salmon with broccoli and butter";
-      snack = hunger === "high" ? "A handful of walnuts" : "A small serving of Greek yogurt";
-      tip = "Focus on protein, vegetables, healthy fats, and consistent portions.";
-    } 
-    else if (goal === "maintenance") {
-      breakfast = "Eggs with avocado and cheese";
-      lunch = "Chicken, leafy greens and olive oil";
-      dinner = "Beef steak with roasted vegetables";
-      snack = "Almond butter with a few berries";
-      tip = "Keep your meals balanced and choose foods that keep you satisfied.";
-    } 
-    else {
-      breakfast = "Eggs, avocado and spinach";
-      lunch = "Chicken salad with avocado";
-      dinner = "Salmon with vegetables";
-      snack = "Greek yogurt with a few berries";
-      tip = "Choose nutrient-dense foods and stay hydrated throughout the day.";
-    }
-
-    if (activity === "high") {
-      tip += " Since you are active today, make sure your meals include enough protein.";
-    }
-
-    if (hunger === "high") {
-      tip += " Because your hunger is higher, prioritize protein, fiber and satisfying whole foods.";
-    }
-
-    document.getElementById("breakfastPlan").textContent = breakfast;
-    document.getElementById("lunchPlan").textContent = lunch;
-    document.getElementById("dinnerPlan").textContent = dinner;
-    document.getElementById("snackPlan").textContent = snack;
-    document.getElementById("dayTip").textContent = tip;
-  });
 }
