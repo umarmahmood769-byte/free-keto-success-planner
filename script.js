@@ -344,10 +344,10 @@ function renderPlanner() {
   mealPlanner.innerHTML = plannerDays
     .map(
       (day) => `
-        <label class="planner-day">
-          <span>${day}</span>
-          <textarea data-day="${day}" placeholder="Add a keto plan for ${day.toLowerCase()}...">${plannerState[day] || ""}</textarea>
-        </label>
+        <button type="button" class="planner-day" data-day="${day}">
+          <strong>${day}</strong>
+          <span>${plannerState[day] || "Click to choose a meal"}</span>
+        </button>
       `
     )
     .join("");
