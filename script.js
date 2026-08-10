@@ -1,8 +1,43 @@
-```javascript
-// The app stores planner content, checklist progress, theme choice, quiz state, XP, and milestone state locally.
+// ============================================================
+// KETO APP - FINAL CLEAN SCRIPT
+// ============================================================
+
+// ================================
+// KETO GROCERY ITEMS
+// ================================
 
 const ketoItems = [
-  "Almond butter","Avocado","Avocados","Bacon","Beef broth","Beef steak","Blackberries","Blue cheese","Bok choy","Bone broth","Brie","Broccoli","Brussels sprouts","Butter","Cabbage","Cauliflower","Cashew butter","Celery","Cheddar cheese","Chicken broth","Chicken thighs","Chicken wings","Chia seeds","Chili flakes","Chorizo","Cocoa powder","Coconut cream","Coconut flour","Coconut milk","Coconut oil","Cod","Collard greens","Cream cheese","Cucumber","Cumin","Dijon mustard","Dill pickles","Eggplant","Eggs","Erythritol","Feta","Flaxseed","Garlic","Ghee","Greek yogurt","Green beans","Ground beef","Ground turkey","Ham","Heavy cream","Hemp hearts","Herbs","Horseradish","Kale","Kimchi","Lamb","Leeks","Lemon","Lettuce","Lime","Macadamia nuts","Mayo","Meatballs","Mozzarella","Mushrooms","Mustard","Nori sheets","Olive oil","Olives","Onion","Oregano","Paprika","Parmesan","Pecans","Peanuts","Pistachios","Pork belly","Pork chops","Prosciutto","Psyllium husk","Pumpkin seeds","Radishes","Raspberries","Romaine","Rosemary","Salami","Salmon","Sardines","Sausage","Sea salt","Seaweed","Shrimp","Sour cream","Spinach","Stevia","Strawberries","Sunflower seeds","Tahini","Tallow","Thyme","Turkey","Turkey bacon","Tuna","Unsweetened almond milk","Walnuts","White fish","Xanthan gum","Zucchini","Anchovies","Arugula","Asparagus","Basil","Bell peppers","Black pepper","Berries","Brussels sprouts","Butterhead lettuce","Coconut flakes","Coconut yogurt","Cottage cheese","Cranberries","Cranberry sauce","Crimini mushrooms","Curry powder","Edamame","Fennel","Miso paste","Monk fruit sweetener","Mushroom broth","Nutritional yeast","Okra","Palm oil","Peanut butter","Pepperoni","Pine nuts","Pork rinds","Poultry seasoning","Pumpkin puree","Red pepper flakes","Salsa verde","Scallions","Sesame seeds","Smoked salmon","Sugar-free syrup","Swiss cheese","Taco seasoning","Tomato sauce","Walnut butter","Watercress","Worcestershire sauce","Yellow squash"
+  "Almond butter", "Avocado", "Avocados", "Bacon", "Beef broth",
+  "Beef steak", "Blackberries", "Blue cheese", "Bok choy", "Bone broth",
+  "Brie", "Broccoli", "Brussels sprouts", "Butter", "Cabbage",
+  "Cauliflower", "Cashew butter", "Celery", "Cheddar cheese",
+  "Chicken broth", "Chicken thighs", "Chicken wings", "Chia seeds",
+  "Chili flakes", "Chorizo", "Cocoa powder", "Coconut cream",
+  "Coconut flour", "Coconut milk", "Coconut oil", "Cod", "Collard greens",
+  "Cream cheese", "Cucumber", "Cumin", "Dijon mustard", "Dill pickles",
+  "Eggplant", "Eggs", "Erythritol", "Feta", "Flaxseed", "Garlic", "Ghee",
+  "Greek yogurt", "Green beans", "Ground beef", "Ground turkey", "Ham",
+  "Heavy cream", "Hemp hearts", "Herbs", "Horseradish", "Kale", "Kimchi",
+  "Lamb", "Leeks", "Lemon", "Lettuce", "Lime", "Macadamia nuts", "Mayo",
+  "Meatballs", "Mozzarella", "Mushrooms", "Mustard", "Nori sheets",
+  "Olive oil", "Olives", "Onion", "Oregano", "Paprika", "Parmesan",
+  "Pecans", "Peanuts", "Pistachios", "Pork belly", "Pork chops",
+  "Prosciutto", "Psyllium husk", "Pumpkin seeds", "Radishes",
+  "Raspberries", "Romaine", "Rosemary", "Salami", "Salmon", "Sardines",
+  "Sausage", "Sea salt", "Seaweed", "Shrimp", "Sour cream", "Spinach",
+  "Stevia", "Strawberries", "Sunflower seeds", "Tahini", "Tallow",
+  "Thyme", "Turkey", "Turkey bacon", "Tuna", "Unsweetened almond milk",
+  "Walnuts", "White fish", "Xanthan gum", "Zucchini", "Anchovies",
+  "Arugula", "Asparagus", "Basil", "Bell peppers", "Black pepper",
+  "Berries", "Brussels sprouts", "Butterhead lettuce", "Coconut flakes",
+  "Coconut yogurt", "Cottage cheese", "Cranberries", "Cranberry sauce",
+  "Crimini mushrooms", "Curry powder", "Edamame", "Fennel", "Miso paste",
+  "Monk fruit sweetener", "Mushroom broth", "Nutritional yeast", "Okra",
+  "Palm oil", "Peanut butter", "Pepperoni", "Pine nuts", "Pork rinds",
+  "Poultry seasoning", "Pumpkin puree", "Red pepper flakes", "Salsa verde",
+  "Scallions", "Sesame seeds", "Smoked salmon", "Sugar-free syrup",
+  "Swiss cheese", "Taco seasoning", "Tomato sauce", "Walnut butter",
+  "Watercress", "Worcestershire sauce", "Yellow squash"
 ];
 
 const plannerDays = [
@@ -14,6 +49,10 @@ const plannerDays = [
   "Saturday",
   "Sunday"
 ];
+
+// ================================
+// QUIZ QUESTIONS
+// ================================
 
 const quizQuestions = [
   {
@@ -58,6 +97,10 @@ const quizQuestions = [
   }
 ];
 
+// ================================
+// PRODUCT MAP
+// ================================
+
 const productMap = {
   plan: "The Keto Meal Plan",
   dessert: "Keto Desserts",
@@ -65,6 +108,10 @@ const productMap = {
   pot: "Instant Pot Keto",
   baking: "Keto Baking Bundle"
 };
+
+// ================================
+// PRODUCT CARDS
+// ================================
 
 const productCards = [
   {
@@ -123,6 +170,10 @@ const productCards = [
   }
 ];
 
+// ================================
+// STORAGE KEYS
+// ================================
+
 const storageKeys = {
   checklist: "keto-checklist-state",
   planner: "keto-planner-state",
@@ -131,6 +182,10 @@ const storageKeys = {
   quiz: "keto-quiz-state",
   milestone: "keto-milestone-shown"
 };
+
+// ================================
+// LOCAL STORAGE STATE
+// ================================
 
 let checklistState = JSON.parse(
   localStorage.getItem(storageKeys.checklist) || "null"
@@ -183,10 +238,15 @@ let progressPopupShown =
 
 let exitPopupShown = false;
 
+// ================================
+// DOM ELEMENTS
+// ================================
+
 const groceryList = document.getElementById("groceryList");
 const searchInput = document.getElementById("searchInput");
 const checklistSummary = document.getElementById("checklistSummary");
 const progressBar = document.getElementById("progressBar");
+
 const scoreBadge = document.getElementById("scoreBadge");
 const heroScore = document.getElementById("heroScore");
 const heroXp = document.getElementById("heroXp");
@@ -195,6 +255,7 @@ const heroLevelMini = document.getElementById("heroLevelMini");
 const heroRingPercent = document.getElementById("heroRingPercent");
 const heroProgressRing = document.getElementById("heroProgressRing");
 const heroSubtitle = document.getElementById("heroSubtitle");
+
 const xpPercent = document.getElementById("xpPercent");
 const xpValue = document.getElementById("xpValue");
 const xpLevelValue = document.getElementById("xpLevelValue");
@@ -202,29 +263,79 @@ const levelLabel = document.getElementById("levelLabel");
 const xpDescription = document.getElementById("xpDescription");
 const xpRing = document.getElementById("xpRing");
 const xpBoostBtn = document.getElementById("xpBoostBtn");
-const achievementBadges = document.getElementById("achievementBadges");
-const achievementMini = document.getElementById("achievementMini");
-const themeToggle = document.getElementById("themeToggle");
-const printBtn = document.getElementById("printBtn");
-const mealPlanner = document.getElementById("mealPlanner");
-const calculatorForm = document.getElementById("calculatorForm");
-const bmiResult = document.getElementById("bmiResult");
-const calorieResult = document.getElementById("calorieResult");
-const waterResult = document.getElementById("waterResult");
-const macroResult = document.getElementById("macroResult");
-const quizForm = document.getElementById("quizForm");
-const quizContainer = document.getElementById("quizContainer");
-const quizResult = document.getElementById("quizResult");
-const recommendationText = document.getElementById("recommendationText");
-const recommendationCTA = document.getElementById("recommendationCTA");
-const recommendationCards = document.getElementById("recommendationCards");
-const milestoneModal = document.getElementById("milestoneModal");
-const progressModal = document.getElementById("progressModal");
-const exitModal = document.getElementById("exitModal");
-const closeModalBtn = document.getElementById("closeModal");
-const closeProgressModalBtn = document.getElementById("closeProgressModal");
-const closeExitModalBtn = document.getElementById("closeExitModal");
-const confettiLayer = document.getElementById("confettiLayer");
+
+const achievementBadges =
+  document.getElementById("achievementBadges");
+
+const achievementMini =
+  document.getElementById("achievementMini");
+
+const themeToggle =
+  document.getElementById("themeToggle");
+
+const printBtn =
+  document.getElementById("printBtn");
+
+const mealPlanner =
+  document.getElementById("mealPlanner");
+
+const calculatorForm =
+  document.getElementById("calculatorForm");
+
+const bmiResult =
+  document.getElementById("bmiResult");
+
+const calorieResult =
+  document.getElementById("calorieResult");
+
+const waterResult =
+  document.getElementById("waterResult");
+
+const macroResult =
+  document.getElementById("macroResult");
+
+const quizForm =
+  document.getElementById("quizForm");
+
+const quizContainer =
+  document.getElementById("quizContainer");
+
+const quizResult =
+  document.getElementById("quizResult");
+
+const recommendationText =
+  document.getElementById("recommendationText");
+
+const recommendationCTA =
+  document.getElementById("recommendationCTA");
+
+const recommendationCards =
+  document.getElementById("recommendationCards");
+
+const milestoneModal =
+  document.getElementById("milestoneModal");
+
+const progressModal =
+  document.getElementById("progressModal");
+
+const exitModal =
+  document.getElementById("exitModal");
+
+const closeModalBtn =
+  document.getElementById("closeModal");
+
+const closeProgressModalBtn =
+  document.getElementById("closeProgressModal");
+
+const closeExitModalBtn =
+  document.getElementById("closeExitModal");
+
+const confettiLayer =
+  document.getElementById("confettiLayer");
+
+// ================================
+// SAVE FUNCTIONS
+// ================================
 
 function saveChecklist() {
   localStorage.setItem(
@@ -254,10 +365,17 @@ function saveQuiz() {
   );
 }
 
+// ================================
+// THEME
+// ================================
+
 function applyTheme(theme) {
   document.body.dataset.theme = theme;
 
-  localStorage.setItem(storageKeys.theme, theme);
+  localStorage.setItem(
+    storageKeys.theme,
+    theme
+  );
 
   if (themeToggle) {
     themeToggle.textContent =
@@ -266,6 +384,10 @@ function applyTheme(theme) {
         : "🌙 Dark mode";
   }
 }
+
+// ================================
+// GROCERY ITEM META
+// ================================
 
 function getItemMeta(itemName) {
   const value = itemName.toLowerCase();
@@ -331,10 +453,15 @@ function getItemMeta(itemName) {
   };
 }
 
+// ================================
+// RENDER CHECKLIST
+// ================================
+
 function renderChecklist() {
   if (!groceryList || !searchInput) return;
 
-  const query = searchInput.value.trim().toLowerCase();
+  const query =
+    searchInput.value.trim().toLowerCase();
 
   const filtered = checklistState.filter((item) =>
     item.name.toLowerCase().includes(query)
@@ -342,8 +469,11 @@ function renderChecklist() {
 
   groceryList.innerHTML = filtered
     .map((item) => {
-      const checked = item.checked ? "is-checked" : "";
-      const meta = getItemMeta(item.name);
+      const checked =
+        item.checked ? "is-checked" : "";
+
+      const meta =
+        getItemMeta(item.name);
 
       return `
         <li>
@@ -353,10 +483,12 @@ function renderChecklist() {
               data-name="${item.name}"
               ${item.checked ? "checked" : ""}
             />
+
             <span class="item-meta">
               <span class="item-name">
                 ${meta.icon} ${item.name}
               </span>
+
               <span class="item-category">
                 ${meta.category}
               </span>
@@ -368,18 +500,27 @@ function renderChecklist() {
     .join("");
 }
 
+// ================================
+// ACHIEVEMENTS
+// ================================
+
 function renderAchievements() {
   if (!achievementBadges || !achievementMini) return;
 
-  const checkedCount = checklistState.filter(
-    (item) => item.checked
-  ).length;
+  const checkedCount =
+    checklistState.filter(
+      (item) => item.checked
+    ).length;
 
-  const total = checklistState.length;
+  const total =
+    checklistState.length;
 
-  const progressPercent = Math.round(
-    (checkedCount / total) * 100
-  );
+  const progressPercent =
+    total > 0
+      ? Math.round(
+          (checkedCount / total) * 100
+        )
+      : 0;
 
   const level =
     Math.floor(xpState.points / 250) + 1;
@@ -440,33 +581,45 @@ function renderAchievements() {
 
   achievementBadges.innerHTML =
     markup ||
-    "🌿 Starter mode<br>Your first wins unlock special badges.";
+    "🌿 Starter mode — Your first wins unlock special badges.";
 
   achievementMini.innerHTML =
     markup || "🌿 Starter mode";
 }
 
+// ================================
+// SCOREBOARD
+// ================================
+
 function updateScoreboard() {
-  const checkedCount = checklistState.filter(
-    (item) => item.checked
-  ).length;
+  const checkedCount =
+    checklistState.filter(
+      (item) => item.checked
+    ).length;
 
-  const total = checklistState.length;
+  const total =
+    checklistState.length;
 
-  const progressPercent = Math.round(
-    (checkedCount / total) * 100
-  );
+  const progressPercent =
+    total > 0
+      ? Math.round(
+          (checkedCount / total) * 100
+        )
+      : 0;
 
   const quizScore =
-    quizState.completed ? quizState.score : 0;
+    quizState.completed
+      ? quizState.score
+      : 0;
 
-  const overallScore = Math.min(
-    100,
-    Math.round(
-      progressPercent * 0.7 +
-      quizScore * 0.3
-    )
-  );
+  const overallScore =
+    Math.min(
+      100,
+      Math.round(
+        progressPercent * 0.7 +
+        quizScore * 0.3
+      )
+    );
 
   if (checklistSummary) {
     checklistSummary.textContent =
@@ -484,11 +637,13 @@ function updateScoreboard() {
   }
 
   if (heroScore) {
-    heroScore.textContent = overallScore;
+    heroScore.textContent =
+      overallScore;
   }
 
   if (heroXp) {
-    heroXp.textContent = xpState.points;
+    heroXp.textContent =
+      xpState.points;
   }
 
   const level =
@@ -517,14 +672,18 @@ function updateScoreboard() {
       )`;
   }
 
-  const nextGoal = level * 250;
+  const nextGoal =
+    level * 250;
 
-  const percentToNext = Math.min(
-    100,
-    Math.round(
-      ((xpState.points % 250) / 250) * 100
-    )
-  );
+  const percentToNext =
+    Math.min(
+      100,
+      Math.round(
+        (xpState.points % 250) /
+          250 *
+          100
+      )
+    );
 
   if (levelLabel) {
     levelLabel.textContent =
@@ -532,11 +691,13 @@ function updateScoreboard() {
   }
 
   if (xpValue) {
-    xpValue.textContent = xpState.points;
+    xpValue.textContent =
+      xpState.points;
   }
 
   if (xpLevelValue) {
-    xpLevelValue.textContent = level;
+    xpLevelValue.textContent =
+      level;
   }
 
   if (heroSubtitle) {
@@ -563,8 +724,7 @@ function updateScoreboard() {
       `conic-gradient(
         var(--accent)
         ${percentToNext}%,
-        rgba(124, 58, 237, 0.16)
-        0%
+        rgba(124, 58, 237, 0.16) 0%
       )`;
   }
 
@@ -618,29 +778,37 @@ function updateScoreboard() {
   }
 }
 
+// ================================
+// MEAL PLANNER
+// ================================
+
 function renderPlanner() {
   if (!mealPlanner) return;
 
-  mealPlanner.innerHTML = plannerDays
-    .map(
-      (day) => `
-        <button
-          type="button"
-          class="planner-day"
-          data-day="${day}"
-        >
-          <strong>${day}</strong>
-          <span>
-            ${plannerState[day] || "Click to choose a meal"}
-          </span>
-        </button>
-      `
-    )
-    .join("");
+  mealPlanner.innerHTML =
+    plannerDays
+      .map(
+        (day) => `
+          <button
+            type="button"
+            class="planner-day"
+            data-day="${day}"
+          >
+            <strong>${day}</strong>
+            <span>
+              ${plannerState[day] ||
+                "Click to choose a meal"}
+            </span>
+          </button>
+        `
+      )
+      .join("");
 }
 
 const mealPlanResult =
-  document.getElementById("mealPlanResult");
+  document.getElementById(
+    "mealPlanResult"
+  );
 
 const ketoMealOptions = {
   Monday: {
@@ -648,31 +816,37 @@ const ketoMealOptions = {
     lunch: "🥗 Grilled Chicken Salad",
     dinner: "🐟 Garlic Butter Salmon with Broccoli"
   },
+
   Tuesday: {
     breakfast: "🍳 Cheese & Spinach Omelet",
     lunch: "🥩 Beef Lettuce Wraps",
     dinner: "🍗 Creamy Garlic Chicken"
   },
+
   Wednesday: {
     breakfast: "🥓 Bacon & Eggs with Avocado",
     lunch: "🥗 Tuna Avocado Salad",
     dinner: "🍖 Herb-Roasted Chicken with Vegetables"
   },
+
   Thursday: {
     breakfast: "🧀 Greek Yogurt with Berries",
     lunch: "🥩 Ground Beef Keto Bowl",
     dinner: "🐟 Lemon Butter Cod with Asparagus"
   },
+
   Friday: {
     breakfast: "🍳 Mushroom & Cheese Omelet",
     lunch: "🍗 Chicken Caesar Salad",
     dinner: "🥩 Steak with Garlic Butter & Greens"
   },
+
   Saturday: {
     breakfast: "🥑 Avocado Egg Bowl",
     lunch: "🍤 Shrimp & Vegetable Bowl",
     dinner: "🍗 Crispy Chicken with Cauliflower"
   },
+
   Sunday: {
     breakfast: "🥓 Bacon, Eggs & Cheese",
     lunch: "🥗 Salmon Avocado Salad",
@@ -683,114 +857,134 @@ const ketoMealOptions = {
 function showMealPlan(day) {
   if (!mealPlanResult) return;
 
-  const meals = ketoMealOptions[day];
+  const meals =
+    ketoMealOptions[day];
 
   if (!meals) return;
 
   mealPlanResult.innerHTML = `
-    <div class="meal-result-header">
-      <strong>${day} Keto Plan</strong>
-      <span>Your Meal Plan for ${day}</span>
+    <div class="meal-result">
+      <h3>${day} Keto Plan</h3>
+
+      <p>Your Meal Plan for ${day}</p>
+
+      <div class="meal-result-grid">
+
+        <button
+          type="button"
+          class="meal-option"
+          data-meal="${meals.breakfast}"
+        >
+          <span class="meal-icon">🌅</span>
+          <strong>Breakfast</strong>
+          <span>${meals.breakfast}</span>
+        </button>
+
+        <button
+          type="button"
+          class="meal-option"
+          data-meal="${meals.lunch}"
+        >
+          <span class="meal-icon">☀️</span>
+          <strong>Lunch</strong>
+          <span>${meals.lunch}</span>
+        </button>
+
+        <button
+          type="button"
+          class="meal-option"
+          data-meal="${meals.dinner}"
+        >
+          <span class="meal-icon">🌙</span>
+          <strong>Dinner</strong>
+          <span>${meals.dinner}</span>
+        </button>
+
+      </div>
+
+      <p
+        class="meal-selection-message"
+        id="mealSelectionMessage"
+      >
+        Click a meal to add it to your ${day} planner.
+      </p>
     </div>
-
-    <div class="meal-result-grid">
-
-      <button
-        type="button"
-        class="meal-option"
-        data-meal="${meals.breakfast}"
-      >
-        <span class="meal-icon">🌅</span>
-        <strong>Breakfast</strong>
-        <span>${meals.breakfast}</span>
-      </button>
-
-      <button
-        type="button"
-        class="meal-option"
-        data-meal="${meals.lunch}"
-      >
-        <span class="meal-icon">☀️</span>
-        <strong>Lunch</strong>
-        <span>${meals.lunch}</span>
-      </button>
-
-      <button
-        type="button"
-        class="meal-option"
-        data-meal="${meals.dinner}"
-      >
-        <span class="meal-icon">🌙</span>
-        <strong>Dinner</strong>
-        <span>${meals.dinner}</span>
-      </button>
-
-    </div>
-
-    <p
-      class="meal-selection-message"
-      id="mealSelectionMessage"
-    >
-      Click a meal to add it to your ${day} planner.
-    </p>
   `;
 }
 
 if (mealPlanner) {
-  mealPlanner.addEventListener("click", (event) => {
-    const dayButton =
-      event.target.closest(".planner-day");
+  mealPlanner.addEventListener(
+    "click",
+    (event) => {
+      const dayButton =
+        event.target.closest(
+          ".planner-day"
+        );
 
-    if (!dayButton) return;
+      if (!dayButton) return;
 
-    document
-      .querySelectorAll(".planner-day")
-      .forEach((button) =>
-        button.classList.remove("active")
-      );
+      document
+        .querySelectorAll(".planner-day")
+        .forEach((button) =>
+          button.classList.remove("active")
+        );
 
-    dayButton.classList.add("active");
+      dayButton.classList.add("active");
 
-    const day = dayButton.dataset.day;
+      const day =
+        dayButton.dataset.day;
 
-    showMealPlan(day);
-  });
+      showMealPlan(day);
+    }
+  );
 }
 
 if (mealPlanResult) {
-  mealPlanResult.addEventListener("click", (event) => {
-    const mealButton =
-      event.target.closest(".meal-option");
+  mealPlanResult.addEventListener(
+    "click",
+    (event) => {
+      const mealButton =
+        event.target.closest(
+          ".meal-option"
+        );
 
-    if (!mealButton) return;
+      if (!mealButton) return;
 
-    const meal = mealButton.dataset.meal;
+      const meal =
+        mealButton.dataset.meal;
 
-    const activeDay =
-      document.querySelector(".planner-day.active");
+      const activeDay =
+        document.querySelector(
+          ".planner-day.active"
+        );
 
-    if (!activeDay) return;
+      if (!activeDay) return;
 
-    const day = activeDay.dataset.day;
+      const day =
+        activeDay.dataset.day;
 
-    plannerState[day] = meal;
+      plannerState[day] = meal;
 
-    savePlanner();
+      savePlanner();
+      renderPlanner();
+      showMealPlan(day);
 
-    renderPlanner();
-    showMealPlan(day);
+      const message =
+        document.getElementById(
+          "mealSelectionMessage"
+        );
 
-    const message =
-      document.getElementById(
-        "mealSelectionMessage"
-      );
-
-    if (message) {
-      message.textContent =
-        `✅ ${meal} added to your ${day} plan!`;
+      if (message) {
+        message.textContent =
+          `✅ ${meal} added to your ${day} plan!`;
+      }
     }
-  });
+  );
 }
+
+// ================================
+// QUIZ RENDER
+// ================================
 
 function renderQuiz() {
   if (!quizContainer) return;
@@ -798,33 +992,39 @@ function renderQuiz() {
   quizContainer.innerHTML =
     quizQuestions
       .map((item, index) => {
-        const options = item.options
-          .map(
-            (option) => `
-              <label class="quiz-option">
-                <input
-                  type="radio"
-                  name="q${index + 1}"
-                  value="${option.value}"
-                  required
-                />
-                <span>${option.text}</span>
-              </label>
-            `
-          )
-          .join("");
+        const options =
+          item.options
+            .map(
+              (option) => `
+                <label class="quiz-option">
+                  <input
+                    type="radio"
+                    name="q${index + 1}"
+                    value="${option.value}"
+                    required
+                  />
+                  <span>${option.text}</span>
+                </label>
+              `
+            )
+            .join("");
 
         return `
           <div class="quiz-question">
             <h3>
               ${index + 1}. ${item.question}
             </h3>
+
             ${options}
           </div>
         `;
       })
       .join("");
 }
+
+// ================================
+// RECOMMENDATION CARDS
+// ================================
 
 function renderRecommendationCards() {
   if (!recommendationCards) return;
@@ -834,7 +1034,8 @@ function renderRecommendationCards() {
       .map((card) => {
         const isActive =
           quizState.completed &&
-          card.name === quizState.recommendation;
+          card.name ===
+            quizState.recommendation;
 
         return `
           <article
@@ -882,6 +1083,10 @@ function renderRecommendationCards() {
       .join("");
 }
 
+// ================================
+// UPDATE RECOMMENDATION
+// ================================
+
 function updateRecommendation() {
   if (recommendationText) {
     recommendationText.textContent =
@@ -900,16 +1105,24 @@ function updateRecommendation() {
   renderRecommendationCards();
 }
 
-function addXp(amount) {
-  xpState.points += amount;
+// ================================
+// XP
+// ================================
 
-  if (xpState.points < 0) {
-    xpState.points = 0;
-  }
+function addXp(amount) {
+  xpState.points =
+    Math.max(
+      0,
+      xpState.points + amount
+    );
 
   saveXp();
   updateScoreboard();
 }
+
+// ================================
+// CONFETTI
+// ================================
 
 function launchConfetti() {
   if (!confettiLayer) return;
@@ -926,15 +1139,20 @@ function launchConfetti() {
     piece.style.left =
       `${Math.random() * 100}%`;
 
+    const confettiColors = [
+      "#7c3aed",
+      "#38bdf8",
+      "#f59e0b",
+      "#f43f5e",
+      "#34d399"
+    ];
+
     piece.style.background =
-      [
-        "#7c3aed",
-        "#38bdf8",
-        "#f59e0b",
-        "#f43f5e",
-        "#34d399"
-      ][
-        Math.floor(Math.random() * 5)
+      confettiColors[
+        Math.floor(
+          Math.random() *
+            confettiColors.length
+        )
       ];
 
     piece.style.setProperty(
@@ -953,19 +1171,24 @@ function launchConfetti() {
   }, 2200);
 }
 
-
-// ========================================
+// ============================================================
 // SMART DAILY KETO CHALLENGE
-// ========================================
+// ============================================================
 
 const dailyChallenge =
-  document.getElementById("dailyChallenge");
+  document.getElementById(
+    "dailyChallenge"
+  );
 
 const challengeText =
-  document.getElementById("challengeText");
+  document.getElementById(
+    "challengeText"
+  );
 
 const challengeBtn =
-  document.getElementById("challengeBtn");
+  document.getElementById(
+    "challengeBtn"
+  );
 
 const dailyChallenges = [
   "Drink enough water today 💧",
@@ -978,7 +1201,9 @@ const dailyChallenges = [
 ];
 
 const todayKey =
-  new Date().toISOString().slice(0, 10);
+  new Date()
+    .toISOString()
+    .slice(0, 10);
 
 const savedChallenge =
   localStorage.getItem(
@@ -1008,12 +1233,14 @@ function loadDailyChallenge() {
 
   const dayNumber =
     Math.floor(
-      new Date().getTime() / 86400000
+      new Date().getTime() /
+        86400000
     );
 
   challengeText.textContent =
     dailyChallenges[
-      dayNumber % dailyChallenges.length
+      dayNumber %
+        dailyChallenges.length
     ];
 }
 
@@ -1030,8 +1257,10 @@ if (challengeBtn) {
         todayKey
       );
 
-      challengeText.textContent =
-        "Challenge completed! +25 XP 🎉";
+      if (challengeText) {
+        challengeText.textContent =
+          "Challenge completed! +25 XP 🎉";
+      }
 
       challengeBtn.textContent =
         "Completed ✓";
@@ -1043,10 +1272,9 @@ if (challengeBtn) {
   );
 }
 
-
-// ========================================
-// CHECKLIST
-// ========================================
+// ================================
+// SEARCH
+// ================================
 
 if (searchInput) {
   searchInput.addEventListener(
@@ -1055,18 +1283,22 @@ if (searchInput) {
   );
 }
 
+// ================================
+// GROCERY CHECKBOX
+// ================================
+
 if (groceryList) {
   groceryList.addEventListener(
     "change",
     (event) => {
-      const checkbox = event.target;
+      const checkbox =
+        event.target;
 
       if (
-        !(
-          checkbox instanceof
-          HTMLInputElement
-        ) ||
-        checkbox.type !== "checkbox"
+        !(checkbox instanceof
+          HTMLInputElement) ||
+        checkbox.type !==
+          "checkbox"
       ) {
         return;
       }
@@ -1107,12 +1339,22 @@ if (groceryList) {
   );
 }
 
+// ================================
+// XP BOOST BUTTON
+// ================================
+
 if (xpBoostBtn) {
   xpBoostBtn.addEventListener(
     "click",
-    () => addXp(25)
+    () => {
+      addXp(25);
+    }
   );
 }
+
+// ================================
+// THEME BUTTON
+// ================================
 
 if (themeToggle) {
   themeToggle.addEventListener(
@@ -1129,6 +1371,10 @@ if (themeToggle) {
   );
 }
 
+// ================================
+// PRINT
+// ================================
+
 if (printBtn) {
   printBtn.addEventListener(
     "click",
@@ -1136,108 +1382,274 @@ if (printBtn) {
   );
 }
 
-
-// ========================================
-// FOOD CHECKER
-// ========================================
+// ============================================================
+// KETO FOOD CHECKER
+// ============================================================
 
 const ketoFoods = {
-  "banana": "❌ Not Keto Friendly<br>Net Carbs: 23g<br>🥑 Better Choice: Avocado",
-  "rice": "❌ Not Keto Friendly<br>Net Carbs: 45g<br>🥦 Better Choice: Cauliflower Rice",
-  "bread": "❌ Not Keto Friendly<br>Net Carbs: 25g<br>🥬 Better Choice: Lettuce Wrap",
-  "apple": "❌ Not Keto Friendly<br>Net Carbs: 25g<br>🥑 Better Choice: Berries",
-  "potato": "❌ Not Keto Friendly<br>Net Carbs: 37g<br>🥦 Better Choice: Cauliflower",
-  "egg": "✅ Keto Friendly<br>Net Carbs: 0.6g",
-  "eggs": "✅ Keto Friendly<br>Net Carbs: 0.6g",
-  "chicken": "✅ Keto Friendly<br>Net Carbs: 0g",
-  "salmon": "✅ Keto Friendly<br>Net Carbs: 0g",
-  "beef": "✅ Keto Friendly<br>Net Carbs: 0g",
-  "avocado": "✅ Keto Friendly<br>Net Carbs: 2g",
-  "broccoli": "✅ Keto Friendly<br>Net Carbs: 4g",
-  "cauliflower": "✅ Keto Friendly<br>Net Carbs: 3g",
-  "spinach": "✅ Keto Friendly<br>Net Carbs: 1g",
-  "kale": "✅ Keto Friendly<br>Net Carbs: 5g",
-  "lettuce": "✅ Keto Friendly<br>Net Carbs: 2g",
-  "cabbage": "✅ Keto Friendly<br>Net Carbs: 3g",
-  "zucchini": "✅ Keto Friendly<br>Net Carbs: 3g",
-  "asparagus": "✅ Keto Friendly<br>Net Carbs: 2g",
-  "cucumber": "✅ Keto Friendly<br>Net Carbs: 3g",
-  "celery": "✅ Keto Friendly<br>Net Carbs: 2g",
-  "mushrooms": "✅ Keto Friendly<br>Net Carbs: 2g",
-  "bell pepper": "⚠️ Keto Friendly in Moderation<br>Net Carbs: 6g",
-  "green beans": "⚠️ Keto Friendly in Moderation<br>Net Carbs: 7g",
-  "onion": "⚠️ Use in Small Amounts<br>Net Carbs: 9g",
-  "garlic": "⚠️ Use in Small Amounts<br>Net Carbs: 33g",
-  "strawberries": "✅ Keto Friendly in Moderation<br>Net Carbs: 6g",
-  "blueberries": "⚠️ Limited on Keto<br>Net Carbs: 12g",
-  "blackberries": "✅ Keto Friendly<br>Net Carbs: 5g",
-  "raspberries": "✅ Keto Friendly<br>Net Carbs: 5g",
-  "lemon": "✅ Keto Friendly<br>Net Carbs: 6g",
-  "lime": "✅ Keto Friendly<br>Net Carbs: 5g",
-  "watermelon": "❌ Not Keto Friendly<br>Net Carbs: 11g<br>🥑 Better Choice: Strawberries",
-  "mango": "❌ Not Keto Friendly<br>Net Carbs: 15g<br>🥑 Better Choice: Avocado",
-  "grapes": "❌ Not Keto Friendly<br>Net Carbs: 17g<br>🥑 Better Choice: Blackberries",
-  "orange": "❌ Not Keto Friendly<br>Net Carbs: 12g<br>🥑 Better Choice: Lemon",
-  "pineapple": "❌ Not Keto Friendly<br>Net Carbs: 13g<br>🥑 Better Choice: Raspberries",
-  "pear": "❌ Not Keto Friendly<br>Net Carbs: 22g<br>🥑 Better Choice: Berries",
-  "peach": "❌ Not Keto Friendly<br>Net Carbs: 13g<br>🥑 Better Choice: Strawberries",
-  "kiwi": "⚠️ Limited on Keto<br>Net Carbs: 9g",
-  "coconut": "✅ Keto Friendly<br>Net Carbs: 6g",
-  "bacon": "✅ Keto Friendly<br>Net Carbs: 0g",
-  "beef steak": "✅ Keto Friendly<br>Net Carbs: 0g",
-  "ground beef": "✅ Keto Friendly<br>Net Carbs: 0g",
-  "lamb": "✅ Keto Friendly<br>Net Carbs: 0g",
-  "pork": "✅ Keto Friendly<br>Net Carbs: 0g",
-  "pork chops": "✅ Keto Friendly<br>Net Carbs: 0g",
-  "pork belly": "✅ Keto Friendly<br>Net Carbs: 0g",
-  "ham": "✅ Keto Friendly<br>Net Carbs: 1g",
-  "sausage": "⚠️ Check Ingredients<br>Net Carbs: 2g",
-  "pepperoni": "✅ Keto Friendly<br>Net Carbs: 1g",
-  "salami": "✅ Keto Friendly<br>Net Carbs: 1g",
-  "turkey": "✅ Keto Friendly<br>Net Carbs: 0g",
-  "turkey bacon": "✅ Keto Friendly<br>Net Carbs: 0g",
-  "duck": "✅ Keto Friendly<br>Net Carbs: 0g",
-  "shrimp": "✅ Keto Friendly<br>Net Carbs: 0g",
-  "prawns": "✅ Keto Friendly<br>Net Carbs: 0g",
-  "tuna": "✅ Keto Friendly<br>Net Carbs: 0g",
-  "cod": "✅ Keto Friendly<br>Net Carbs: 0g",
-  "white fish": "✅ Keto Friendly<br>Net Carbs: 0g",
-  "sardines": "✅ Keto Friendly<br>Net Carbs: 0g",
-  "anchovies": "✅ Keto Friendly<br>Net Carbs: 0g",
-  "crab": "✅ Keto Friendly<br>Net Carbs: 0g",
-  "lobster": "✅ Keto Friendly<br>Net Carbs: 1g",
-  "cheddar cheese": "✅ Keto Friendly<br>Net Carbs: 1g",
-  "mozzarella": "✅ Keto Friendly<br>Net Carbs: 2g",
-  "parmesan": "✅ Keto Friendly<br>Net Carbs: 1g",
-  "cream cheese": "✅ Keto Friendly<br>Net Carbs: 2g",
-  "feta": "✅ Keto Friendly<br>Net Carbs: 1g",
-  "blue cheese": "✅ Keto Friendly<br>Net Carbs: 1g",
-  "brie": "✅ Keto Friendly<br>Net Carbs: 1g",
-  "swiss cheese": "✅ Keto Friendly<br>Net Carbs: 1g",
-  "butter": "✅ Keto Friendly<br>Net Carbs: 0g",
-  "ghee": "✅ Keto Friendly<br>Net Carbs: 0g",
-  "heavy cream": "✅ Keto Friendly<br>Net Carbs: 1g",
-  "sour cream": "✅ Keto Friendly<br>Net Carbs: 2g",
-  "greek yogurt": "⚠️ Choose Full-Fat Unsweetened<br>Net Carbs: 4g",
-  "cottage cheese": "⚠️ Keto Friendly in Moderation<br>Net Carbs: 4g",
-  "egg yolk": "✅ Keto Friendly<br>Net Carbs: 0.2g",
-  "egg white": "✅ Keto Friendly<br>Net Carbs: 0.2g"
+  banana:
+    "❌ Not Keto Friendly<br>Net Carbs: 23g<br>🥑 Better Choice: Avocado",
+
+  rice:
+    "❌ Not Keto Friendly<br>Net Carbs: 45g<br>🥦 Better Choice: Cauliflower Rice",
+
+  bread:
+    "❌ Not Keto Friendly<br>Net Carbs: 25g<br>🥬 Better Choice: Lettuce Wrap",
+
+  apple:
+    "❌ Not Keto Friendly<br>Net Carbs: 25g<br>🥑 Better Choice: Berries",
+
+  potato:
+    "❌ Not Keto Friendly<br>Net Carbs: 37g<br>🥦 Better Choice: Cauliflower",
+
+  egg:
+    "✅ Keto Friendly<br>Net Carbs: 0.6g",
+
+  eggs:
+    "✅ Keto Friendly<br>Net Carbs: 0.6g",
+
+  chicken:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  salmon:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  beef:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  avocado:
+    "✅ Keto Friendly<br>Net Carbs: 2g",
+
+  broccoli:
+    "✅ Keto Friendly<br>Net Carbs: 4g",
+
+  cauliflower:
+    "✅ Keto Friendly<br>Net Carbs: 3g",
+
+  spinach:
+    "✅ Keto Friendly<br>Net Carbs: 1g",
+
+  kale:
+    "✅ Keto Friendly<br>Net Carbs: 5g",
+
+  lettuce:
+    "✅ Keto Friendly<br>Net Carbs: 2g",
+
+  cabbage:
+    "✅ Keto Friendly<br>Net Carbs: 3g",
+
+  zucchini:
+    "✅ Keto Friendly<br>Net Carbs: 3g",
+
+  asparagus:
+    "✅ Keto Friendly<br>Net Carbs: 2g",
+
+  cucumber:
+    "✅ Keto Friendly<br>Net Carbs: 3g",
+
+  celery:
+    "✅ Keto Friendly<br>Net Carbs: 2g",
+
+  mushrooms:
+    "✅ Keto Friendly<br>Net Carbs: 2g",
+
+  "bell pepper":
+    "⚠️ Keto Friendly in Moderation<br>Net Carbs: 6g",
+
+  "green beans":
+    "⚠️ Keto Friendly in Moderation<br>Net Carbs: 7g",
+
+  onion:
+    "⚠️ Use in Small Amounts<br>Net Carbs: 9g",
+
+  garlic:
+    "⚠️ Use in Small Amounts<br>Net Carbs: 33g",
+
+  strawberries:
+    "✅ Keto Friendly in Moderation<br>Net Carbs: 6g",
+
+  blueberries:
+    "⚠️ Limited on Keto<br>Net Carbs: 12g",
+
+  blackberries:
+    "✅ Keto Friendly<br>Net Carbs: 5g",
+
+  raspberries:
+    "✅ Keto Friendly<br>Net Carbs: 5g",
+
+  lemon:
+    "✅ Keto Friendly<br>Net Carbs: 6g",
+
+  lime:
+    "✅ Keto Friendly<br>Net Carbs: 5g",
+
+  watermelon:
+    "❌ Not Keto Friendly<br>Net Carbs: 11g<br>🥑 Better Choice: Strawberries",
+
+  mango:
+    "❌ Not Keto Friendly<br>Net Carbs: 15g<br>🥑 Better Choice: Avocado",
+
+  grapes:
+    "❌ Not Keto Friendly<br>Net Carbs: 17g<br>🥑 Better Choice: Blackberries",
+
+  orange:
+    "❌ Not Keto Friendly<br>Net Carbs: 12g<br>🥑 Better Choice: Lemon",
+
+  pineapple:
+    "❌ Not Keto Friendly<br>Net Carbs: 13g<br>🥑 Better Choice: Raspberries",
+
+  pear:
+    "❌ Not Keto Friendly<br>Net Carbs: 22g<br>🥑 Better Choice: Berries",
+
+  peach:
+    "❌ Not Keto Friendly<br>Net Carbs: 13g<br>🥑 Better Choice: Strawberries",
+
+  kiwi:
+    "⚠️ Limited on Keto<br>Net Carbs: 9g",
+
+  coconut:
+    "✅ Keto Friendly<br>Net Carbs: 6g",
+
+  bacon:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  "beef steak":
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  "ground beef":
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  lamb:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  pork:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  "pork chops":
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  "pork belly":
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  ham:
+    "✅ Keto Friendly<br>Net Carbs: 1g",
+
+  sausage:
+    "⚠️ Check Ingredients<br>Net Carbs: 2g",
+
+  pepperoni:
+    "✅ Keto Friendly<br>Net Carbs: 1g",
+
+  salami:
+    "✅ Keto Friendly<br>Net Carbs: 1g",
+
+  turkey:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  "turkey bacon":
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  duck:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  shrimp:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  prawns:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  tuna:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  cod:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  "white fish":
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  sardines:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  anchovies:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  crab:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  lobster:
+    "✅ Keto Friendly<br>Net Carbs: 1g",
+
+  "cheddar cheese":
+    "✅ Keto Friendly<br>Net Carbs: 1g",
+
+  mozzarella:
+    "✅ Keto Friendly<br>Net Carbs: 2g",
+
+  parmesan:
+    "✅ Keto Friendly<br>Net Carbs: 1g",
+
+  "cream cheese":
+    "✅ Keto Friendly<br>Net Carbs: 2g",
+
+  feta:
+    "✅ Keto Friendly<br>Net Carbs: 1g",
+
+  "blue cheese":
+    "✅ Keto Friendly<br>Net Carbs: 1g",
+
+  brie:
+    "✅ Keto Friendly<br>Net Carbs: 1g",
+
+  "swiss cheese":
+    "✅ Keto Friendly<br>Net Carbs: 1g",
+
+  butter:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  ghee:
+    "✅ Keto Friendly<br>Net Carbs: 0g",
+
+  "heavy cream":
+    "✅ Keto Friendly<br>Net Carbs: 1g",
+
+  "sour cream":
+    "✅ Keto Friendly<br>Net Carbs: 2g",
+
+  "greek yogurt":
+    "⚠️ Choose Full-Fat Unsweetened<br>Net Carbs: 4g",
+
+  "cottage cheese":
+    "⚠️ Keto Friendly in Moderation<br>Net Carbs: 4g",
+
+  "egg yolk":
+    "✅ Keto Friendly<br>Net Carbs: 0.2g",
+
+  "egg white":
+    "✅ Keto Friendly<br>Net Carbs: 0.2g"
 };
 
 const checkFoodBtn =
-  document.getElementById("checkFoodBtn");
+  document.getElementById(
+    "checkFoodBtn"
+  );
 
 const foodInput =
-  document.getElementById("foodInput");
+  document.getElementById(
+    "foodInput"
+  );
 
 const foodResult =
-  document.getElementById("foodResult");
+  document.getElementById(
+    "foodResult"
+  );
 
 if (checkFoodBtn) {
   checkFoodBtn.addEventListener(
     "click",
-    function () {
-      if (!foodInput || !foodResult) return;
+    () => {
+      if (!foodInput || !foodResult) {
+        return;
+      }
 
       const food =
         foodInput.value
@@ -1255,18 +1667,19 @@ if (checkFoodBtn) {
   );
 }
 
-
-// ========================================
+// ============================================================
 // BUILD MY DAY
-// ========================================
+// ============================================================
 
 const buildDayBtn =
-  document.getElementById("buildDayBtn");
+  document.getElementById(
+    "buildDayBtn"
+  );
 
 if (buildDayBtn) {
   buildDayBtn.addEventListener(
     "click",
-    function () {
+    () => {
       const goal =
         document.getElementById(
           "ketoGoal"
@@ -1426,7 +1839,8 @@ if (buildDayBtn) {
         );
 
       if (result) {
-        result.style.display = "block";
+        result.style.display =
+          "block";
       }
 
       addXp(25);
@@ -1434,31 +1848,99 @@ if (buildDayBtn) {
   );
 }
 
+// ============================================================
+// REVEAL MY PICK
+// ============================================================
+//
+// IMPORTANT:
+// This is the ONLY Reveal My Pick handler.
+// There are NO duplicate quiz submit handlers below.
+// ============================================================
 
-// ========================================
-// QUIZ — SINGLE CLEAN HANDLER
-// ========================================
+const revealPickBtn =
+  document.getElementById(
+    "revealPickBtn"
+  );
 
-function processQuiz() {
-  if (!quizForm || !quizResult) {
+function calculateQuizResult() {
+  if (!quizQuestions.length) {
+    return null;
+  }
+
+  const answers = [];
+
+  quizQuestions.forEach(
+    (question, index) => {
+      const selected =
+        document.querySelector(
+          `input[name="q${index + 1}"]:checked`
+        );
+
+      if (selected) {
+        answers.push(
+          selected.value
+        );
+      }
+    }
+  );
+
+  if (
+    answers.length !==
+    quizQuestions.length
+  ) {
+    return null;
+  }
+
+  const counts = {
+    plan: 0,
+    dessert: 0,
+    dna: 0,
+    pot: 0,
+    baking: 0
+  };
+
+  answers.forEach(
+    (answer) => {
+      if (
+        counts[answer] !==
+        undefined
+      ) {
+        counts[answer]++;
+      }
+    }
+  );
+
+  let winner = "plan";
+
+  Object.keys(counts).forEach(
+    (key) => {
+      if (
+        counts[key] >
+        counts[winner]
+      ) {
+        winner = key;
+      }
+    }
+  );
+
+  return {
+    winner,
+    counts,
+    recommendation:
+      productMap[winner] ||
+      "Keto Journey"
+  };
+}
+
+function revealQuizPick() {
+  if (!quizResult) {
     return;
   }
 
-  const answers =
-    quizQuestions.map(
-      (question, index) => {
-        const selected =
-          document.querySelector(
-            `input[name="q${index + 1}"]:checked`
-          );
+  const result =
+    calculateQuizResult();
 
-        return selected
-          ? selected.value
-          : null;
-      }
-    );
-
-  if (answers.includes(null)) {
+  if (!result) {
     quizResult.textContent =
       "Please answer all 5 questions first.";
 
@@ -1468,37 +1950,25 @@ function processQuiz() {
     return;
   }
 
-  const counts = {};
-
-  answers.forEach((answer) => {
-    counts[answer] =
-      (counts[answer] || 0) + 1;
-  });
-
-  const recommendation =
-    Object.keys(counts).reduce(
-      (a, b) =>
-        counts[a] >= counts[b]
-          ? a
-          : b
-    );
-
-  quizState.completed = true;
+  quizState.completed =
+    true;
 
   quizState.score =
     Math.round(
-      (
-        (counts[recommendation] /
-          quizQuestions.length) *
+      (Math.max(
+        ...Object.values(
+          result.counts
+        )
+      ) /
+        quizQuestions.length) *
         100
-      )
     );
 
   quizState.recommendation =
-    productMap[recommendation] ||
-    "Keto Journey";
+    result.recommendation;
 
   saveQuiz();
+
   updateRecommendation();
   updateScoreboard();
 
@@ -1514,50 +1984,85 @@ function processQuiz() {
       block: "center"
     });
   }, 100);
+
+  launchConfetti();
 }
-
-
-// ========================================
-// REVEAL MY PICK BUTTON
-// ========================================
-
-const revealPickBtn =
-  document.getElementById(
-    "revealPickBtn"
-  );
 
 if (revealPickBtn) {
   revealPickBtn.addEventListener(
     "click",
-    function (event) {
+    (event) => {
       event.preventDefault();
-      event.stopPropagation();
-
-      processQuiz();
+      revealQuizPick();
     }
   );
 }
 
-
-// ========================================
+// ============================================================
 // QUIZ FORM SUBMIT
-// ========================================
+// ============================================================
+//
+// This is intentionally ONE submit handler only.
+// If the Reveal My Pick button is inside the form,
+// type="button" in HTML is recommended.
+// ============================================================
 
 if (quizForm) {
   quizForm.addEventListener(
     "submit",
-    function (event) {
+    (event) => {
       event.preventDefault();
 
-      processQuiz();
+      revealQuizPick();
     }
   );
 }
 
+// ============================================================
+// MODAL HELPERS
+// ============================================================
 
-// ========================================
+function closeModal(modal) {
+  if (!modal) return;
+
+  modal.classList.add("hidden");
+
+  modal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+}
+
+if (closeModalBtn) {
+  closeModalBtn.addEventListener(
+    "click",
+    () => {
+      closeModal(milestoneModal);
+    }
+  );
+}
+
+if (closeProgressModalBtn) {
+  closeProgressModalBtn.addEventListener(
+    "click",
+    () => {
+      closeModal(progressModal);
+    }
+  );
+}
+
+if (closeExitModalBtn) {
+  closeExitModalBtn.addEventListener(
+    "click",
+    () => {
+      closeModal(exitModal);
+    }
+  );
+}
+
+// ============================================================
 // INITIAL RENDER
-// ========================================
+// ============================================================
 
 renderChecklist();
 renderPlanner();
@@ -1565,11 +2070,16 @@ renderQuiz();
 updateScoreboard();
 updateRecommendation();
 
+// ============================================================
+// LOAD SAVED THEME
+// ============================================================
+
 const savedTheme =
   localStorage.getItem(
     storageKeys.theme
   ) ||
   (
+    window.matchMedia &&
     window.matchMedia(
       "(prefers-color-scheme: dark)"
     ).matches
@@ -1578,4 +2088,3 @@ const savedTheme =
   );
 
 applyTheme(savedTheme);
-```
