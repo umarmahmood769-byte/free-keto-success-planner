@@ -2088,3 +2088,90 @@ const savedTheme =
   );
 
 applyTheme(savedTheme);
+// ================================
+// KETO CALCULATOR
+// ================================
+
+const calculatorForm = document.getElementById("calculatorForm");
+const bmiResult = document.getElementById("bmiResult");
+const calorieResult = document.getElementById("calorieResult");
+const waterResult = document.getElementById("waterResult");
+const macroResult = document.getElementById("macroResult");
+
+if (calculatorForm) {
+  calculatorForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const heightInput = calculatorForm.querySelector('[name="height"]');
+    const weightInput = calculatorForm.querySelector('[name="weight"]');
+    const ageInput = calculatorForm.querySelector('[name="age"]');
+    const genderInput = calculatorForm.querySelector('[name="gender"]:checked');
+    const activityInput = calculatorForm.querySelector('[name="activity"]');
+
+    const height = parseFloat(heightInput?.value);
+    const weight = parseFloat(weightInput?.value);
+    const age = parseFloat(ageInput?.value);
+    const gender = genderInput?.value || "male";
+    const activity = activityInput?.value || "moderate";
+
+    if (!height || !weight || !age) {
+      if (bmiResult) bmiResult.textContent = "--";
+      if (calorieResult) calorieResult.textContent = "--";
+      if (waterResult) waterResult.textContent = "--";
+      if (macroResult) macroResult.textContent = "Please enter all details";
+      return;
+    }
+
+    // BMI
+    const heightMeters = height / 100;
+    const bmi = weight / (heightMeters * heightMeters);
+
+    // Basal Metabolic Rate - Mifflin St Jeor
+    let bmr;
+
+    if (gender === "female") {
+      bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+    } else {
+      bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+    }
+
+    // Activity multiplier
+    const activityMultipliers = {
+      low: 1.2,
+      moderate: 1.375,
+      active: 1.55,
+      "very-active": 1.725
+    };
+
+    const multiplier = activityMultipliers[activity] || 1.375;
+
+    const calories = Math.round(bmr * multiplier);
+
+    // Water estimate: approximately 35 ml per kg
+    const waterLiters = (weight * 0.035).toFixed(1);
+
+    // Simple keto macro estimate
+    const protein = Math.round(weight * 1.6);
+    const carbs = 25;
+    const proteinCalories = protein * 4;
+    const carbCalories = carbs * 4;
+    const fatCalories = Math.max(0, calories - proteinCalories - carbCalories);
+    const fat = Math.round(fatCalories / 9);
+
+    if (bmiResult) {
+      bmiResult.textContent = bmi.toFixed(1);
+    }
+
+    if (calorieResult) {
+      calorieResult.textContent = `${calories} kcal`;
+    }
+
+    if (waterResult) {
+      waterResult.textContent = `${waterLiters} L`;
+    }
+
+    if (macroResult) {
+      macroResult.textContent = `P ${protein}g • C ${carbs}g • F ${fat}g`;
+    }
+  });
+}
