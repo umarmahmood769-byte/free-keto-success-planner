@@ -726,6 +726,16 @@ quizState = {
   score: score,
   recommendation: recommendation
 };
+  saveQuiz();
+updateScoreboard();
+updateRecommendation();
+
+quizResult.innerHTML = `
+  <strong>${recommendation}</strong>
+  <p>This is your recommended keto match based on your answers.</p>
+`;
+
+launchConfetti();
 
 saveQuiz();
 updateScoreboard();
