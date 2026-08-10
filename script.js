@@ -723,7 +723,6 @@ if (checkFoodBtn) {
 // ================================
 
 const generateMealBtn = document.getElementById("generateMealBtn");
-console.log(generateMealBtn);
 if (generateMealBtn) {
 
   const breakfastMeals = [
