@@ -981,7 +981,212 @@ if (mealPlanResult) {
     }
   );
 }
+// ============================================================
+// CALCULATOR - FIXED
+// ============================================================
 
+if (calculatorForm) {
+  calculatorForm.addEventListener(
+    "submit",
+    (event) => {
+      event.preventDefault();
+
+      const weightInput =
+        document.getElementById("weight");
+
+      const heightInput =
+        document.getElementById("height");
+
+      const ageInput =
+        document.getElementById("age");
+
+      const genderInput =
+        document.getElementById("gender");
+
+      const activityInput =
+        document.getElementById("activity");
+
+      if (
+        !weightInput ||
+        !heightInput ||
+        !ageInput ||
+        !genderInput ||
+        !activityInput
+      ) {
+        return;
+      }
+
+      const weight =
+        parseFloat(weightInput.value);
+
+      const height =
+        parseFloat(heightInput.value);
+
+      const age =
+        parseInt(ageInput.value, 10);
+
+      const gender =
+        genderInput.value;
+
+      const activity =
+        parseFloat(activityInput.value);
+
+      // ============================
+      // VALIDATION
+      // ============================
+
+      if (
+        !Number.isFinite(weight) ||
+        !Number.isFinite(height) ||
+        !Number.isFinite(age) ||
+        !Number.isFinite(activity) ||
+        weight <= 0 ||
+        height <= 0 ||
+        age <= 0
+      ) {
+        if (bmiResult) {
+          bmiResult.textContent = "--";
+        }
+
+        if (calorieResult) {
+          calorieResult.textContent = "--";
+        }
+
+        if (waterResult) {
+          waterResult.textContent = "--";
+        }
+
+        if (macroResult) {
+          macroResult.textContent = "--";
+        }
+
+        return;
+      }
+
+      // ============================
+      // BMI
+      // ============================
+
+      const heightMeters =
+        height / 100;
+
+      const bmi =
+        weight /
+        (heightMeters * heightMeters);
+
+      let bmiCategory = "";
+
+      if (bmi < 18.5) {
+        bmiCategory = "Underweight";
+      } else if (bmi < 25) {
+        bmiCategory = "Healthy";
+      } else if (bmi < 30) {
+        bmiCategory = "Overweight";
+      } else {
+        bmiCategory = "Obesity range";
+      }
+
+      if (bmiResult) {
+        bmiResult.textContent =
+          `${bmi.toFixed(1)} (${bmiCategory})`;
+      }
+
+      // ============================
+      // BMR
+      // ============================
+
+      let bmr;
+
+      if (gender === "female") {
+        bmr =
+          (10 * weight) +
+          (6.25 * height) -
+          (5 * age) -
+          161;
+      } else {
+        bmr =
+          (10 * weight) +
+          (6.25 * height) -
+          (5 * age) +
+          5;
+      }
+
+      // ============================
+      // DAILY CALORIES
+      // ============================
+
+      const maintenanceCalories =
+        bmr * activity;
+
+      const dailyCalories =
+        Math.max(
+          1200,
+          Math.round(
+            maintenanceCalories
+          )
+        );
+
+      if (calorieResult) {
+        calorieResult.textContent =
+          `${dailyCalories} kcal/day`;
+      }
+
+      // ============================
+      // WATER
+      // ============================
+
+      const waterMl =
+        Math.round(weight * 35);
+
+      const waterLiters =
+        (waterMl / 1000).toFixed(1);
+
+      if (waterResult) {
+        waterResult.textContent =
+          `${waterLiters} L/day`;
+      }
+
+      // ============================
+      // KETO MACROS
+      // ============================
+
+      const proteinGrams =
+        Math.round(weight * 1.6);
+
+      const carbGrams = 25;
+
+      const proteinCalories =
+        proteinGrams * 4;
+
+      const carbCalories =
+        carbGrams * 4;
+
+      const remainingCalories =
+        Math.max(
+          0,
+          dailyCalories -
+          proteinCalories -
+          carbCalories
+        );
+
+      const fatGrams =
+        Math.round(
+          remainingCalories / 9
+        );
+
+      if (macroResult) {
+        macroResult.textContent =
+          `${proteinGrams}g protein • ${carbGrams}g net carbs • ${fatGrams}g fat`;
+      }
+
+      // ============================
+      // XP
+      // ============================
+
+      addXp(25);
+    }
+  );
+}
 // ================================
 // QUIZ RENDER
 // ================================
