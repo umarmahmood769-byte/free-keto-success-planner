@@ -719,11 +719,7 @@ if (checkFoodBtn) {
   });
 }
 // ================================
-// Generate My Keto Meal
-// ================================
 
-
-}
 const buildDayBtn = document.getElementById("buildDayBtn");
 
 if (buildDayBtn) {
