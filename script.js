@@ -633,68 +633,7 @@ printBtn.addEventListener("click", () => window.print());
 
 
 
-calculatorForm.addEventListener("submit", (event) => {
-  event.preventDefault();
 
-  const weight = Number(document.getElementById("weight").value);
-  const height = Number(document.getElementById("height").value) / 100;
-  const age = Number(document.getElementById("age").value);
-  const gender = document.getElementById("gender").value;
-  const activity = Number(document.getElementById("activity").value);
-
-  const bmi = (weight / (height * height)).toFixed(1);
-  const bmr = gender === "male"
-    ? 10 * weight + 6.25 * 100 * height - 5 * age + 5
-    : 10 * weight + 6.25 * 100 * height - 5 * age - 161;
-  const calories = Math.round(bmr * activity);
-  const water = Math.round(weight * 35);
-  const protein = Math.round(weight * 1.2);
-  const fat = Math.round((calories * 0.7) / 9);
-  const carbs = 20;
-
-  bmiResult.textContent = bmi;
-  calorieResult.textContent = `${calories} kcal`;
-  waterResult.textContent = `${water} ml`;
-
-  quizContainer.addEventListener("change", (event) => {
-  const option = event.target.closest(".quiz-option");
-
-  if (!option) return;
-
-  const allOptions = quizContainer.querySelectorAll(".quiz-option");
-
-  allOptions.forEach((item) => {
-    item.classList.remove("selected");
-  });
-
-  option.classList.add("selected");
-});
-
-function closeModal(modal) {
-  modal.classList.add("hidden");
-  modal.setAttribute("aria-hidden", "true");
-}
-
-closeModalBtn.addEventListener("click", () => closeModal(milestoneModal));
-closeProgressModalBtn.addEventListener("click", () => closeModal(progressModal));
-closeExitModalBtn.addEventListener("click", () => closeModal(exitModal));
-
-[milestoneModal, progressModal, exitModal].forEach((modal) => {
-  modal.addEventListener("click", (event) => {
-    if (event.target === modal) {
-      closeModal(modal);
-    }
-  });
-});
-
-window.addEventListener("mouseout", (event) => {
-  if (!exitPopupShown && event.relatedTarget === null) {
-    exitPopupShown = true;
-    
-    exitModal.classList.remove("hidden");
-    exitModal.setAttribute("aria-hidden", "false");
-  }
-});
 
 renderChecklist();
 renderPlanner();
