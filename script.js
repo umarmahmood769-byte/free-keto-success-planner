@@ -826,6 +826,59 @@ if (buildDayBtn) {
     addXp(25);
   });
 }
+const revealPickBtn = document.getElementById("revealPickBtn");
+
+if (revealPickBtn) {
+  revealPickBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    const answers = [];
+
+    quizQuestions.forEach((question, index) => {
+      const selected = document.querySelector(
+        `input[name="q${index + 1}"]:checked`
+      );
+
+      if (selected) {
+        answers.push(selected.value);
+      }
+    });
+
+    if (answers.length < quizQuestions.length) {
+      quizResult.textContent = "Please answer all 5 questions first.";
+      return;
+    }
+
+    const counts = {};
+
+    answers.forEach((answer) => {
+      counts[answer] = (counts[answer] || 0) + 1;
+    });
+
+    let winner = answers[0];
+
+    Object.keys(counts).forEach((key) => {
+      if (counts[key] > counts[winner]) {
+        winner = key;
+      }
+    });
+
+    const recommendation = productMap[winner] || "Keto Journey";
+
+    quizState.completed = true;
+    quizState.score = 100;
+    quizState.recommendation = recommendation;
+
+    saveQuiz();
+    updateRecommendation();
+    updateScoreboard();
+
+    quizResult.textContent =
+      "Your personalized pick: " + recommendation;
+
+    quizResult.style.display = "block";
+  });
+}
 // ================================
 // QUIZ SUBMIT
 // ================================
