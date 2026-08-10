@@ -340,7 +340,7 @@ function updateScoreboard() {
   }
 }
 
-function renderPlanner() {
+ffunction renderPlanner() {
   mealPlanner.innerHTML = plannerDays
     .map(
       (day) => `
@@ -352,7 +352,126 @@ function renderPlanner() {
     )
     .join("");
 }
+const mealPlanResult = document.getElementById("mealPlanResult");
 
+const ketoMealOptions = {
+  Monday: {
+    breakfast: "🥑 Avocado & Egg Breakfast",
+    lunch: "🥗 Grilled Chicken Salad",
+    dinner: "🐟 Garlic Butter Salmon with Broccoli"
+  },
+  Tuesday: {
+    breakfast: "🍳 Cheese & Spinach Omelet",
+    lunch: "🥩 Beef Lettuce Wraps",
+    dinner: "🍗 Creamy Garlic Chicken"
+  },
+  Wednesday: {
+    breakfast: "🥓 Bacon & Eggs with Avocado",
+    lunch: "🥗 Tuna Avocado Salad",
+    dinner: "🍖 Herb-Roasted Chicken with Vegetables"
+  },
+  Thursday: {
+    breakfast: "🧀 Greek Yogurt with Berries",
+    lunch: "🥩 Ground Beef Keto Bowl",
+    dinner: "🐟 Lemon Butter Cod with Asparagus"
+  },
+  Friday: {
+    breakfast: "🍳 Mushroom & Cheese Omelet",
+    lunch: "🍗 Chicken Caesar Salad",
+    dinner: "🥩 Steak with Garlic Butter & Greens"
+  },
+  Saturday: {
+    breakfast: "🥑 Avocado Egg Bowl",
+    lunch: "🍤 Shrimp & Vegetable Bowl",
+    dinner: "🍗 Crispy Chicken with Cauliflower"
+  },
+  Sunday: {
+    breakfast: "🥓 Bacon, Eggs & Cheese",
+    lunch: "🥗 Salmon Avocado Salad",
+    dinner: "🍖 Roast Beef with Broccoli"
+  }
+};
+
+function showMealPlan(day) {
+  const meals = ketoMealOptions[day];
+
+  if (!meals) return;
+
+  mealPlanResult.innerHTML = `
+    <div class="meal-result-card">
+      <p class="eyebrow">${day} Keto Plan</p>
+      <h3>Your Meal Plan for ${day}</h3>
+
+      <div class="meal-result-grid">
+
+        <button type="button" class="meal-option" data-meal="${meals.breakfast}">
+          <span class="meal-icon">🌅</span>
+          <strong>Breakfast</strong>
+          <span>${meals.breakfast}</span>
+        </button>
+
+        <button type="button" class="meal-option" data-meal="${meals.lunch}">
+          <span class="meal-icon">☀️</span>
+          <strong>Lunch</strong>
+          <span>${meals.lunch}</span>
+        </button>
+
+        <button type="button" class="meal-option" data-meal="${meals.dinner}">
+          <span class="meal-icon">🌙</span>
+          <strong>Dinner</strong>
+          <span>${meals.dinner}</span>
+        </button>
+
+      </div>
+
+      <p class="meal-selection-message" id="mealSelectionMessage">
+        Click a meal to add it to your ${day} planner.
+      </p>
+    </div>
+  `;
+}
+
+mealPlanner.addEventListener("click", (event) => {
+  const dayButton = event.target.closest(".planner-day");
+
+  if (!dayButton) return;
+
+  document
+    .querySelectorAll(".planner-day")
+    .forEach((button) => button.classList.remove("active"));
+
+  dayButton.classList.add("active");
+
+  const day = dayButton.dataset.day;
+
+  showMealPlan(day);
+});
+
+mealPlanResult.addEventListener("click", (event) => {
+  const mealButton = event.target.closest(".meal-option");
+
+  if (!mealButton) return;
+
+  const meal = mealButton.dataset.meal;
+
+  const activeDay = document.querySelector(".planner-day.active");
+
+  if (!activeDay) return;
+
+  const day = activeDay.dataset.day;
+
+  plannerState[day] = meal;
+  savePlanner();
+
+  renderPlanner();
+  showMealPlan(day);
+
+  const message = document.getElementById("mealSelectionMessage");
+
+  if (message) {
+    message.textContent = `✅ ${meal} added to your ${day} plan!`;
+  }
+});
 function renderQuiz() {
   quizContainer.innerHTML = quizQuestions
     .map((item, index) => {
