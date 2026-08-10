@@ -678,9 +678,77 @@ quizForm.addEventListener("submit", (event) => {
       scores[answer] += 1;
     }
   });
+
+  const topMatch = Object.entries(scores)
+    .sort((a, b) => b[1] - a[1])[0][0];
+
+  const recommendation = productMap[topMatch] || "Keto Journey";
+
+  const score = Math.min(
+    100,
+    Object.values(scores).reduce((sum, value) => sum + value, 0) * 20
+  );
+
+  quizState = {
+    completed: true,
+    score: score,
+    recommendation: recommendation
+  };
+
+  saveQuiz();
+  updateScoreboard();
+  updateRecommendation();
+
+  quizResult.innerHTML = `
+    <div class="quiz-result-card">
+      <strong>Your Best Match: ${recommendation}</strong>
+      <p>
+        Based on your answers, this keto option may be a good fit
+        for your current routine and goals.
+      </p>
+    </div>
+  `;
+
+  launchConfetti();
+});
+
+  quizQuestions.forEach((question, index) => {
+    const answer = formData.get(`q${index + 1}`);
+
+    if (answer && scores.hasOwnProperty(answer)) {
+      scores[answer] += 1;
+    }
+  });
   const topMatch = Object.entries(scores).sort((a, b) => b[1] - a[1])[0][0];
 
 const recommendation = productMap[topMatch] || "Keto Journey";
+  const score = Math.min(
+  100,
+  Object.values(scores).reduce((sum, value) => sum + value, 0) * 20
+);
+
+quizState = {
+  completed: true,
+  score: score,
+  recommendation: recommendation
+};
+
+saveQuiz();
+updateScoreboard();
+updateRecommendation();
+
+quizResult.innerHTML = `
+  <div class="quiz-result-card">
+    <strong>Your Best Match: ${recommendation}</strong>
+    <p>
+      Based on your answers, this keto option may be a good fit
+      for your current routine and goals.
+    </p>
+  </div>
+`;
+
+launchConfetti();
+});
 
 const score = Math.min(
   100,
