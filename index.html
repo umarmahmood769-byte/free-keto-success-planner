@@ -214,7 +214,97 @@ onclick="gtag('event', 'affiliate_click', {
           </div>
           <div id="achievementBadges" class="achievement-list"></div>
         </section>
+<section class="card day-builder-card" id="day-builder">
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">Personalized keto tool</p>
+      <h2>🥑 Build My Keto Day</h2>
+      <p class="section-subtitle">
+        Create a simple keto day based on your goal, hunger level, and routine.
+      </p>
+    </div>
+    <span class="section-badge">Smart Planner</span>
+  </div>
 
+  <div class="day-builder-grid">
+
+    <div class="builder-field">
+      <label for="ketoGoal">What's your main goal?</label>
+      <select id="ketoGoal">
+        <option value="weight">Weight loss</option>
+        <option value="maintenance">Maintain weight</option>
+        <option value="energy">Better daily energy</option>
+      </select>
+    </div>
+
+    <div class="builder-field">
+      <label for="hungerLevel">How hungry do you usually feel?</label>
+      <select id="hungerLevel">
+        <option value="low">Not very hungry</option>
+        <option value="medium">Moderately hungry</option>
+        <option value="high">Very hungry</option>
+      </select>
+    </div>
+
+    <div class="builder-field">
+      <label for="activityLevel">Today's activity</label>
+      <select id="activityLevel">
+        <option value="low">Light / mostly sitting</option>
+        <option value="medium">Moderately active</option>
+        <option value="high">Workout / very active</option>
+      </select>
+    </div>
+
+  </div>
+
+  <button id="buildDayBtn" class="btn primary" type="button">
+    ✨ Build My Keto Day
+  </button>
+
+  <div id="dayPlanResult" class="day-plan-result" hidden>
+    <div class="day-score">
+      <span>Your Keto Day Score</span>
+      <strong id="dayScore">0/100</strong>
+    </div>
+
+    <div class="meal-result">
+      <div class="meal-result-icon">🍳</div>
+      <div>
+        <strong>Breakfast</strong>
+        <p id="breakfastPlan"></p>
+      </div>
+    </div>
+
+    <div class="meal-result">
+      <div class="meal-result-icon">🥗</div>
+      <div>
+        <strong>Lunch</strong>
+        <p id="lunchPlan"></p>
+      </div>
+    </div>
+
+    <div class="meal-result">
+      <div class="meal-result-icon">🍗</div>
+      <div>
+        <strong>Dinner</strong>
+        <p id="dinnerPlan"></p>
+      </div>
+    </div>
+
+    <div class="meal-result">
+      <div class="meal-result-icon">🥜</div>
+      <div>
+        <strong>Smart Snack</strong>
+        <p id="snackPlan"></p>
+      </div>
+    </div>
+
+    <div class="day-tip">
+      <strong>💡 Your personalized tip</strong>
+      <p id="dayTip"></p>
+    </div>
+  </div>
+</section>
         <section class="card" id="grocery-section">
           <div class="section-head">
             <div>
