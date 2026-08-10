@@ -712,7 +712,36 @@ quizForm.addEventListener("submit", (event) => {
       scores[answer] += 1;
     }
   });
+  const topMatch = Object.entries(scores).sort((a, b) => b[1] - a[1])[0][0];
 
+const recommendation = productMap[topMatch] || "Keto Journey";
+
+const score = Math.min(
+  100,
+  Object.values(scores).reduce((sum, value) => sum + value, 0) * 20
+);
+
+quizState = {
+  completed: true,
+  score: score,
+  recommendation: recommendation
+};
+
+saveQuiz();
+updateScoreboard();
+updateRecommendation();
+
+quizResult.innerHTML = `
+  <strong>Your best match: ${recommendation}</strong>
+  <p>Based on your answers, this option may be a good fit for your current keto goals.</p>
+`;
+
+launchConfetti();
+const topMatch = Object.entries(scores).sort((a, b) => b[1] - a[1])[0][0];
+
+const recommendation = productMap[topMatch] || "Keto Journey";
+
+const score = Math.min(100, Object.values(scores).reduce((sum, value) => sum + value, 0) * 20);
   const topMatch = Object.entries(scores).sort((a, b) => b[1] - a[1])[0][0];
 
   const recommendation = productMap[topMatch] || "Keto Journey";
