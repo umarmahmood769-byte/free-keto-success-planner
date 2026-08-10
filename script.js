@@ -1,12 +1,274 @@
-const storageKeys = {
-  theme: "keto-theme",
-  xp: "keto-xp",
-  quiz: "keto-quiz",
-  planner: "keto-planner",
-  checklist: "keto-checklist"
+// ============================================================
+// KETO APP - FINAL CLEAN SCRIPT
+// ============================================================
+
+// ================================
+// KETO GROCERY ITEMS
+// ================================
+
+const ketoItems = [
+  "Almond butter", "Avocado", "Avocados", "Bacon", "Beef broth",
+  "Beef steak", "Blackberries", "Blue cheese", "Bok choy", "Bone broth",
+  "Brie", "Broccoli", "Brussels sprouts", "Butter", "Cabbage",
+  "Cauliflower", "Cashew butter", "Celery", "Cheddar cheese",
+  "Chicken broth", "Chicken thighs", "Chicken wings", "Chia seeds",
+  "Chili flakes", "Chorizo", "Cocoa powder", "Coconut cream",
+  "Coconut flour", "Coconut milk", "Coconut oil", "Cod", "Collard greens",
+  "Cream cheese", "Cucumber", "Cumin", "Dijon mustard", "Dill pickles",
+  "Eggplant", "Eggs", "Erythritol", "Feta", "Flaxseed", "Garlic", "Ghee",
+  "Greek yogurt", "Green beans", "Ground beef", "Ground turkey", "Ham",
+  "Heavy cream", "Hemp hearts", "Herbs", "Horseradish", "Kale", "Kimchi",
+  "Lamb", "Leeks", "Lemon", "Lettuce", "Lime", "Macadamia nuts", "Mayo",
+  "Meatballs", "Mozzarella", "Mushrooms", "Mustard", "Nori sheets",
+  "Olive oil", "Olives", "Onion", "Oregano", "Paprika", "Parmesan",
+  "Pecans", "Peanuts", "Pistachios", "Pork belly", "Pork chops",
+  "Prosciutto", "Psyllium husk", "Pumpkin seeds", "Radishes",
+  "Raspberries", "Romaine", "Rosemary", "Salami", "Salmon", "Sardines",
+  "Sausage", "Sea salt", "Seaweed", "Shrimp", "Sour cream", "Spinach",
+  "Stevia", "Strawberries", "Sunflower seeds", "Tahini", "Tallow",
+  "Thyme", "Turkey", "Turkey bacon", "Tuna", "Unsweetened almond milk",
+  "Walnuts", "White fish", "Xanthan gum", "Zucchini", "Anchovies",
+  "Arugula", "Asparagus", "Basil", "Bell peppers", "Black pepper",
+  "Berries", "Brussels sprouts", "Butterhead lettuce", "Coconut flakes",
+  "Coconut yogurt", "Cottage cheese", "Cranberries", "Cranberry sauce",
+  "Crimini mushrooms", "Curry powder", "Edamame", "Fennel", "Miso paste",
+  "Monk fruit sweetener", "Mushroom broth", "Nutritional yeast", "Okra",
+  "Palm oil", "Peanut butter", "Pepperoni", "Pine nuts", "Pork rinds",
+  "Poultry seasoning", "Pumpkin puree", "Red pepper flakes", "Salsa verde",
+  "Scallions", "Sesame seeds", "Smoked salmon", "Sugar-free syrup",
+  "Swiss cheese", "Taco seasoning", "Tomato sauce", "Walnut butter",
+  "Watercress", "Worcestershire sauce", "Yellow squash"
+];
+
+const plannerDays = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday"
+];
+
+// ================================
+// QUIZ QUESTIONS
+// ================================
+
+const quizQuestions = [
+  {
+    question: "What feels best for your current routine?",
+    options: [
+      { text: "Meal prep and structure", value: "plan" },
+      { text: "Treats and desserts", value: "dessert" },
+      { text: "Tracking and wellness data", value: "dna" }
+    ]
+  },
+  {
+    question: "Which kitchen tool would you use most?",
+    options: [
+      { text: "A pressure cooker", value: "pot" },
+      { text: "A baking tray", value: "baking" },
+      { text: "A meal planner app", value: "plan" }
+    ]
+  },
+  {
+    question: "Which outcome matters most right now?",
+    options: [
+      { text: "Quick wins and simplicity", value: "plan" },
+      { text: "Sweet cravings support", value: "dessert" },
+      { text: "Biometric-backed guidance", value: "dna" }
+    ]
+  },
+  {
+    question: "How do you want to feel after your next meal?",
+    options: [
+      { text: "Comforted and satisfied", value: "pot" },
+      { text: "Happy and indulgent", value: "dessert" },
+      { text: "Balanced and informed", value: "dna" }
+    ]
+  },
+  {
+    question: "What would make you stick to keto longer?",
+    options: [
+      { text: "A complete plan", value: "plan" },
+      { text: "Easy baking recipes", value: "baking" },
+      { text: "Smart coaching", value: "dna" }
+    ]
+  }
+];
+
+// ================================
+// PRODUCT MAP
+// ================================
+
+const productMap = {
+  plan: "The Keto Meal Plan",
+  dessert: "Keto Desserts",
+  dna: "Keto DNA",
+  pot: "Instant Pot Keto",
+  baking: "Keto Baking Bundle"
 };
 
-const body = document.body;
+// ================================
+// PRODUCT CARDS
+// ================================
+
+const productCards = [
+  {
+    name: "The Keto Meal Plan",
+    tag: "Structured roadmap",
+    description: "A polished weekly plan for calm, repeatable success.",
+    accent: "Daily structure",
+    image: "🥗",
+    rating: "★★★★★",
+    bestFor: "Best for: consistent weekly meal prep"
+  },
+  {
+    name: "Keto Desserts",
+    tag: "Sweet satisfaction",
+    description: "Beautiful low-carb treats that keep cravings in check.",
+    accent: "Dessert support",
+    image: "🍰",
+    rating: "★★★★★",
+    bestFor: "Best for: sweet cravings without guilt"
+  },
+  {
+    name: "Keto DNA",
+    tag: "Bio-backed guidance",
+    description: "Personalized insights that make your plan feel premium.",
+    accent: "Smart coaching",
+    image: "🧬",
+    rating: "★★★★★",
+    bestFor: "Best for: data-driven keto support"
+  },
+  {
+    name: "Instant Pot Keto",
+    tag: "Fast weeknight meals",
+    description: "Quick, easy recipes for your busiest days.",
+    accent: "Kitchen speed",
+    image: "🍲",
+    rating: "★★★★★",
+    bestFor: "Best for: fast keto dinners"
+  },
+  {
+    name: "Keto Baking Bundle",
+    tag: "Baking confidence",
+    description: "Everything you need for indulgent, keto-friendly baking.",
+    accent: "Bakery-style results",
+    image: "🥐",
+    rating: "★★★★★",
+    bestFor: "Best for: keto baking success"
+  },
+  {
+    name: "Keto Journey",
+    tag: "Shared progress",
+    description: "A supportive companion for every milestone in your transformation.",
+    accent: "Long-term momentum",
+    image: "🌿",
+    rating: "★★★★★",
+    bestFor: "Best for: staying motivated long-term"
+  }
+];
+
+// ================================
+// STORAGE KEYS
+// ================================
+
+const storageKeys = {
+  checklist: "keto-checklist-state",
+  planner: "keto-planner-state",
+  theme: "keto-theme",
+  xp: "keto-xp-state",
+  quiz: "keto-quiz-state",
+  milestone: "keto-milestone-shown"
+};
+
+// ================================
+// LOCAL STORAGE STATE
+// ================================
+
+let checklistState = JSON.parse(
+  localStorage.getItem(storageKeys.checklist) || "null"
+);
+
+if (!checklistState) {
+  checklistState = ketoItems.map((item) => ({
+    name: item,
+    checked: false
+  }));
+}
+
+let plannerState = JSON.parse(
+  localStorage.getItem(storageKeys.planner) || "null"
+);
+
+if (!plannerState) {
+  plannerState = Object.fromEntries(
+    plannerDays.map((day) => [day, ""])
+  );
+}
+
+let xpState = JSON.parse(
+  localStorage.getItem(storageKeys.xp) || "null"
+);
+
+if (!xpState) {
+  xpState = {
+    points: 0
+  };
+}
+
+let quizState = JSON.parse(
+  localStorage.getItem(storageKeys.quiz) || "null"
+);
+
+if (!quizState) {
+  quizState = {
+    completed: false,
+    score: 0,
+    recommendation: "Keto Journey"
+  };
+}
+
+let milestoneShown =
+  localStorage.getItem(storageKeys.milestone) === "true";
+
+let progressPopupShown =
+  localStorage.getItem("keto-progress-popup-shown") === "true";
+
+let exitPopupShown = false;
+
+// ================================
+// DOM ELEMENTS
+// ================================
+
+const groceryList = document.getElementById("groceryList");
+const searchInput = document.getElementById("searchInput");
+const checklistSummary = document.getElementById("checklistSummary");
+const progressBar = document.getElementById("progressBar");
+
+const scoreBadge = document.getElementById("scoreBadge");
+const heroScore = document.getElementById("heroScore");
+const heroXp = document.getElementById("heroXp");
+const heroLevel = document.getElementById("heroLevel");
+const heroLevelMini = document.getElementById("heroLevelMini");
+const heroRingPercent = document.getElementById("heroRingPercent");
+const heroProgressRing = document.getElementById("heroProgressRing");
+const heroSubtitle = document.getElementById("heroSubtitle");
+
+const xpPercent = document.getElementById("xpPercent");
+const xpValue = document.getElementById("xpValue");
+const xpLevelValue = document.getElementById("xpLevelValue");
+const levelLabel = document.getElementById("levelLabel");
+const xpDescription = document.getElementById("xpDescription");
+const xpRing = document.getElementById("xpRing");
+const xpBoostBtn = document.getElementById("xpBoostBtn");
+
+const achievementBadges =
+  document.getElementById("achievementBadges");
+
+const achievementMini =
+  document.getElementById("achievementMini");
 
 const themeToggle =
   document.getElementById("themeToggle");
@@ -14,11 +276,8 @@ const themeToggle =
 const printBtn =
   document.getElementById("printBtn");
 
-const searchInput =
-  document.getElementById("searchInput");
-
-const groceryList =
-  document.getElementById("groceryList");
+const mealPlanner =
+  document.getElementById("mealPlanner");
 
 const calculatorForm =
   document.getElementById("calculatorForm");
@@ -38,585 +297,6 @@ const macroResult =
 const quizForm =
   document.getElementById("quizForm");
 
-const quizContainer =
-  document.getElementById("quizContainer");
-
-const quizResult =
-  document.getElementById("quizResult");
-
-const recommendationCards =
-  document.getElementById("recommendationCards");
-
-const recommendationText =
-  document.getElementById("recommendationText");
-
-const recommendationCTA =
-  document.getElementById("recommendationCTA");
-
-const mealPlanner =
-  document.getElementById("mealPlanner");
-
-const mealPlanResult =
-  document.getElementById("mealPlanResult");
-
-const xpBoostBtn =
-  document.getElementById("xpBoostBtn");
-
-const scoreValue =
-  document.getElementById("scoreValue");
-
-const progressValue =
-  document.getElementById("progressValue");
-
-const milestoneModal =
-  document.getElementById("milestoneModal");
-
-const progressModal =
-  document.getElementById("progressModal");
-
-const exitModal =
-  document.getElementById("exitModal");
-
-const closeModalBtn =
-  document.getElementById("closeModalBtn");
-
-const closeProgressModalBtn =
-  document.getElementById("closeProgressModalBtn");
-
-const closeExitModalBtn =
-  document.getElementById("closeExitModalBtn");
-
-const confettiLayer =
-  document.getElementById("confettiLayer");
-
-let xpState = {
-  points: 0
-};
-
-let quizState = {
-  completed: false,
-  score: 0,
-  recommendation: ""
-};
-
-let plannerState = {
-  Monday: "",
-  Tuesday: "",
-  Wednesday: "",
-  Thursday: "",
-  Friday: "",
-  Saturday: "",
-  Sunday: ""
-};
-
-let checklistState = [];
-
-function loadXp() {
-  try {
-    const saved =
-      localStorage.getItem(
-        storageKeys.xp
-      );
-
-    if (saved) {
-      const parsed =
-        JSON.parse(saved);
-
-      if (
-        parsed &&
-        Number.isFinite(parsed.points)
-      ) {
-        xpState = parsed;
-      }
-    }
-  } catch (error) {
-    console.error(
-      "Unable to load XP:",
-      error
-    );
-  }
-}
-
-function saveXp() {
-  try {
-    localStorage.setItem(
-      storageKeys.xp,
-      JSON.stringify(xpState)
-    );
-  } catch (error) {
-    console.error(
-      "Unable to save XP:",
-      error
-    );
-  }
-}
-
-function loadQuiz() {
-  try {
-    const saved =
-      localStorage.getItem(
-        storageKeys.quiz
-      );
-
-    if (saved) {
-      const parsed =
-        JSON.parse(saved);
-
-      if (parsed) {
-        quizState = {
-          ...quizState,
-          ...parsed
-        };
-      }
-    }
-  } catch (error) {
-    console.error(
-      "Unable to load quiz:",
-      error
-    );
-  }
-}
-
-function saveQuiz() {
-  try {
-    localStorage.setItem(
-      storageKeys.quiz,
-      JSON.stringify(quizState)
-    );
-  } catch (error) {
-    console.error(
-      "Unable to save quiz:",
-      error
-    );
-  }
-}
-
-function loadPlanner() {
-  try {
-    const saved =
-      localStorage.getItem(
-        storageKeys.planner
-      );
-
-    if (saved) {
-      const parsed =
-        JSON.parse(saved);
-
-      if (parsed) {
-        plannerState = {
-          ...plannerState,
-          ...parsed
-        };
-      }
-    }
-  } catch (error) {
-    console.error(
-      "Unable to load planner:",
-      error
-    );
-  }
-}
-
-function savePlanner() {
-  try {
-    localStorage.setItem(
-      storageKeys.planner,
-      JSON.stringify(plannerState)
-    );
-  } catch (error) {
-    console.error(
-      "Unable to save planner:",
-      error
-    );
-  }
-}
-
-function loadChecklist() {
-  try {
-    const saved =
-      localStorage.getItem(
-        storageKeys.checklist
-      );
-
-    if (saved) {
-      const parsed =
-        JSON.parse(saved);
-
-      if (Array.isArray(parsed)) {
-        checklistState = parsed;
-      }
-    }
-  } catch (error) {
-    console.error(
-      "Unable to load checklist:",
-      error
-    );
-  }
-}
-
-function saveChecklist() {
-  try {
-    localStorage.setItem(
-      storageKeys.checklist,
-      JSON.stringify(
-        checklistState
-      )
-    );
-  } catch (error) {
-    console.error(
-      "Unable to save checklist:",
-      error
-    );
-  }
-}
-
-function applyTheme(theme) {
-  if (!body) return;
-
-  body.dataset.theme = theme;
-
-  try {
-    localStorage.setItem(
-      storageKeys.theme,
-      theme
-    );
-  } catch (error) {
-    console.error(
-      "Unable to save theme:",
-      error
-    );
-  }
-}
-
-function updateScoreboard() {
-  if (scoreValue) {
-    scoreValue.textContent =
-      xpState.points;
-  }
-
-  if (progressValue) {
-    progressValue.textContent =
-      `${xpState.points} XP`;
-  }
-}
-
-loadXp();
-loadQuiz();
-loadPlanner();
-loadChecklist();
-
-const groceryItems = [
-  {
-    name: "Avocado",
-    category: "Produce"
-  },
-  {
-    name: "Spinach",
-    category: "Produce"
-  },
-  {
-    name: "Broccoli",
-    category: "Produce"
-  },
-  {
-    name: "Cauliflower",
-    category: "Produce"
-  },
-  {
-    name: "Zucchini",
-    category: "Produce"
-  },
-  {
-    name: "Chicken",
-    category: "Protein"
-  },
-  {
-    name: "Salmon",
-    category: "Protein"
-  },
-  {
-    name: "Eggs",
-    category: "Protein"
-  },
-  {
-    name: "Ground Beef",
-    category: "Protein"
-  },
-  {
-    name: "Greek Yogurt",
-    category: "Dairy"
-  },
-  {
-    name: "Cheddar Cheese",
-    category: "Dairy"
-  },
-  {
-    name: "Butter",
-    category: "Dairy"
-  },
-  {
-    name: "Almonds",
-    category: "Pantry"
-  },
-  {
-    name: "Olive Oil",
-    category: "Pantry"
-  },
-  {
-    name: "Coconut Oil",
-    category: "Pantry"
-  }
-];
-
-if (!checklistState.length) {
-  checklistState =
-    groceryItems.map(
-      (item) => ({
-        ...item,
-        checked: false
-      })
-    );
-}
-
-function renderChecklist() {
-  if (!groceryList) return;
-
-  const query =
-    searchInput?.value
-      ?.trim()
-      .toLowerCase() || "";
-
-  const filtered =
-    checklistState.filter(
-      (item) =>
-        item.name
-          .toLowerCase()
-          .includes(query)
-    );
-
-  groceryList.innerHTML =
-    filtered
-      .map(
-        (item) => `
-          <label class="grocery-item">
-            <input
-              type="checkbox"
-              data-name="${item.name}"
-              ${item.checked ? "checked" : ""}
-            />
-            <span>
-              <strong>${item.name}</strong>
-              <small>${item.category}</small>
-            </span>
-          </label>
-        `
-      )
-      .join("");
-}
-
-const quizQuestions = [
-  {
-    question:
-      "What is your main keto goal?",
-    options: [
-      {
-        value: "plan",
-        text: "Build a simple keto plan"
-      },
-      {
-        value: "dessert",
-        text: "Find keto-friendly treats"
-      },
-      {
-        value: "dna",
-        text: "Understand my keto style"
-      },
-      {
-        value: "pot",
-        text: "Make easy keto meals"
-      },
-      {
-        value: "baking",
-        text: "Make keto baked foods"
-      }
-    ]
-  },
-  {
-    question:
-      "What type of food do you enjoy most?",
-    options: [
-      {
-        value: "plan",
-        text: "Balanced meals"
-      },
-      {
-        value: "dessert",
-        text: "Sweet foods"
-      },
-      {
-        value: "dna",
-        text: "Different foods"
-      },
-      {
-        value: "pot",
-        text: "Comfort foods"
-      },
-      {
-        value: "baking",
-        text: "Baked foods"
-      }
-    ]
-  },
-  {
-    question:
-      "How much time do you have for cooking?",
-    options: [
-      {
-        value: "plan",
-        text: "I like planning"
-      },
-      {
-        value: "dessert",
-        text: "Quick recipes"
-      },
-      {
-        value: "dna",
-        text: "I experiment"
-      },
-      {
-        value: "pot",
-        text: "Easy one-pot meals"
-      },
-      {
-        value: "baking",
-        text: "I enjoy baking"
-      }
-    ]
-  },
-  {
-    question:
-      "What sounds most useful to you?",
-    options: [
-      {
-        value: "plan",
-        text: "Meal planning"
-      },
-      {
-        value: "dessert",
-        text: "Keto desserts"
-      },
-      {
-        value: "dna",
-        text: "Personalized choices"
-      },
-      {
-        value: "pot",
-        text: "Simple recipes"
-      },
-      {
-        value: "baking",
-        text: "Keto baking"
-      }
-    ]
-  },
-  {
-    question:
-      "Which description fits you best?",
-    options: [
-      {
-        value: "plan",
-        text: "I like structure"
-      },
-      {
-        value: "dessert",
-        text: "I have a sweet tooth"
-      },
-      {
-        value: "dna",
-        text: "I like variety"
-      },
-      {
-        value: "pot",
-        text: "I like convenience"
-      },
-      {
-        value: "baking",
-        text: "I love baking"
-      }
-    ]
-  }
-];
-
-const productMap = {
-  plan: "Keto Starter Plan",
-  dessert: "Keto Dessert Guide",
-  dna: "Keto DNA Guide",
-  pot: "Keto One-Pot Guide",
-  baking: "Keto Baking Guide"
-};
-
-const productCards = [
-  {
-    name: "Keto Starter Plan",
-    tag: "Planning",
-    rating: "★★★★★",
-    description:
-      "A simple companion for building consistent keto meals.",
-    bestFor:
-      "Best for structured meal planning.",
-    accent:
-      "Easy Start",
-    image: "🥑"
-  },
-  {
-    name: "Keto Dessert Guide",
-    tag: "Desserts",
-    rating: "★★★★★",
-    description:
-      "Sweet keto-friendly ideas for satisfying cravings.",
-    bestFor:
-      "Best for dessert lovers.",
-    accent:
-      "Sweet",
-    image: "🍓"
-  },
-  {
-    name: "Keto DNA Guide",
-    tag: "Personalized",
-    rating: "★★★★★",
-    description:
-      "Explore your personal keto food preferences.",
-    bestFor:
-      "Best for people who like variety.",
-    accent:
-      "Personal",
-    image: "🧬"
-  },
-  {
-    name: "Keto One-Pot Guide",
-    tag: "Easy Meals",
-    rating: "★★★★★",
-    description:
-      "Simple recipes designed around convenience.",
-    bestFor:
-      "Best for busy schedules.",
-    accent:
-      "Simple",
-    image: "🍲"
-  },
-  {
-    name: "Keto Baking Guide",
-    tag: "Baking",
-    rating: "★★★★★",
-    description:
-      "Keto-friendly baking ideas and inspiration.",
-    bestFor:
-      "Best for home bakers.",
-    accent:
-      "Bake",
-    image: "🧁"
-  }
-];
 const quizContainer =
   document.getElementById("quizContainer");
 
@@ -1016,78 +696,79 @@ function updateScoreboard() {
         ? "Your system is operating at premium speed."
         : "Your keto journey is building momentum.";
   }
+}
+// ================================
+// CONTINUE SCOREBOARD
+// ================================
 
-  if (xpDescription) {
-    xpDescription.textContent =
-      checkedCount > 0
-        ? `You are ${checkedCount} items away from a full pantry reset.`
-        : "Every checked item sharpens your streak.";
-  }
+if (xpDescription) {
+  xpDescription.textContent =
+    checkedCount > 0
+      ? `You are ${checkedCount} items away from a full pantry reset.`
+      : "Every checked item sharpens your streak.";
+}
 
-  if (xpPercent) {
-    xpPercent.textContent =
-      `${percentToNext}%`;
-  }
+if (xpPercent) {
+  xpPercent.textContent =
+    `${percentToNext}%`;
+}
 
-  if (xpRing) {
-    xpRing.style.background =
-      `conic-gradient(
-        var(--accent)
-        ${percentToNext}%,
-        rgba(124, 58, 237, 0.16) 0%
-      )`;
-  }
+if (xpRing) {
+  xpRing.style.background =
+    `conic-gradient(
+      var(--accent)
+      ${percentToNext}%,
+      rgba(124, 58, 237, 0.16) 0%
+    )`;
+}
 
-  renderAchievements();
+renderAchievements();
 
-  if (
-    progressPercent >= 75 &&
-    !milestoneShown &&
-    milestoneModal
-  ) {
-    milestoneShown = true;
+if (
+  progressPercent >= 75 &&
+  !milestoneShown &&
+  milestoneModal
+) {
+  milestoneShown = true;
 
-    localStorage.setItem(
-      storageKeys.milestone,
-      "true"
-    );
+  localStorage.setItem(
+    storageKeys.milestone,
+    "true"
+  );
 
-    milestoneModal.classList.remove("hidden");
+  milestoneModal.classList.remove("hidden");
+  milestoneModal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
 
-    milestoneModal.setAttribute(
-      "aria-hidden",
-      "false"
-    );
+  launchConfetti();
+}
 
-    launchConfetti();
-  }
+if (
+  progressPercent >= 80 &&
+  !progressPopupShown &&
+  progressModal
+) {
+  progressPopupShown = true;
 
-  if (
-    progressPercent >= 80 &&
-    !progressPopupShown &&
-    progressModal
-  ) {
-    progressPopupShown = true;
+  localStorage.setItem(
+    "keto-progress-popup-shown",
+    "true"
+  );
 
-    localStorage.setItem(
-      "keto-progress-popup-shown",
-      "true"
-    );
+  progressModal.classList.remove("hidden");
+  progressModal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+}
 
-    progressModal.classList.remove("hidden");
-
-    progressModal.setAttribute(
-      "aria-hidden",
-      "false"
-    );
-  }
-
-  if (
-    checkedCount === total &&
-    !quizState.completed
-  ) {
-    launchConfetti();
-  }
+if (
+  checkedCount === total &&
+  !quizState.completed
+) {
+  launchConfetti();
 }
 
 // ================================
@@ -1117,9 +798,11 @@ function renderPlanner() {
       .join("");
 }
 
-const mealPlanResult = document.getElementById(
-  "mealPlanResult"
-);
+const mealPlanResult =
+  document.getElementById(
+    "mealPlanResult"
+  );
+
 const ketoMealOptions = {
   Monday: {
     breakfast: "🥑 Avocado & Egg Breakfast",
@@ -1370,9 +1053,7 @@ if (calculatorForm) {
         return;
       }
 
-      // ----------------------------
       // BMI
-      // ----------------------------
 
       const heightMeters =
         height / 100;
@@ -1398,9 +1079,7 @@ if (calculatorForm) {
           `${bmi.toFixed(1)} (${bmiCategory})`;
       }
 
-      // ----------------------------
-      // BMR - Mifflin St Jeor
-      // ----------------------------
+      // BMR
 
       let bmr;
 
@@ -1418,9 +1097,7 @@ if (calculatorForm) {
           5;
       }
 
-      // ----------------------------
       // DAILY CALORIES
-      // ----------------------------
 
       const maintenanceCalories =
         bmr * activity;
@@ -1438,10 +1115,7 @@ if (calculatorForm) {
           `${dailyCalories} kcal/day`;
       }
 
-      // ----------------------------
       // WATER
-      // Approx. 35 ml per kg
-      // ----------------------------
 
       const waterMl =
         Math.round(weight * 35);
@@ -1454,13 +1128,7 @@ if (calculatorForm) {
           `${waterLiters} L/day`;
       }
 
-      // ----------------------------
       // KETO MACROS
-      //
-      // Protein = 1.6g per kg
-      // Net carbs = 25g
-      // Fat = remaining calories
-      // ----------------------------
 
       const proteinGrams =
         Math.round(weight * 1.6);
@@ -1490,10 +1158,6 @@ if (calculatorForm) {
         macroResult.textContent =
           `P ${proteinGrams}g • C ${carbGrams}g • F ${fatGrams}g`;
       }
-
-      // ----------------------------
-      // Add XP for using calculator
-      // ----------------------------
 
       addXp(10);
     }
@@ -1789,130 +1453,248 @@ if (challengeBtn) {
     }
   );
 }
-
-// ================================
-// SEARCH
-// ================================
-
-if (searchInput) {
-  searchInput.addEventListener(
-    "input",
-    renderChecklist
-  );
-}
-
-// ================================
-// GROCERY CHECKBOX
-// ================================
-
-if (groceryList) {
-  groceryList.addEventListener(
-    "change",
-    (event) => {
-      const checkbox =
-        event.target;
-
-      if (
-        !(
-          checkbox instanceof
-          HTMLInputElement
-        ) ||
-        checkbox.type !==
-          "checkbox"
-      ) {
-        return;
-      }
-
-      const itemName =
-        checkbox.dataset.name;
-
-      const target =
-        checklistState.find(
-          (item) =>
-            item.name === itemName
+      const result =
+        document.getElementById(
+          "mealResult"
         );
 
-      if (!target) return;
-
-      target.checked =
-        checkbox.checked;
-
-      saveChecklist();
-
-      if (checkbox.checked) {
-        addXp(12);
-      } else {
-        addXp(-12);
+      if (result) {
+        result.style.display =
+          "block";
       }
 
-      renderChecklist();
-      updateScoreboard();
-
-      if (
-        checklistState.every(
-          (item) => item.checked
-        )
-      ) {
-        launchConfetti();
-      }
-    }
-  );
-}
-
-// ================================
-// XP BOOST BUTTON
-// ================================
-
-if (xpBoostBtn) {
-  xpBoostBtn.addEventListener(
-    "click",
-    () => {
       addXp(25);
     }
   );
 }
 
-// ================================
-// THEME BUTTON
-// ================================
+// ============================================================
+// REVEAL MY PICK
+// ============================================================
 
-if (themeToggle) {
-  themeToggle.addEventListener(
+const revealPickBtn =
+  document.getElementById(
+    "revealPickBtn"
+  );
+
+function calculateQuizResult() {
+  if (!quizQuestions.length) {
+    return null;
+  }
+
+  const answers = [];
+
+  quizQuestions.forEach(
+    (question, index) => {
+      const selected =
+        document.querySelector(
+          `input[name="q${index + 1}"]:checked`
+        );
+
+      if (selected) {
+        answers.push(
+          selected.value
+        );
+      }
+    }
+  );
+
+  if (
+    answers.length !==
+    quizQuestions.length
+  ) {
+    return null;
+  }
+
+  const counts = {
+    plan: 0,
+    dessert: 0,
+    dna: 0,
+    pot: 0,
+    baking: 0
+  };
+
+  answers.forEach(
+    (answer) => {
+      if (
+        counts[answer] !==
+        undefined
+      ) {
+        counts[answer]++;
+      }
+    }
+  );
+
+  let winner = "plan";
+
+  Object.keys(counts).forEach(
+    (key) => {
+      if (
+        counts[key] >
+        counts[winner]
+      ) {
+        winner = key;
+      }
+    }
+  );
+
+  return {
+    winner,
+    counts,
+    recommendation:
+      productMap[winner] ||
+      "Keto Journey"
+  };
+}
+
+function revealQuizPick() {
+  if (!quizResult) {
+    return;
+  }
+
+  const result =
+    calculateQuizResult();
+
+  if (!result) {
+    quizResult.textContent =
+      "Please answer all 5 questions first.";
+
+    quizResult.style.display =
+      "block";
+
+    return;
+  }
+
+  quizState.completed =
+    true;
+
+  quizState.score =
+    Math.round(
+      (Math.max(
+        ...Object.values(
+          result.counts
+        )
+      ) /
+        quizQuestions.length) *
+        100
+    );
+
+  quizState.recommendation =
+    result.recommendation;
+
+  saveQuiz();
+
+  updateRecommendation();
+  updateScoreboard();
+
+  quizResult.textContent =
+    `🎉 Your personalized pick: ${quizState.recommendation}`;
+
+  quizResult.style.display =
+    "block";
+
+  setTimeout(() => {
+    quizResult.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  }, 100);
+
+  launchConfetti();
+}
+
+if (revealPickBtn) {
+  revealPickBtn.addEventListener(
     "click",
-    () => {
-      const nextTheme =
-        document.body.dataset.theme ===
-          "dark"
-          ? "light"
-          : "dark";
-
-      applyTheme(nextTheme);
+    (event) => {
+      event.preventDefault();
+      revealQuizPick();
     }
   );
 }
 
-// ================================
-// PRINT
-// ================================
+// ============================================================
+// QUIZ FORM SUBMIT
+// ============================================================
 
-if (printBtn) {
-  printBtn.addEventListener(
-    "click",
-    () => window.print()
+if (quizForm) {
+  quizForm.addEventListener(
+    "submit",
+    (event) => {
+      event.preventDefault();
+
+      revealQuizPick();
+    }
   );
 }
 
 // ============================================================
-// KETO FOOD CHECKER
+// MODAL HELPERS
 // ============================================================
 
-const ketoFoods = {
-  banana:
-    "❌ Not Keto Friendly<br>Net Carbs: 23g<br>🥑 Better Choice: Avocado",
+function closeModal(modal) {
+  if (!modal) return;
 
-  rice:
-    "❌ Not Keto Friendly<br>Net Carbs: 45g<br>🥦 Better Choice: Cauliflower Rice",
+  modal.classList.add("hidden");
 
-  bread:
-    "❌ Not Keto Friendly<br>Net Carbs: 25g<br>🥬 Better Choice: Lettuce Wrap"
-};
+  modal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+}
+
+if (closeModalBtn) {
+  closeModalBtn.addEventListener(
+    "click",
+    () => {
+      closeModal(milestoneModal);
+    }
+  );
+}
+
+if (closeProgressModalBtn) {
+  closeProgressModalBtn.addEventListener(
+    "click",
+    () => {
+      closeModal(progressModal);
+    }
+  );
+}
+
+if (closeExitModalBtn) {
+  closeExitModalBtn.addEventListener(
+    "click",
+    () => {
+      closeModal(exitModal);
+    }
+  );
+}
+
+// ============================================================
+// INITIAL RENDER
+// ============================================================
+
+renderChecklist();
+renderPlanner();
+renderQuiz();
+updateScoreboard();
+updateRecommendation();
+
+// ============================================================
+// LOAD SAVED THEME
+// ============================================================
+
+const savedTheme =
+  localStorage.getItem(
+    storageKeys.theme
+  ) ||
+  (
+    window.matchMedia &&
+    window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches
+      ? "dark"
+      : "light"
+  );
+
+applyTheme(savedTheme);
