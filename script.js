@@ -631,41 +631,7 @@ themeToggle.addEventListener("click", () => {
 
 printBtn.addEventListener("click", () => window.print());
 
-mealPlanner.addEventListener("click", (event) => {
-  const button = event.target.closest(".planner-day");
 
-  if (!button) return;
-
-  const day = button.dataset.day;
-
-  const meals = {
-    Monday: "🍳 Avocado Egg Scramble",
-    Tuesday: "🥗 Chicken Avocado Salad",
-    Wednesday: "🐟 Garlic Butter Salmon",
-    Thursday: "🍗 Keto Chicken & Broccoli",
-    Friday: "🥩 Garlic Butter Steak",
-    Saturday: "🍤 Keto Shrimp Bowl",
-    Sunday: "🥑 Bacon & Avocado Bowl"
-  };
-
-  const meal = meals[day];
-
-  plannerState[day] = meal;
-  savePlanner();
-  renderPlanner();
-
-  const result = document.getElementById("mealPlanResult");
-
-  if (result) {
-    result.innerHTML = `
-      <div class="meal-plan-card">
-        <p class="eyebrow">${day} Keto Meal</p>
-        <h3>${meal}</h3>
-        <p>Your suggested keto meal for ${day} is ready. Enjoy a simple low-carb option and stay consistent with your plan. 🥑</p>
-      </div>
-    `;
-  }
-});
 
 calculatorForm.addEventListener("submit", (event) => {
   event.preventDefault();
