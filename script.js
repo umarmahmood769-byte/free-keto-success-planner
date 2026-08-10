@@ -428,7 +428,54 @@ function launchConfetti() {
     confettiLayer.innerHTML = "";
   }, 2200);
 }
+// ===== SMART DAILY KETO CHALLENGE =====
+const dailyChallenge = document.getElementById("dailyChallenge");
+const challengeText = document.getElementById("challengeText");
+const challengeBtn = document.getElementById("challengeBtn");
 
+const dailyChallenges = [
+  "Drink enough water today 💧",
+  "Add a low-carb vegetable to your next meal 🥦",
+  "Take a 20-minute walk today 🚶",
+  "Prepare your next keto meal before you get hungry 🍳",
+  "Choose whole foods instead of processed snacks 🥑",
+  "Check your grocery list before shopping 🛒",
+  "Plan tomorrow's meals today 📋"
+];
+
+const todayKey = new Date().toISOString().slice(0, 10);
+const savedChallenge = localStorage.getItem("keto-daily-challenge");
+
+function loadDailyChallenge() {
+  if (!dailyChallenge || !challengeText || !challengeBtn) return;
+
+  if (savedChallenge === todayKey) {
+    challengeText.textContent = "Today's challenge completed! 🎉";
+    challengeBtn.textContent = "Completed ✓";
+    challengeBtn.disabled = true;
+    return;
+  }
+
+  const dayNumber = Math.floor(new Date().getTime() / 86400000);
+  challengeText.textContent =
+    dailyChallenges[dayNumber % dailyChallenges.length];
+}
+
+if (dailyChallenge) {
+  loadDailyChallenge();
+}
+
+if (challengeBtn) {
+  challengeBtn.addEventListener("click", () => {
+    localStorage.setItem("keto-daily-challenge", todayKey);
+
+    challengeText.textContent = "Challenge completed! +25 XP 🎉";
+    challengeBtn.textContent = "Completed ✓";
+    challengeBtn.disabled = true;
+
+    addXp(25);
+  });
+}
 searchInput.addEventListener("input", renderChecklist);
 
 groceryList.addEventListener("change", (event) => {
