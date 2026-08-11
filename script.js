@@ -116,6 +116,7 @@ const productMap = {
 const productCards = [
   {
     name: "The Keto Meal Plan",
+    url: "https://www.claudiacaldwell.com/oto-uf61a?el=splittest-1214-bradflow-control#aff=umarmahmood",
     tag: "Structured roadmap",
     description: "A polished weekly plan for calm, repeatable success.",
     accent: "Daily structure",
@@ -125,6 +126,7 @@ const productCards = [
   },
   {
     name: "Keto Desserts",
+    url: "https://www.ketoafter50desserts.com/digi/?aff=umarmahmood",
     tag: "Sweet satisfaction",
     description: "Beautiful low-carb treats that keep cravings in check.",
     accent: "Dessert support",
@@ -134,6 +136,7 @@ const productCards = [
   },
   {
     name: "Keto DNA",
+    url: "https://ketodna.app/d#aff=umarmahmood",
     tag: "Bio-backed guidance",
     description: "Personalized insights that make your plan feel premium.",
     accent: "Smart coaching",
@@ -143,6 +146,7 @@ const productCards = [
   },
   {
     name: "Instant Pot Keto",
+    url: "https://ketosolution.net/ds/#aff=umarmahmood",
     tag: "Fast weeknight meals",
     description: "Quick, easy recipes for your busiest days.",
     accent: "Kitchen speed",
@@ -152,14 +156,14 @@ const productCards = [
   },
   {
     name: "Keto Baking Bundle",
+    url: "https://ketobreads.net/ds/bakery-bundle/#aff=umarmahmood",
     tag: "Baking confidence",
     description: "Everything you need for indulgent, keto-friendly baking.",
     accent: "Bakery-style results",
     image: "🥐",
     rating: "★★★★★",
     bestFor: "Best for: keto baking success"
-  },
-  
+  }
 ];
 
 // ================================
@@ -1268,7 +1272,7 @@ function renderRecommendationCards() {
 
             <a
               class="product-cta"
-              href="http://bit.ly/4aIbQci"
+              href="${card.url}"
               target="_blank"
               rel="noreferrer"
             >
