@@ -50,6 +50,73 @@ const plannerDays = [
   "Sunday"
 ];
 
+const GOOGLE_DRIVE_PDF_LINK = "https://drive.google.com/file/d/14Eb9INTTOEIRIDJQswKarruQsqklwF8l/view?usp=sharing";
+const plannerPopupStorageKey = "free-7-day-planner-popup-dismissed";
+
+// ================================
+// POPUP HANDLERS
+// ================================
+
+const plannerPopup = document.getElementById("plannerPopup");
+const plannerPopupClose = document.getElementById("plannerPopupClose");
+const plannerPopupDownload = document.getElementById("plannerPopupDownload");
+
+function openPlannerPopup() {
+  if (!plannerPopup) {
+    return;
+  }
+
+  plannerPopup.classList.add("is-open");
+  plannerPopup.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
+
+function closePlannerPopup() {
+  if (!plannerPopup) {
+    return;
+  }
+
+  plannerPopup.classList.remove("is-open");
+  plannerPopup.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+  localStorage.setItem(plannerPopupStorageKey, "true");
+}
+
+if (plannerPopup && plannerPopupDownload) {
+  plannerPopupDownload.setAttribute("href", GOOGLE_DRIVE_PDF_LINK);
+
+  const shouldShowPopup = !localStorage.getItem(plannerPopupStorageKey);
+  const showPopupAfterDelay = () => {
+    if (!plannerPopup.classList.contains("is-open") && !localStorage.getItem(plannerPopupStorageKey)) {
+      window.setTimeout(() => {
+        openPlannerPopup();
+      }, 700);
+    }
+  };
+
+  if (shouldShowPopup) {
+    showPopupAfterDelay();
+  }
+
+  if (plannerPopupClose) {
+    plannerPopupClose.addEventListener("click", closePlannerPopup);
+  }
+
+  plannerPopup.addEventListener("click", (event) => {
+    if (event.target === plannerPopup) {
+      closePlannerPopup();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closePlannerPopup();
+    }
+  });
+
+  window.addEventListener("load", showPopupAfterDelay);
+}
+
 // ================================
 // QUIZ QUESTIONS
 // ================================
