@@ -1522,3 +1522,11 @@ padding:4px;
 #specialOfferPopup {
   display: none;
 }
+.keto-ad-video {
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
