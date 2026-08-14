@@ -300,6 +300,36 @@
           </p>
         </section>
 
+        <section class="card keto-question-card" id="keto-question-helper">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Predefined Keto Guidance</p>
+              <h2>💬 Ask a Keto Question</h2>
+            </div>
+          </div>
+
+          <p class="helper-intro">
+            Type a keto or weight-loss question and get a quick answer based on
+            our built-in guidance. No AI or external service is used.
+          </p>
+
+          <form id="ketoQuestionForm" class="keto-question-form">
+            <label for="ketoQuestionInput" class="sr-only">Your keto or weight-loss question</label>
+            <textarea
+              id="ketoQuestionInput"
+              rows="3"
+              maxlength="300"
+              placeholder="Example: What can I eat for breakfast on keto?">
+            </textarea>
+            <div class="question-form-actions">
+              <span id="ketoQuestionCount" class="question-count">0/300</span>
+              <button id="ketoQuestionBtn" class="btn primary" type="submit">Get My Answer</button>
+            </div>
+          </form>
+
+          <div id="ketoQuestionResult" class="keto-question-result" aria-live="polite"></div>
+        </section>
+
         <section class="card planner-teaser">
           <div class="section-head">
             <div>
@@ -562,35 +592,7 @@
           </section>
 
 
-        <section class="card keto-question-card" id="keto-question-helper">
-          <div class="section-head">
-            <div>
-              <p class="eyebrow">Predefined Keto Guidance</p>
-              <h2>💬 Ask a Keto Question</h2>
-            </div>
-          </div>
-
-          <p class="helper-intro">
-            Type a keto or weight-loss question and get a quick answer based on
-            our built-in guidance. No AI or external service is used.
-          </p>
-
-          <form id="ketoQuestionForm" class="keto-question-form">
-            <label for="ketoQuestionInput" class="sr-only">Your keto or weight-loss question</label>
-            <textarea
-              id="ketoQuestionInput"
-              rows="3"
-              maxlength="300"
-              placeholder="Example: What can I eat for breakfast on keto?">
-            </textarea>
-            <div class="question-form-actions">
-              <span id="ketoQuestionCount" class="question-count">0/300</span>
-              <button id="ketoQuestionBtn" class="btn primary" type="submit">Get My Answer</button>
-            </div>
-          </form>
-
-          <div id="ketoQuestionResult" class="keto-question-result" aria-live="polite"></div>
-        </section>
+        
 
           <section class="card quiz-card">
             <div class="section-head">
