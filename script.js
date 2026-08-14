@@ -1251,6 +1251,312 @@ if (calculatorForm) {
   );
 }
 // ================================
+// PREDEFINED KETO QUESTION HELPER
+// ================================
+
+const ketoQuestionForm =
+  document.getElementById("ketoQuestionForm");
+
+const ketoQuestionInput =
+  document.getElementById("ketoQuestionInput");
+
+const ketoQuestionResult =
+  document.getElementById("ketoQuestionResult");
+
+const ketoQuestionCount =
+  document.getElementById("ketoQuestionCount");
+
+const ketoQuestionRules = [
+  {
+    keys: ["breakfast", "morning", "first meal", "nashta"],
+    title: "Keto breakfast ideas",
+    answer: "Try eggs with avocado and spinach, an omelet with cheese and vegetables, or unsweetened full-fat Greek yogurt with a small serving of berries. Keep sugary cereals, bread and sweetened drinks out of the meal.",
+    tip: "Build breakfast around protein plus low-carb vegetables or healthy fats.",
+    product: "The Keto Meal Plan"
+  },
+  {
+    keys: ["lunch", "dinner", "meal", "recipe", "recipes", "what should i eat", "what can i eat"],
+    title: "Simple keto meal idea",
+    answer: "A simple plate is grilled chicken or salmon, a generous serving of low-carb vegetables and a sensible portion of healthy fat such as olive oil or avocado. Rotate proteins and vegetables so your meals stay practical.",
+    tip: "Planning a few repeatable meals can make keto easier to follow consistently.",
+    product: "The Keto Meal Plan"
+  },
+  {
+    keys: ["snack", "snacks", "hungry", "hunger", "craving", "cravings"],
+    title: "Keto-friendly snack ideas",
+    answer: "Good options include boiled eggs, cheese, olives, avocado, a small handful of nuts, or unsweetened Greek yogurt. If cravings are frequent, first check whether your main meals contain enough protein and satisfying foods.",
+    tip: "Keep one or two ready-to-eat keto options available so you are less likely to reach for high-carb snacks.",
+    product: "Keto Desserts"
+  },
+  {
+    keys: ["sweet", "dessert", "desserts", "chocolate", "cake", "cookie", "cookies"],
+    title: "Handling sweet cravings on keto",
+    answer: "Choose lower-carb alternatives and watch portions. Unsweetened cocoa, berries in moderation, or a keto-style dessert can fit better than regular sugary desserts. Check labels because products marketed as keto can still contain significant carbs.",
+    tip: "If you want a planned treat, portion it before eating instead of eating directly from the package.",
+    product: "Keto Desserts"
+  },
+  {
+    keys: ["carb", "carbs", "net carb", "net carbs", "low carb"],
+    title: "Understanding carbs on keto",
+    answer: "Keto generally emphasizes very low carbohydrate intake, but the exact amount varies by person and approach. Focus on whole foods such as meat, fish, eggs, leafy vegetables, avocado and healthy fats, while limiting sugar and high-carb grains and starches.",
+    tip: "Read nutrition labels and compare total carbohydrates, fiber and serving size rather than relying only on a 'keto' label.",
+    product: "The Keto Meal Plan"
+  },
+  {
+    keys: ["weight loss", "lose weight", "lose fat", "fat loss", "weight", "belly fat", "lose 15", "15 lbs"],
+    title: "Keto and weight loss",
+    answer: "Weight loss usually depends on your overall energy intake, food quality, activity and consistency—not simply removing carbohydrates. Build meals around protein, non-starchy vegetables and satisfying fats, and keep portions appropriate for your goal.",
+    tip: "Avoid extreme promises or crash diets. A steady, sustainable routine is usually easier to maintain.",
+    product: "Mindful Weight Loss"
+  },
+  {
+    keys: ["water", "hydration", "drink", "drinks", "thirst"],
+    title: "Hydration on keto",
+    answer: "Drink water regularly and pay attention to thirst, urine color and your activity level. Keto can change fluid balance for some people, especially early on, so staying hydrated is important.",
+    tip: "If you have a medical condition or take medicines that affect fluids or electrolytes, ask a qualified healthcare professional about your individual needs.",
+    product: "The Keto Meal Plan"
+  },
+  {
+    keys: ["electrolyte", "electrolytes", "salt", "sodium", "potassium", "magnesium"],
+    title: "Electrolytes and keto",
+    answer: "Electrolytes are minerals involved in fluid balance and normal body function. Some people notice changes in fluid and sodium balance when reducing carbohydrates. Food sources and adequate hydration matter, but individual needs vary.",
+    tip: "Do not take large amounts of electrolyte supplements without considering your health, medicines and clinician's advice.",
+    product: "The Keto Meal Plan"
+  },
+  {
+    keys: ["exercise", "workout", "gym", "training", "walking", "exercise"],
+    title: "Keto and exercise",
+    answer: "Start with an activity level you can maintain, such as walking and basic strength training. If you are new to keto, give yourself time to adapt and pay attention to energy, hydration and recovery.",
+    tip: "Increase exercise gradually rather than trying to combine a very restrictive diet with a sudden intense workout routine.",
+    product: "Mindful Weight Loss"
+  },
+  {
+    keys: ["quick", "fast", "busy", "10 minute", "10-minute", "instant pot", "pressure cooker"],
+    title: "Quick keto meals",
+    answer: "For busy days, keep eggs, canned tuna, cooked chicken, cheese, avocado, salad greens and frozen low-carb vegetables available. These ingredients can become quick meals without complicated preparation.",
+    tip: "A small emergency keto food list can help you stay consistent when you have little time.",
+    product: "Instant Pot Keto"
+  },
+  {
+    keys: ["bake", "baking", "bread", "flour", "muffin", "muffins"],
+    title: "Keto baking",
+    answer: "Keto baking often uses lower-carb ingredients such as almond or coconut flour and sugar alternatives. Portions still matter, and recipes can vary considerably in their carbohydrate content.",
+    tip: "Check the nutrition information for the complete recipe rather than assuming every low-carb baked item is automatically low-calorie.",
+    product: "Keto Baking Bundle"
+  },
+  {
+    keys: ["smoothie", "smoothies", "shake", "shakes"],
+    title: "Keto smoothies",
+    answer: "A keto-friendly smoothie can use unsweetened almond milk, a protein source, leafy greens, avocado and a small amount of berries. Avoid fruit juice, added sugar and large amounts of high-sugar fruit.",
+    tip: "Measure ingredients because liquid calories and carbohydrates can add up quickly.",
+    product: "The Smoothie Diet"
+  },
+  {
+    keys: ["mindful", "mindfulness", "habit", "habits", "consistency", "motivation", "motivate"],
+    title: "Making keto easier to maintain",
+    answer: "Focus on simple habits: plan meals, keep useful foods available, eat without distractions when possible, and track what works for you. Sustainable routines are usually more useful than trying to be perfect.",
+    tip: "Choose one or two habits to improve this week instead of changing everything at once.",
+    product: "Mindful Weight Loss"
+  },
+  {
+    keys: ["supplement", "supplements", "leptozan"],
+    title: "About keto supplements",
+    answer: "Supplements are not a replacement for a balanced diet, appropriate calorie intake, sleep and activity. If you are considering a supplement, check its ingredients and discuss it with a healthcare professional if you take medicines or have health conditions.",
+    tip: "Treat supplement claims carefully and do not assume a product will cause weight loss by itself.",
+    product: "Leptozan – Natural Weight Support"
+  }
+];
+
+function normalizeQuestionText(text) {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function findKetoQuestionMatch(question) {
+  const normalized = normalizeQuestionText(question);
+
+  if (!normalized) {
+    return null;
+  }
+
+  let bestRule = null;
+  let bestScore = 0;
+
+  ketoQuestionRules.forEach((rule) => {
+    let score = 0;
+
+    rule.keys.forEach((key) => {
+      const normalizedKey = normalizeQuestionText(key);
+
+      if (normalized.includes(normalizedKey)) {
+        score += normalizedKey.includes(" ") ? 3 : 2;
+      }
+    });
+
+    if (score > bestScore) {
+      bestScore = score;
+      bestRule = rule;
+    }
+  });
+
+  return bestRule;
+}
+
+const ketoQuestionProducts = {
+  "The Keto Meal Plan": {
+    name: "The Keto Meal Plan",
+    url: "https://www.claudiacaldwell.com/oto-uf61a?el=splittest-1214-bradflow-control#aff=umarmahmood",
+    image: "🥗",
+    bestFor: "structured weekly meal prep"
+  },
+  "Keto Desserts": {
+    name: "Keto Desserts",
+    url: "https://www.ketoafter50desserts.com/digi/?aff=umarmahmood",
+    image: "🍰",
+    bestFor: "sweet-craving support"
+  },
+  "Instant Pot Keto": {
+    name: "Instant Pot Keto",
+    url: "https://ketosolution.net/ds/#aff=umarmahmood",
+    image: "🍲",
+    bestFor: "fast keto meals"
+  },
+  "Keto Baking Bundle": {
+    name: "Keto Baking Bundle",
+    url: "https://ketobreads.net/ds/bakery-bundle/#aff=umarmahmood",
+    image: "🥐",
+    bestFor: "keto baking"
+  },
+  "The Smoothie Diet": {
+    name: "The Smoothie Diet",
+    url: "smoothie-diet.html",
+    image: "🥤",
+    bestFor: "smoothie-based routines"
+  },
+  "Mindful Weight Loss": {
+    name: "Mindful Weight Loss",
+    url: "mindful-weight-loss.html",
+    image: "🧘",
+    bestFor: "sustainable habits"
+  },
+  "Leptozan – Natural Weight Support": {
+    name: "Leptozan – Natural Weight Support",
+    url: "leptozan.html",
+    image: "🌿",
+    bestFor: "learning about a weight-support supplement"
+  }
+};
+
+function getExistingProduct(productName) {
+  return ketoQuestionProducts[productName] || ketoQuestionProducts["The Keto Meal Plan"];
+}
+
+function showKetoQuestionAnswer(rule) {
+  if (!ketoQuestionResult || !rule) {
+    return;
+  }
+
+  const product = getExistingProduct(rule.product);
+
+  ketoQuestionResult.innerHTML = `
+    <p class="keto-answer-label">Built-in answer</p>
+    <h3 class="keto-answer-title">${rule.title}</h3>
+    <p class="keto-answer-text">${rule.answer}</p>
+    <p class="keto-answer-tip"><strong>💡 Helpful tip:</strong> ${rule.tip}</p>
+
+    <div class="keto-product-match">
+      <div class="keto-product-match-copy">
+        <strong>Recommended from this website</strong>
+        <span>${product.image} ${product.name} — ${product.bestFor}</span>
+      </div>
+      <a
+        class="btn cta-green"
+        href="${product.url}"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Explore Match
+      </a>
+    </div>
+
+    <p class="keto-disclaimer">
+      General educational information only. This tool does not provide medical advice,
+      diagnosis or treatment. Individual nutrition needs vary.
+    </p>
+  `;
+
+  ketoQuestionResult.classList.add("is-visible");
+}
+
+function showKetoQuestionFallback() {
+  if (!ketoQuestionResult) {
+    return;
+  }
+
+  ketoQuestionResult.innerHTML = `
+    <p class="keto-answer-label">Try one of these topics</p>
+    <h3 class="keto-answer-title">I can help with common keto questions</h3>
+    <p class="keto-answer-text">
+      Try asking about keto breakfast, lunch or dinner, snacks, cravings,
+      carbs, weight loss, hydration, electrolytes, exercise, smoothies,
+      baking, meal planning or keto supplements.
+    </p>
+    <p class="keto-disclaimer">
+      This is a predefined website guide, not an AI chatbot or medical advice service.
+    </p>
+  `;
+
+  ketoQuestionResult.classList.add("is-visible");
+}
+
+if (ketoQuestionInput && ketoQuestionCount) {
+  const updateQuestionCount = () => {
+    ketoQuestionCount.textContent =
+      `${ketoQuestionInput.value.length}/300`;
+  };
+
+  ketoQuestionInput.addEventListener("input", updateQuestionCount);
+  updateQuestionCount();
+}
+
+if (ketoQuestionForm) {
+  ketoQuestionForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const question = ketoQuestionInput?.value.trim() || "";
+
+    if (!question) {
+      if (ketoQuestionResult) {
+        ketoQuestionResult.innerHTML = `
+          <p class="keto-answer-label">Your question</p>
+          <h3 class="keto-answer-title">Please type a question first.</h3>
+          <p class="keto-answer-text">For example: “What can I eat for breakfast on keto?”</p>
+        `;
+        ketoQuestionResult.classList.add("is-visible");
+      }
+      ketoQuestionInput?.focus();
+      return;
+    }
+
+    const match = findKetoQuestionMatch(question);
+
+    if (match) {
+      showKetoQuestionAnswer(match);
+    } else {
+      showKetoQuestionFallback();
+    }
+
+    ketoQuestionResult?.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest"
+    });
+  });
+}
+
+// ================================
 // QUIZ RENDER
 // ================================
 
