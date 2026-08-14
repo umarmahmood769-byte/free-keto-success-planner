@@ -1662,10 +1662,54 @@ padding:4px;
 }
 
 
-/* Fix excessive empty space below the calculator card.
-   The calculator shares a .grid-2 row with the taller Keto Question card.
-   Prevent the calculator card from stretching to the row height. */
-.calculator-card {
-  align-self: start;
-  height: fit-content;
+/* Calculator educational text */
+.calculator-info {
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.08), rgba(56, 189, 248, 0.08));
+  border: 1px solid var(--border);
+}
+
+.calculator-info h3 {
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+}
+
+.calculator-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.calculator-info-grid > div {
+  padding: 12px;
+  border-radius: 14px;
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+}
+
+.calculator-info-grid strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.calculator-info-grid p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.calculator-note {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .calculator-info-grid {
+    grid-template-columns: 1fr;
+  }
 }
