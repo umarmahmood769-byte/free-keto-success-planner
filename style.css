@@ -1662,57 +1662,10 @@ padding:4px;
 }
 
 
-/* ============================================================
-   QUIZ + CALCULATOR LAYOUT UPDATE
-   ============================================================ */
-
-/* Keep every quiz question centered inside the quiz card. */
-.quiz-question {
-  width: min(100%, 760px);
-  margin-inline: auto;
-}
-
-.quiz-question h3 {
-  text-align: center;
-}
-
-/* Center the answer choices while keeping their text readable. */
-.quiz-option {
-  justify-content: center;
-}
-
-/* Put Reveal My Pick clearly underneath all five questions. */
-#revealPickBtn {
-  width: min(100%, 420px);
-  margin: 8px auto 0;
-  display: block;
-}
-
-/* Slightly reduce the calculator card's vertical height
-   without changing its functionality. */
+/* Fix excessive empty space below the calculator card.
+   The calculator shares a .grid-2 row with the taller Keto Question card.
+   Prevent the calculator card from stretching to the row height. */
 .calculator-card {
-  padding-top: 18px;
-  padding-bottom: 18px;
-}
-
-.calculator-form {
-  gap: 7px;
-  margin-bottom: 10px;
-}
-
-.calculator-form label {
-  gap: 4px;
-}
-
-.calculator-form input,
-.calculator-form select {
-  padding: 8px 10px;
-}
-
-.calculator-results {
-  gap: 8px;
-}
-
-.result-pill {
-  padding: 10px;
+  align-self: start;
+  height: fit-content;
 }
