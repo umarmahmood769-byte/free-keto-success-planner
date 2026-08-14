@@ -1,11 +1,10 @@
 // ============================================================
 // KETO APP - FINAL CLEAN SCRIPT
-// PART 1 OF 8
 // ============================================================
 
 // ================================
 // KETO GROCERY ITEMS
-// ================================
+// ================================ 
 
 const ketoItems = [
   "Almond butter", "Avocado", "Avocados", "Bacon", "Beef broth",
@@ -51,24 +50,16 @@ const plannerDays = [
   "Sunday"
 ];
 
-const GOOGLE_DRIVE_PDF_LINK =
-  "https://drive.google.com/file/d/14Eb9INTTOEIRIDJQswKarruQsqklwF8l/view?usp=sharing";
-
-const plannerPopupStorageKey =
-  "free-7-day-planner-popup-dismissed";
+const GOOGLE_DRIVE_PDF_LINK = "https://drive.google.com/file/d/14Eb9INTTOEIRIDJQswKarruQsqklwF8l/view?usp=sharing";
+const plannerPopupStorageKey = "free-7-day-planner-popup-dismissed";
 
 // ================================
 // POPUP HANDLERS
 // ================================
 
-const plannerPopup =
-  document.getElementById("plannerPopup");
-
-const plannerPopupClose =
-  document.getElementById("plannerPopupClose");
-
-const plannerPopupDownload =
-  document.getElementById("plannerPopupDownload");
+const plannerPopup = document.getElementById("plannerPopup");
+const plannerPopupClose = document.getElementById("plannerPopupClose");
+const plannerPopupDownload = document.getElementById("plannerPopupDownload");
 
 function openPlannerPopup() {
   if (!plannerPopup) {
@@ -76,12 +67,7 @@ function openPlannerPopup() {
   }
 
   plannerPopup.classList.add("is-open");
-
-  plannerPopup.setAttribute(
-    "aria-hidden",
-    "false"
-  );
-
+  plannerPopup.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
 }
 
@@ -91,43 +77,17 @@ function closePlannerPopup() {
   }
 
   plannerPopup.classList.remove("is-open");
-
-  plannerPopup.setAttribute(
-    "aria-hidden",
-    "true"
-  );
-
+  plannerPopup.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
-
-  localStorage.setItem(
-    plannerPopupStorageKey,
-    "true"
-  );
+  localStorage.setItem(plannerPopupStorageKey, "true");
 }
 
-if (
-  plannerPopup &&
-  plannerPopupDownload
-) {
-  plannerPopupDownload.setAttribute(
-    "href",
-    GOOGLE_DRIVE_PDF_LINK
-  );
+if (plannerPopup && plannerPopupDownload) {
+  plannerPopupDownload.setAttribute("href", GOOGLE_DRIVE_PDF_LINK);
 
-  const shouldShowPopup =
-    !localStorage.getItem(
-      plannerPopupStorageKey
-    );
-
+  const shouldShowPopup = !localStorage.getItem(plannerPopupStorageKey);
   const showPopupAfterDelay = () => {
-    if (
-      !plannerPopup.classList.contains(
-        "is-open"
-      ) &&
-      !localStorage.getItem(
-        plannerPopupStorageKey
-      )
-    ) {
+    if (!plannerPopup.classList.contains("is-open") && !localStorage.getItem(plannerPopupStorageKey)) {
       window.setTimeout(() => {
         openPlannerPopup();
       }, 700);
@@ -139,36 +99,22 @@ if (
   }
 
   if (plannerPopupClose) {
-    plannerPopupClose.addEventListener(
-      "click",
-      closePlannerPopup
-    );
+    plannerPopupClose.addEventListener("click", closePlannerPopup);
   }
 
-  plannerPopup.addEventListener(
-    "click",
-    (event) => {
-      if (
-        event.target === plannerPopup
-      ) {
-        closePlannerPopup();
-      }
+  plannerPopup.addEventListener("click", (event) => {
+    if (event.target === plannerPopup) {
+      closePlannerPopup();
     }
-  );
+  });
 
-  document.addEventListener(
-    "keydown",
-    (event) => {
-      if (event.key === "Escape") {
-        closePlannerPopup();
-      }
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closePlannerPopup();
     }
-  );
+  });
 
-  window.addEventListener(
-    "load",
-    showPopupAfterDelay
-  );
+  window.addEventListener("load", showPopupAfterDelay);
 }
 
 // ================================
@@ -177,267 +123,47 @@ if (
 
 const quizQuestions = [
   {
-    question:
-      "What feels best for your current routine?",
-
+    question: "What feels best for your current routine?",
     options: [
-      {
-        text:
-          "Meal prep and structure",
-        value: "plan"
-      },
-      {
-        text:
-          "Treats and desserts",
-        value: "dessert"
-      },
-      {
-        text:
-          "Tracking and wellness data",
-        value: "dna"
-      }
+      { text: "Meal prep and structure", value: "plan" },
+      { text: "Treats and desserts", value: "dessert" },
+      { text: "Tracking and wellness data", value: "dna" }
     ]
   },
-
   {
-    question:
-      "Which kitchen tool would you use most?",
-
+    question: "Which kitchen tool would you use most?",
     options: [
-      {
-        text:
-          "A pressure cooker",
-        value: "pot"
-      },
-      {
-        text:
-          "A baking tray",
-        value: "baking"
-      },
-      {
-        text:
-          "A meal planner app",
-        value: "plan"
-      }
+      { text: "A pressure cooker", value: "pot" },
+      { text: "A baking tray", value: "baking" },
+      { text: "A meal planner app", value: "plan" }
     ]
   },
-
   {
-    question:
-      "Which outcome matters most right now?",
-
+    question: "Which outcome matters most right now?",
     options: [
-      {
-        text:
-          "Quick wins and simplicity",
-        value: "plan"
-      },
-      {
-        text:
-          "Sweet cravings support",
-        value: "dessert"
-      },
-      {
-        text:
-          "Biometric-backed guidance",
-        value: "dna"
-      }
+      { text: "Quick wins and simplicity", value: "plan" },
+      { text: "Sweet cravings support", value: "dessert" },
+      { text: "Biometric-backed guidance", value: "dna" }
     ]
   },
-
   {
-    question:
-      "How do you want to feel after your next meal?",
-
+    question: "How do you want to feel after your next meal?",
     options: [
-      {
-        text:
-          "Comforted and satisfied",
-        value: "pot"
-      },
-      {
-        text:
-          "Happy and indulgent",
-        value: "dessert"
-      },
-      {
-        text:
-          "Balanced and informed",
-        value: "dna"
-      }
+      { text: "Comforted and satisfied", value: "pot" },
+      { text: "Happy and indulgent", value: "dessert" },
+      { text: "Balanced and informed", value: "dna" }
     ]
   },
-
   {
-    question:
-      "What would make you stick to keto longer?",
-
+    question: "What would make you stick to keto longer?",
     options: [
-      {
-        text:
-          "A complete plan",
-        value: "plan"
-      },
-      {
-        text:
-          "Easy baking recipes",
-        value: "baking"
-      },
-      {
-        text:
-          "Smart coaching",
-        value: "dna"
-      }
+      { text: "A complete plan", value: "plan" },
+      { text: "Easy baking recipes", value: "baking" },
+      { text: "Smart coaching", value: "dna" }
     ]
   }
 ];
 
-// ================================
-// PRODUCT MAP
-// ================================
-
-const productMap = {
-  plan: "The Keto Meal Plan",
-  dessert: "Keto Desserts",
-  dna: "Keto DNA",
-  pot: "Instant Pot Keto",
-  baking: "Keto Baking Bundle"
-};
-
-// ================================
-// PRODUCT CARDS
-// ================================
-
-const productCards = [
-  {
-    name: "The Keto Meal Plan",
-
-    url:
-      "https://www.claudiacaldwell.com/oto-uf61a?el=splittest-1214-bradflow-control#aff=umarmahmood",
-
-    tag: "Structured roadmap",
-
-    description:
-      "A polished weekly plan for calm, repeatable success.",
-
-    accent: "Daily structure",
-
-    image: "🥗",
-
-    rating: "★★★★★",
-
-    bestFor:
-      "Best for: consistent weekly meal prep"
-  },
-
-  {
-    name: "Keto Desserts",
-
-    url:
-      "https://www.ketoafter50desserts.com/digi/?aff=umarmahmood",
-
-    tag: "Sweet satisfaction",
-
-    description:
-      "Beautiful low-carb treats that keep cravings in check.",
-
-    accent: "Dessert support",
-
-    image: "🍰",
-
-    rating: "★★★★★",
-
-    bestFor:
-      "Best for: sweet cravings without guilt"
-  },
-
-  {
-    name: "Keto DNA",
-
-    url:
-      "https://ketodna.app/d#aff=umarmahmood",
-
-    tag: "Bio-backed guidance",
-
-    description:
-      "Personalized insights that make your plan feel premium.",
-
-    accent: "Smart coaching",
-
-    image: "🧬",
-
-    rating: "★★★★★",
-
-    bestFor:
-      "Best for: data-driven keto support"
-  },
-
-  {
-    name: "Instant Pot Keto",
-
-    url:
-      "https://ketosolution.net/ds/#aff=umarmahmood",
-
-    tag: "Fast weeknight meals",
-
-    description:
-      "Quick, easy recipes for your busiest days.",
-
-    accent: "Kitchen speed",
-
-    image: "🍲",
-
-    rating: "★★★★★",
-
-    bestFor:
-      "Best for: fast keto dinners"
-  },
-
-  {
-    name: "Keto Baking Bundle",
-
-    url:
-      "https://ketobreads.net/ds/bakery-bundle/#aff=umarmahmood",
-
-    tag: "Baking confidence",
-
-    description:
-      "Everything you need for indulgent, keto-friendly baking.",
-
-    accent: "Bakery-style results",
-
-    image: "🥐",
-
-    rating: "★★★★★",
-
-    bestFor:
-      "Best for: keto baking success"
-  }
-];
-
-// ================================
-// STORAGE KEYS
-// ================================
-
-const storageKeys = {
-  checklist:
-    "keto-checklist-state",
-
-  planner:
-    "keto-planner-state",
-
-  theme:
-    "keto-theme",
-
-  xp:
-    "keto-xp-state",
-
-  quiz:
-    "keto-quiz-state",
-
-  milestone:
-    "keto-milestone-shown"  
-};
 // ================================
 // PRODUCT MAP
 // ================================
@@ -579,62 +305,27 @@ let exitPopupShown = false;
 // DOM ELEMENTS
 // ================================
 
-const groceryList =
-  document.getElementById("groceryList");
+const groceryList = document.getElementById("groceryList");
+const searchInput = document.getElementById("searchInput");
+const checklistSummary = document.getElementById("checklistSummary");
+const progressBar = document.getElementById("progressBar");
 
-const searchInput =
-  document.getElementById("searchInput");
+const scoreBadge = document.getElementById("scoreBadge");
+const heroScore = document.getElementById("heroScore");
+const heroXp = document.getElementById("heroXp");
+const heroLevel = document.getElementById("heroLevel");
+const heroLevelMini = document.getElementById("heroLevelMini");
+const heroRingPercent = document.getElementById("heroRingPercent");
+const heroProgressRing = document.getElementById("heroProgressRing");
+const heroSubtitle = document.getElementById("heroSubtitle");
 
-const checklistSummary =
-  document.getElementById("checklistSummary");
-
-const progressBar =
-  document.getElementById("progressBar");
-
-const scoreBadge =
-  document.getElementById("scoreBadge");
-
-const heroScore =
-  document.getElementById("heroScore");
-
-const heroXp =
-  document.getElementById("heroXp");
-
-const heroLevel =
-  document.getElementById("heroLevel");
-
-const heroLevelMini =
-  document.getElementById("heroLevelMini");
-
-const heroRingPercent =
-  document.getElementById("heroRingPercent");
-
-const heroProgressRing =
-  document.getElementById("heroProgressRing");
-
-const heroSubtitle =
-  document.getElementById("heroSubtitle");
-
-const xpPercent =
-  document.getElementById("xpPercent");
-
-const xpValue =
-  document.getElementById("xpValue");
-
-const xpLevelValue =
-  document.getElementById("xpLevelValue");
-
-const levelLabel =
-  document.getElementById("levelLabel");
-
-const xpDescription =
-  document.getElementById("xpDescription");
-
-const xpRing =
-  document.getElementById("xpRing");
-
-const xpBoostBtn =
-  document.getElementById("xpBoostBtn");
+const xpPercent = document.getElementById("xpPercent");
+const xpValue = document.getElementById("xpValue");
+const xpLevelValue = document.getElementById("xpLevelValue");
+const levelLabel = document.getElementById("levelLabel");
+const xpDescription = document.getElementById("xpDescription");
+const xpRing = document.getElementById("xpRing");
+const xpBoostBtn = document.getElementById("xpBoostBtn");
 
 const achievementBadges =
   document.getElementById("achievementBadges");
@@ -830,52 +521,46 @@ function getItemMeta(itemName) {
 // ================================
 
 function renderChecklist() {
-  if (!groceryList || !searchInput) {
-    return;
-  }
+  if (!groceryList || !searchInput) return;
 
   const query =
     searchInput.value.trim().toLowerCase();
 
-  const filtered =
-    checklistState.filter((item) =>
-      item.name.toLowerCase().includes(query)
-    );
+  const filtered = checklistState.filter((item) =>
+    item.name.toLowerCase().includes(query)
+  );
 
-  groceryList.innerHTML =
-    filtered
-      .map((item) => {
-        const checked =
-          item.checked
-            ? "is-checked"
-            : "";
+  groceryList.innerHTML = filtered
+    .map((item) => {
+      const checked =
+        item.checked ? "is-checked" : "";
 
-        const meta =
-          getItemMeta(item.name);
+      const meta =
+        getItemMeta(item.name);
 
-        return `
-          <li>
-            <label class="grocery-item ${checked}">
-              <input
-                type="checkbox"
-                data-name="${item.name}"
-                ${item.checked ? "checked" : ""}
-              />
+      return `
+        <li>
+          <label class="grocery-item ${checked}">
+            <input
+              type="checkbox"
+              data-name="${item.name}"
+              ${item.checked ? "checked" : ""}
+            />
 
-              <span class="item-meta">
-                <span class="item-name">
-                  ${meta.icon} ${item.name}
-                </span>
-
-                <span class="item-category">
-                  ${meta.category}
-                </span>
+            <span class="item-meta">
+              <span class="item-name">
+                ${meta.icon} ${item.name}
               </span>
-            </label>
-          </li>
-        `;
-      })
-      .join("");
+
+              <span class="item-category">
+                ${meta.category}
+              </span>
+            </span>
+          </label>
+        </li>
+      `;
+    })
+    .join("");
 }
 
 // ================================
@@ -883,12 +568,7 @@ function renderChecklist() {
 // ================================
 
 function renderAchievements() {
-  if (
-    !achievementBadges ||
-    !achievementMini
-  ) {
-    return;
-  }
+  if (!achievementBadges || !achievementMini) return;
 
   const checkedCount =
     checklistState.filter(
@@ -906,9 +586,7 @@ function renderAchievements() {
       : 0;
 
   const level =
-    Math.floor(
-      xpState.points / 250
-    ) + 1;
+    Math.floor(xpState.points / 250) + 1;
 
   const badges = [];
 
@@ -952,26 +630,24 @@ function renderAchievements() {
     });
   }
 
-  const markup =
-    badges
-      .map(
-        (badge) => `
-          <div class="achievement-badge">
-            <div>${badge.icon}</div>
-            <strong>${badge.title}</strong>
-            <span>${badge.note}</span>
-          </div>
-        `
-      )
-      .join("");
+  const markup = badges
+    .map(
+      (badge) => `
+        <div class="achievement-badge">
+          <div>${badge.icon}</div>
+          <strong>${badge.title}</strong>
+          <span>${badge.note}</span>
+        </div>
+      `
+    )
+    .join("");
 
   achievementBadges.innerHTML =
     markup ||
     "🌿 Starter mode — Your first wins unlock special badges.";
 
   achievementMini.innerHTML =
-    markup ||
-    "🌿 Starter mode";
+    markup || "🌿 Starter mode";
 }
 
 // ================================
@@ -1034,18 +710,14 @@ function updateScoreboard() {
   }
 
   const level =
-    Math.floor(
-      xpState.points / 250
-    ) + 1;
+    Math.floor(xpState.points / 250) + 1;
 
   if (heroLevel) {
-    heroLevel.textContent =
-      level;
+    heroLevel.textContent = level;
   }
 
   if (heroLevelMini) {
-    heroLevelMini.textContent =
-      level;
+    heroLevelMini.textContent = level;
   }
 
   if (heroRingPercent) {
@@ -1133,10 +805,7 @@ function updateScoreboard() {
       "true"
     );
 
-    milestoneModal.classList.remove(
-      "hidden"
-    );
-
+    milestoneModal.classList.remove("hidden");
     milestoneModal.setAttribute(
       "aria-hidden",
       "false"
@@ -1157,10 +826,7 @@ function updateScoreboard() {
       "true"
     );
 
-    progressModal.classList.remove(
-      "hidden"
-    );
-
+    progressModal.classList.remove("hidden");
     progressModal.setAttribute(
       "aria-hidden",
       "false"
@@ -1174,14 +840,13 @@ function updateScoreboard() {
     launchConfetti();
   }
 }
-// ============================================================
+
+// ================================
 // MEAL PLANNER
-// ============================================================
+// ================================
 
 function renderPlanner() {
-  if (!mealPlanner) {
-    return;
-  }
+  if (!mealPlanner) return;
 
   mealPlanner.innerHTML =
     plannerDays
@@ -1194,10 +859,8 @@ function renderPlanner() {
           >
             <strong>${day}</strong>
             <span>
-              ${
-                plannerState[day] ||
-                "Click to choose a meal"
-              }
+              ${plannerState[day] ||
+                "Click to choose a meal"}
             </span>
           </button>
         `
@@ -1206,84 +869,61 @@ function renderPlanner() {
 }
 
 const mealPlanResult =
-  document.getElementById("mealPlanResult");
+  document.getElementById(
+    "mealPlanResult"
+  );
 
 const ketoMealOptions = {
   Monday: {
-    breakfast:
-      "🥑 Avocado & Egg Breakfast",
-    lunch:
-      "🥗 Grilled Chicken Salad",
-    dinner:
-      "🐟 Garlic Butter Salmon with Broccoli"
+    breakfast: "🥑 Avocado & Egg Breakfast",
+    lunch: "🥗 Grilled Chicken Salad",
+    dinner: "🐟 Garlic Butter Salmon with Broccoli"
   },
 
   Tuesday: {
-    breakfast:
-      "🍳 Cheese & Spinach Omelet",
-    lunch:
-      "🥩 Beef Lettuce Wraps",
-    dinner:
-      "🍗 Creamy Garlic Chicken"
+    breakfast: "🍳 Cheese & Spinach Omelet",
+    lunch: "🥩 Beef Lettuce Wraps",
+    dinner: "🍗 Creamy Garlic Chicken"
   },
 
   Wednesday: {
-    breakfast:
-      "🥓 Bacon & Eggs with Avocado",
-    lunch:
-      "🥗 Tuna Avocado Salad",
-    dinner:
-      "🍖 Herb-Roasted Chicken with Vegetables"
+    breakfast: "🥓 Bacon & Eggs with Avocado",
+    lunch: "🥗 Tuna Avocado Salad",
+    dinner: "🍖 Herb-Roasted Chicken with Vegetables"
   },
 
   Thursday: {
-    breakfast:
-      "🧀 Greek Yogurt with Berries",
-    lunch:
-      "🥩 Ground Beef Keto Bowl",
-    dinner:
-      "🐟 Lemon Butter Cod with Asparagus"
+    breakfast: "🧀 Greek Yogurt with Berries",
+    lunch: "🥩 Ground Beef Keto Bowl",
+    dinner: "🐟 Lemon Butter Cod with Asparagus"
   },
 
   Friday: {
-    breakfast:
-      "🍳 Mushroom & Cheese Omelet",
-    lunch:
-      "🍗 Chicken Caesar Salad",
-    dinner:
-      "🥩 Steak with Garlic Butter & Greens"
+    breakfast: "🍳 Mushroom & Cheese Omelet",
+    lunch: "🍗 Chicken Caesar Salad",
+    dinner: "🥩 Steak with Garlic Butter & Greens"
   },
 
   Saturday: {
-    breakfast:
-      "🥑 Avocado Egg Bowl",
-    lunch:
-      "🍤 Shrimp & Vegetable Bowl",
-    dinner:
-      "🍗 Crispy Chicken with Cauliflower"
+    breakfast: "🥑 Avocado Egg Bowl",
+    lunch: "🍤 Shrimp & Vegetable Bowl",
+    dinner: "🍗 Crispy Chicken with Cauliflower"
   },
 
   Sunday: {
-    breakfast:
-      "🥓 Bacon, Eggs & Cheese",
-    lunch:
-      "🥗 Salmon Avocado Salad",
-    dinner:
-      "🍖 Roast Beef with Broccoli"
+    breakfast: "🥓 Bacon, Eggs & Cheese",
+    lunch: "🥗 Salmon Avocado Salad",
+    dinner: "🍖 Roast Beef with Broccoli"
   }
 };
 
 function showMealPlan(day) {
-  if (!mealPlanResult) {
-    return;
-  }
+  if (!mealPlanResult) return;
 
   const meals =
     ketoMealOptions[day];
 
-  if (!meals) {
-    return;
-  }
+  if (!meals) return;
 
   mealPlanResult.innerHTML = `
     <div class="meal-result">
@@ -1340,17 +980,17 @@ if (mealPlanner) {
     "click",
     (event) => {
       const dayButton =
-        event.target.closest(".planner-day");
+        event.target.closest(
+          ".planner-day"
+        );
 
-      if (!dayButton) {
-        return;
-      }
+      if (!dayButton) return;
 
       document
         .querySelectorAll(".planner-day")
-        .forEach((button) => {
-          button.classList.remove("active");
-        });
+        .forEach((button) =>
+          button.classList.remove("active")
+        );
 
       dayButton.classList.add("active");
 
@@ -1367,11 +1007,11 @@ if (mealPlanResult) {
     "click",
     (event) => {
       const mealButton =
-        event.target.closest(".meal-option");
+        event.target.closest(
+          ".meal-option"
+        );
 
-      if (!mealButton) {
-        return;
-      }
+      if (!mealButton) return;
 
       const meal =
         mealButton.dataset.meal;
@@ -1381,9 +1021,7 @@ if (mealPlanResult) {
           ".planner-day.active"
         );
 
-      if (!activeDay) {
-        return;
-      }
+      if (!activeDay) return;
 
       const day =
         activeDay.dataset.day;
@@ -1406,9 +1044,8 @@ if (mealPlanResult) {
     }
   );
 }
-
 // ============================================================
-// CALCULATOR
+// CALCULATOR - FIXED
 // ============================================================
 
 if (calculatorForm) {
@@ -1449,10 +1086,7 @@ if (calculatorForm) {
         parseFloat(heightInput.value);
 
       const age =
-        parseInt(
-          ageInput.value,
-          10
-        );
+        parseInt(ageInput.value, 10);
 
       const gender =
         genderInput.value;
@@ -1474,23 +1108,19 @@ if (calculatorForm) {
         age <= 0
       ) {
         if (bmiResult) {
-          bmiResult.textContent =
-            "--";
+          bmiResult.textContent = "--";
         }
 
         if (calorieResult) {
-          calorieResult.textContent =
-            "--";
+          calorieResult.textContent = "--";
         }
 
         if (waterResult) {
-          waterResult.textContent =
-            "--";
+          waterResult.textContent = "--";
         }
 
         if (macroResult) {
-          macroResult.textContent =
-            "--";
+          macroResult.textContent = "--";
         }
 
         return;
@@ -1505,25 +1135,18 @@ if (calculatorForm) {
 
       const bmi =
         weight /
-        (
-          heightMeters *
-          heightMeters
-        );
+        (heightMeters * heightMeters);
 
       let bmiCategory = "";
 
       if (bmi < 18.5) {
-        bmiCategory =
-          "Underweight";
+        bmiCategory = "Underweight";
       } else if (bmi < 25) {
-        bmiCategory =
-          "Healthy";
+        bmiCategory = "Healthy";
       } else if (bmi < 30) {
-        bmiCategory =
-          "Overweight";
+        bmiCategory = "Overweight";
       } else {
-        bmiCategory =
-          "Obesity range";
+        bmiCategory = "Obesity range";
       }
 
       if (bmiResult) {
@@ -1576,14 +1199,10 @@ if (calculatorForm) {
       // ============================
 
       const waterMl =
-        Math.round(
-          weight * 35
-        );
+        Math.round(weight * 35);
 
       const waterLiters =
-        (
-          waterMl / 1000
-        ).toFixed(1);
+        (waterMl / 1000).toFixed(1);
 
       if (waterResult) {
         waterResult.textContent =
@@ -1595,9 +1214,7 @@ if (calculatorForm) {
       // ============================
 
       const proteinGrams =
-        Math.round(
-          weight * 1.6
-        );
+        Math.round(weight * 1.6);
 
       const carbGrams = 25;
 
@@ -1611,8 +1228,8 @@ if (calculatorForm) {
         Math.max(
           0,
           dailyCalories -
-            proteinCalories -
-            carbCalories
+          proteinCalories -
+          carbCalories
         );
 
       const fatGrams =
@@ -1633,15 +1250,12 @@ if (calculatorForm) {
     }
   );
 }
-
-// ============================================================
+// ================================
 // QUIZ RENDER
-// ============================================================
+// ================================
 
 function renderQuiz() {
-  if (!quizContainer) {
-    return;
-  }
+  if (!quizContainer) return;
 
   quizContainer.innerHTML =
     quizQuestions
@@ -1676,14 +1290,12 @@ function renderQuiz() {
       .join("");
 }
 
-// ============================================================
+// ================================
 // RECOMMENDATION CARDS
-// ============================================================
+// ================================
 
 function renderRecommendationCards() {
-  if (!recommendationCards) {
-    return;
-  }
+  if (!recommendationCards) return;
 
   recommendationCards.innerHTML =
     productCards
@@ -1695,11 +1307,7 @@ function renderRecommendationCards() {
 
         return `
           <article
-            class="product-card ${
-              isActive
-                ? "active"
-                : ""
-            }"
+            class="product-card ${isActive ? "active" : ""}"
           >
             <div class="product-image">
               ${card.image}
@@ -1743,9 +1351,9 @@ function renderRecommendationCards() {
       .join("");
 }
 
-// ============================================================
+// ================================
 // UPDATE RECOMMENDATION
-// ============================================================
+// ================================
 
 function updateRecommendation() {
   if (recommendationText) {
@@ -1765,9 +1373,9 @@ function updateRecommendation() {
   renderRecommendationCards();
 }
 
-// ============================================================
+// ================================
 // XP
-// ============================================================
+// ================================
 
 function addXp(amount) {
   xpState.points =
@@ -1780,40 +1388,32 @@ function addXp(amount) {
   updateScoreboard();
 }
 
-// ============================================================
+// ================================
 // CONFETTI
-// ============================================================
+// ================================
 
 function launchConfetti() {
-  if (!confettiLayer) {
-    return;
-  }
+  if (!confettiLayer) return;
 
   confettiLayer.innerHTML = "";
 
-  const confettiColors = [
-    "#7c3aed",
-    "#38bdf8",
-    "#f59e0b",
-    "#f43f5e",
-    "#34d399"
-  ];
-
-  for (
-    let i = 0;
-    i < 60;
-    i += 1
-  ) {
+  for (let i = 0; i < 60; i += 1) {
     const piece =
-      document.createElement(
-        "span"
-      );
+      document.createElement("span");
 
     piece.className =
       "confetti-piece";
 
     piece.style.left =
       `${Math.random() * 100}%`;
+
+    const confettiColors = [
+      "#7c3aed",
+      "#38bdf8",
+      "#f59e0b",
+      "#f43f5e",
+      "#34d399"
+    ];
 
     piece.style.background =
       confettiColors[
@@ -1831,9 +1431,7 @@ function launchConfetti() {
     piece.style.animationDuration =
       `${2 + Math.random() * 1.5}s`;
 
-    confettiLayer.appendChild(
-      piece
-    );
+    confettiLayer.appendChild(piece);
   }
 
   window.setTimeout(() => {
@@ -1889,18 +1487,14 @@ function loadDailyChallenge() {
     return;
   }
 
-  if (
-    savedChallenge ===
-    todayKey
-  ) {
+  if (savedChallenge === todayKey) {
     challengeText.textContent =
       "Today's challenge completed! 🎉";
 
     challengeBtn.textContent =
       "Completed ✓";
 
-    challengeBtn.disabled =
-      true;
+    challengeBtn.disabled = true;
 
     return;
   }
@@ -1939,13 +1533,13 @@ if (challengeBtn) {
       challengeBtn.textContent =
         "Completed ✓";
 
-      challengeBtn.disabled =
-        true;
+      challengeBtn.disabled = true;
 
       addXp(25);
     }
   );
 }
+
 // ================================
 // SEARCH
 // ================================
@@ -1969,8 +1563,10 @@ if (groceryList) {
         event.target;
 
       if (
-        !(checkbox instanceof HTMLInputElement) ||
-        checkbox.type !== "checkbox"
+        !(checkbox instanceof
+          HTMLInputElement) ||
+        checkbox.type !==
+          "checkbox"
       ) {
         return;
       }
@@ -1984,9 +1580,7 @@ if (groceryList) {
             item.name === itemName
         );
 
-      if (!target) {
-        return;
-      }
+      if (!target) return;
 
       target.checked =
         checkbox.checked;
@@ -2321,10 +1915,7 @@ if (checkFoodBtn) {
   checkFoodBtn.addEventListener(
     "click",
     () => {
-      if (
-        !foodInput ||
-        !foodResult
-      ) {
+      if (!foodInput || !foodResult) {
         return;
       }
 
@@ -2360,20 +1951,17 @@ if (buildDayBtn) {
       const goal =
         document.getElementById(
           "ketoGoal"
-        )?.value ||
-        "weight";
+        )?.value || "weight";
 
       const hunger =
         document.getElementById(
           "hungerLevel"
-        )?.value ||
-        "medium";
+        )?.value || "medium";
 
       const activity =
         document.getElementById(
           "activityLevel"
-        )?.value ||
-        "medium";
+        )?.value || "medium";
 
       const breakfastPlan =
         document.getElementById(
@@ -2531,6 +2119,11 @@ if (buildDayBtn) {
 // ============================================================
 // REVEAL MY PICK
 // ============================================================
+//
+// IMPORTANT:
+// This is the ONLY Reveal My Pick handler.
+// There are NO duplicate quiz submit handlers below.
+// ============================================================
 
 const revealPickBtn =
   document.getElementById(
@@ -2630,14 +2223,12 @@ function revealQuizPick() {
 
   quizState.score =
     Math.round(
-      (
-        Math.max(
-          ...Object.values(
-            result.counts
-          )
-        ) /
-        quizQuestions.length
-      ) *
+      (Math.max(
+        ...Object.values(
+          result.counts
+        )
+      ) /
+        quizQuestions.length) *
         100
     );
 
@@ -2678,12 +2269,18 @@ if (revealPickBtn) {
 // ============================================================
 // QUIZ FORM SUBMIT
 // ============================================================
+//
+// This is intentionally ONE submit handler only.
+// If the Reveal My Pick button is inside the form,
+// type="button" in HTML is recommended.
+// ============================================================
 
 if (quizForm) {
   quizForm.addEventListener(
     "submit",
     (event) => {
       event.preventDefault();
+
       revealQuizPick();
     }
   );
@@ -2694,13 +2291,9 @@ if (quizForm) {
 // ============================================================
 
 function closeModal(modal) {
-  if (!modal) {
-    return;
-  }
+  if (!modal) return;
 
-  modal.classList.add(
-    "hidden"
-  );
+  modal.classList.add("hidden");
 
   modal.setAttribute(
     "aria-hidden",
@@ -2712,9 +2305,7 @@ if (closeModalBtn) {
   closeModalBtn.addEventListener(
     "click",
     () => {
-      closeModal(
-        milestoneModal
-      );
+      closeModal(milestoneModal);
     }
   );
 }
@@ -2723,9 +2314,7 @@ if (closeProgressModalBtn) {
   closeProgressModalBtn.addEventListener(
     "click",
     () => {
-      closeModal(
-        progressModal
-      );
+      closeModal(progressModal);
     }
   );
 }
@@ -2734,9 +2323,7 @@ if (closeExitModalBtn) {
   closeExitModalBtn.addEventListener(
     "click",
     () => {
-      closeModal(
-        exitModal
-      );
+      closeModal(exitModal);
     }
   );
 }
