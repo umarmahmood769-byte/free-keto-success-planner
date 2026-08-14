@@ -571,6 +571,12 @@ h3 {
   border: 1px solid var(--border);
 }
 
+.quiz-card {
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .quiz-form {
   display: grid;
   gap: 12px;
@@ -1523,140 +1529,3 @@ padding:4px;
   display: none;
 }
 
-
-
-/* ================================
-   KETO QUESTION HELPER
-================================ */
-
-.keto-question-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.helper-intro {
-  margin: 0 0 16px;
-  color: var(--muted);
-}
-
-.keto-question-form {
-  display: grid;
-  gap: 10px;
-}
-
-.keto-question-form textarea {
-  width: 100%;
-  min-height: 96px;
-  resize: vertical;
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 14px 16px;
-  background: var(--surface-strong);
-  color: var(--text);
-  outline: none;
-}
-
-.keto-question-form textarea:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
-}
-
-.question-form-actions {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.question-count {
-  color: var(--muted);
-  font-size: 0.86rem;
-}
-
-.keto-question-result {
-  display: none;
-  margin-top: 18px;
-  padding: 20px;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  background: var(--surface-strong);
-}
-
-.keto-question-result.is-visible {
-  display: block;
-  animation: fadeUp 0.35s ease both;
-}
-
-.keto-answer-label {
-  margin: 0 0 6px;
-  color: var(--accent);
-  font-size: 0.76rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.keto-answer-title {
-  margin: 0 0 8px;
-}
-
-.keto-answer-text {
-  margin: 0 0 14px;
-  color: var(--muted);
-}
-
-.keto-answer-tip {
-  margin: 0 0 16px;
-  padding: 12px 14px;
-  border-radius: 14px;
-  background: rgba(16, 185, 129, 0.10);
-}
-
-.keto-product-match {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  padding-top: 14px;
-  border-top: 1px solid var(--border);
-}
-
-.keto-product-match-copy strong {
-  display: block;
-  margin-bottom: 3px;
-}
-
-.keto-product-match-copy span {
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.keto-disclaimer {
-  margin: 14px 0 0;
-  color: var(--muted);
-  font-size: 0.78rem;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-@media (max-width: 640px) {
-  .question-form-actions,
-  .keto-product-match {
-    align-items: stretch;
-    flex-direction: column;
-  }
-
-  .question-form-actions .btn {
-    width: 100%;
-  }
-}
