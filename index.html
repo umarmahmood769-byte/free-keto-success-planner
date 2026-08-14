@@ -300,38 +300,7 @@
           </p>
         </section>
 
-        
-        <section class="card keto-question-card" id="keto-question-helper">
-          <div class="section-head">
-            <div>
-              <p class="eyebrow">Predefined Keto Guidance</p>
-              <h2>💬 Ask a Keto Question</h2>
-            </div>
-          </div>
-
-          <p class="helper-intro">
-            Type a keto or weight-loss question and get a quick answer based on
-            our built-in guidance. No AI or external service is used.
-          </p>
-
-          <form id="ketoQuestionForm" class="keto-question-form">
-            <label for="ketoQuestionInput" class="sr-only">Your keto or weight-loss question</label>
-            <textarea
-              id="ketoQuestionInput"
-              rows="3"
-              maxlength="300"
-              placeholder="Example: What can I eat for breakfast on keto?">
-            </textarea>
-            <div class="question-form-actions">
-              <span id="ketoQuestionCount" class="question-count">0/300</span>
-              <button id="ketoQuestionBtn" class="btn primary" type="submit">Get My Answer</button>
-            </div>
-          </form>
-
-          <div id="ketoQuestionResult" class="keto-question-result" aria-live="polite"></div>
-        </section>
-
-<section class="card planner-teaser">
+        <section class="card planner-teaser">
           <div class="section-head">
             <div>
               <p class="eyebrow">New free planner</p>
@@ -560,10 +529,68 @@
                 Macros <strong id="macroResult">--</strong>
               </div>
             </div>
+
+            <div class="calculator-info">
+              <h3>How to use these numbers</h3>
+
+              <div class="calculator-info-grid">
+                <div>
+                  <strong>BMI</strong>
+                  <p>A general screening measure based on your height and weight. It is useful for context, but it does not describe body composition by itself.</p>
+                </div>
+
+                <div>
+                  <strong>Daily calories</strong>
+                  <p>This is an estimate based on your details and activity level. Your actual needs can vary, so use it as a starting point rather than an exact target.</p>
+                </div>
+
+                <div>
+                  <strong>Water</strong>
+                  <p>This gives a simple starting estimate based on body weight. Your needs can change with heat, exercise, diet and individual circumstances.</p>
+                </div>
+
+                <div>
+                  <strong>Keto macros</strong>
+                  <p>This provides a practical starting point for protein, net carbs and fat. Adjustments may be needed depending on your goals and individual needs.</p>
+                </div>
+              </div>
+
+              <p class="calculator-note">
+                <strong>Tip:</strong> Use these results to understand your starting point and track your progress over time. They are estimates, not medical advice.
+              </p>
+            </div>
           </section>
 
 
-        
+        <section class="card keto-question-card" id="keto-question-helper">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Predefined Keto Guidance</p>
+              <h2>💬 Ask a Keto Question</h2>
+            </div>
+          </div>
+
+          <p class="helper-intro">
+            Type a keto or weight-loss question and get a quick answer based on
+            our built-in guidance. No AI or external service is used.
+          </p>
+
+          <form id="ketoQuestionForm" class="keto-question-form">
+            <label for="ketoQuestionInput" class="sr-only">Your keto or weight-loss question</label>
+            <textarea
+              id="ketoQuestionInput"
+              rows="3"
+              maxlength="300"
+              placeholder="Example: What can I eat for breakfast on keto?">
+            </textarea>
+            <div class="question-form-actions">
+              <span id="ketoQuestionCount" class="question-count">0/300</span>
+              <button id="ketoQuestionBtn" class="btn primary" type="submit">Get My Answer</button>
+            </div>
+          </form>
+
+          <div id="ketoQuestionResult" class="keto-question-result" aria-live="polite"></div>
+        </section>
 
           <section class="card quiz-card">
             <div class="section-head">
