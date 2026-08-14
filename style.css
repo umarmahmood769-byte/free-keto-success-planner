@@ -1713,3 +1713,52 @@ padding:4px;
     grid-template-columns: 1fr;
   }
 }
+
+
+/* XP & Level explanatory content */
+.xp-info {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
+.xp-info h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+.xp-info > p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+.xp-info-points {
+  display: grid;
+  gap: 10px;
+}
+
+.xp-info-points > div {
+  padding: 11px 13px;
+  border-radius: 14px;
+  background: linear-gradient(
+    135deg,
+    rgba(124, 58, 237, 0.08),
+    rgba(56, 189, 248, 0.07)
+  );
+  border: 1px solid var(--border);
+}
+
+.xp-info-points strong {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 0.9rem;
+}
+
+.xp-info-points span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
