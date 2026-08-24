@@ -173,14 +173,6 @@
       </a>
 
       <a
-        class="btn cta-green"
-        href="Free Keto Success Planner.pdf"
-        download="Free Keto Success Planner.pdf"
-      >
-        📘 Free Keto eBook
-      </a>
-
-      <a
         class="btn secondary"
         href="https://drive.google.com/file/d/14Eb9INTTOEIRIDJQswKarruQsqklwF8l/view?usp=sharing"
         target="_blank"
@@ -191,9 +183,46 @@
 
     </div>
 
-    <p class="ebook-note">
-      🎁 Instant PDF Download – No Sign-up Required
-    </p>
+    <div class="keto-optin" id="ketoOptin">
+
+      <p class="keto-optin-heading">
+        🎁 Get Your FREE Keto Success Planner
+      </p>
+
+      <p class="keto-optin-desc">
+        Enter your email and get the FREE Keto Success Planner delivered to your inbox.
+      </p>
+
+      <form id="ketoOptinForm" class="keto-optin-form" novalidate>
+
+        <input
+          type="email"
+          id="ketoOptinEmail"
+          name="email"
+          class="keto-optin-input"
+          placeholder="Enter your email address"
+          autocomplete="email"
+          required
+        />
+
+        <button
+          type="submit"
+          id="ketoOptinButton"
+          class="btn cta-green keto-optin-submit"
+        >
+          🎁 Get My FREE Keto Planner
+        </button>
+
+      </form>
+
+      <p
+        id="ketoOptinStatus"
+        class="keto-optin-status"
+        role="status"
+        aria-live="polite"
+      ></p>
+
+    </div>
 
     <ul class="hero-badges">
       <li>120+ keto staples</li>
