@@ -118,6 +118,101 @@ if (plannerPopup && plannerPopupDownload) {
 }
 
 // ================================
+// KETO SUCCESS PLANNER - EMAIL OPT-IN
+// ================================
+
+const KETO_OPTIN_ENDPOINT =
+  "https://script.google.com/macros/s/AKfycbyh4Lg7vuzgYSBeVeoJJgEHZohb1PJj7ts2iasNDRS7FF2sX8gtXCdqdZGgEcUUnhNG/exec";
+
+const ketoOptinForm = document.getElementById("ketoOptinForm");
+const ketoOptinEmail = document.getElementById("ketoOptinEmail");
+const ketoOptinButton = document.getElementById("ketoOptinButton");
+const ketoOptinStatus = document.getElementById("ketoOptinStatus");
+
+function isValidKetoEmail(value) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
+function setKetoOptinStatus(message, type) {
+  if (!ketoOptinStatus) {
+    return;
+  }
+
+  ketoOptinStatus.textContent = message;
+  ketoOptinStatus.classList.remove("is-loading", "is-success", "is-error");
+
+  if (type) {
+    ketoOptinStatus.classList.add("is-" + type);
+  }
+}
+
+if (ketoOptinForm && ketoOptinEmail && ketoOptinButton) {
+  let ketoOptinSubmitting = false;
+
+  ketoOptinForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (ketoOptinSubmitting) {
+      return;
+    }
+
+    const email = ketoOptinEmail.value.trim();
+
+    if (!email) {
+      setKetoOptinStatus("Please enter your email address.", "error");
+      return;
+    }
+
+    if (!isValidKetoEmail(email)) {
+      setKetoOptinStatus("Please enter a valid email address.", "error");
+      return;
+    }
+
+    ketoOptinSubmitting = true;
+    ketoOptinButton.disabled = true;
+    const originalButtonText = ketoOptinButton.textContent;
+    ketoOptinButton.textContent = "Sending...";
+    setKetoOptinStatus("Sending your FREE Keto Planner...", "loading");
+
+    const payload = new URLSearchParams();
+    payload.append("email", email);
+
+    fetch(KETO_OPTIN_ENDPOINT, {
+      method: "POST",
+      body: payload,
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Request failed with status " + response.status);
+        }
+        return response.text();
+      })
+      .then((result) => {
+        if (result && result.indexOf("SUCCESS") !== -1) {
+          setKetoOptinStatus(
+            "\u2705 Success! Your FREE Keto Success Planner has been sent to your email. Please check your inbox.",
+            "success"
+          );
+          ketoOptinForm.reset();
+        } else {
+          throw new Error(result || "Unknown response from server");
+        }
+      })
+      .catch(() => {
+        setKetoOptinStatus(
+          "\u274c Something went wrong. Please try again.",
+          "error"
+        );
+      })
+      .finally(() => {
+        ketoOptinSubmitting = false;
+        ketoOptinButton.disabled = false;
+        ketoOptinButton.textContent = originalButtonText;
+      });
+  });
+}
+
+// ================================
 // QUIZ QUESTIONS
 // ================================
 
