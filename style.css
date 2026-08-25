@@ -122,6 +122,26 @@ textarea {
   box-shadow: 0 12px 28px rgba(124, 58, 237, 0.28);
 }
 
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  line-height: 0;
+  flex-shrink: 0;
+  transition: opacity .18s ease;
+}
+
+.brand:hover {
+  opacity: 0.85;
+}
+
+.brand-logo {
+  display: block;
+  height: 42px;
+  width: auto;
+}
+
 .topbar-actions {
   display: flex;
   gap: 10px;
