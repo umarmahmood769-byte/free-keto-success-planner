@@ -526,6 +526,31 @@ h3 {
   color: #ecfdf5;
 }
 
+.faq-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.faq-card .section-head {
+  position: relative;
+  margin: -24px -24px 18px;
+  padding: 26px 24px;
+  border-radius: 28px 28px 0 0;
+  background:
+    linear-gradient(120deg, rgba(76, 29, 149, 0.85), rgba(14, 42, 30, 0.78)),
+    url('https://images.unsplash.com/photo-1547496502-affa22d38842?auto=format&fit=crop&w=1400&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+.faq-card .section-head .eyebrow {
+  color: #d8b4fe;
+}
+
+.faq-card .section-head h2 {
+  color: #ffffff;
+}
+
 .section-meta {
   display: flex;
   flex-direction: column;
@@ -1002,35 +1027,59 @@ h3 {
   text-decoration: none;
   font-weight: 600;
 }
-  .keto-checker {
+.keto-checker {
   margin: 30px 0;
   text-align: center;
-  padding: 30px;
+  padding: 46px 30px;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(14,42,30,0.86), rgba(30,27,75,0.8)),
+    url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1400&q=80');
+  background-size: cover;
+  background-position: center;
 }
 
 .keto-checker h2 {
   margin-bottom: 10px;
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
 }
 
 .keto-checker p {
   margin-bottom: 20px;
-  color: #666;
+  color: rgba(255,255,255,0.82);
+  position: relative;
+  z-index: 1;
 }
 
 .keto-checker input {
   width: 100%;
   max-width: 350px;
-  padding: 12px;
-  border: 2px solid #ddd;
-  border-radius: 10px;
+  padding: 13px 16px;
+  border: none;
+  border-radius: 12px;
   font-size: 16px;
   margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
+  background: rgba(255,255,255,0.96);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.22);
+}
+
+.keto-checker #checkFoodBtn {
+  position: relative;
+  z-index: 1;
 }
 
 #foodResult {
   margin-top: 20px;
   font-weight: bold;
   font-size: 18px;
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
 }
 
 .floating-cta {
