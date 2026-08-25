@@ -138,6 +138,24 @@ textarea {
   animation: fadeUp 0.65s ease both;
 }
 
+.seo-intro {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.86)),
+    url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1400&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+body[data-theme="dark"] .seo-intro {
+  background:
+    linear-gradient(120deg, rgba(6, 8, 22, 0.92), rgba(19, 26, 45, 0.88)),
+    url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1400&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
 .hero {
   display: grid;
   grid-template-columns: 1.35fr 0.95fr;
@@ -178,8 +196,17 @@ h3 {
 }
 
 .hero h1 {
-  font-size: clamp(2rem, 3.6vw, 3rem);
-  margin-bottom: 12px;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+.hero h1 .highlight {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero p {
@@ -333,10 +360,25 @@ h3 {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 16px;
+  padding: 18px 16px;
   border-radius: 22px;
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.14), rgba(56, 189, 248, 0.14));
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(120deg, rgba(6, 78, 59, 0.82), rgba(30, 27, 75, 0.72)),
+    url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80');
+  background-size: cover;
+  background-position: center;
   border: 1px solid rgba(16, 185, 129, 0.22);
+}
+
+.illustration-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.illustration-copy h2 {
+  color: #ffffff;
 }
 
 .illustration-bowl {
@@ -357,6 +399,7 @@ h3 {
 .illustration-copy p {
   margin: 0;
   font-size: 0.95rem;
+  color: #ecfdf5;
 }
 
 .hero-ring-card {
@@ -432,6 +475,35 @@ h3 {
   gap: 12px;
   align-items: center;
   margin-bottom: 16px;
+}
+
+#grocery-section {
+  position: relative;
+  overflow: hidden;
+}
+
+#grocery-section .section-head {
+  position: relative;
+  margin: -24px -24px 18px;
+  padding: 22px 24px;
+  border-radius: 28px 28px 0 0;
+  background:
+    linear-gradient(120deg, rgba(6, 78, 59, 0.82), rgba(30, 27, 75, 0.7)),
+    url('https://images.unsplash.com/photo-1543168256-418811576931?auto=format&fit=crop&w=1400&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+#grocery-section .section-head .eyebrow {
+  color: #a7f3d0;
+}
+
+#grocery-section .section-head h2 {
+  color: #ffffff;
+}
+
+#grocery-section .section-head .section-meta {
+  color: #ecfdf5;
 }
 
 .section-meta {
@@ -856,6 +928,15 @@ h3 {
   gap: 8px;
 }
 
+.recipe-card-img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 2px;
+}
+
 .recipe-card p {
   color: var(--muted);
   margin: 0;
@@ -1205,23 +1286,45 @@ h3 {
 }
 
 .planner-teaser {
+  position: relative;
   overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(30, 27, 75, 0.88), rgba(76, 29, 149, 0.8)),
+    url('https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+.planner-teaser .section-head,
+.planner-teaser .planner-teaser-grid {
+  position: relative;
+  z-index: 1;
+}
+
+.planner-teaser .eyebrow {
+  color: #c4b5fd;
+}
+
+.planner-teaser h2 {
+  color: #ffffff;
+}
+
+.planner-teaser-grid p {
+  color: #ede9fe;
 }
 
 .planner-teaser-grid {
   display: grid;
   gap: 20px;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr;
   align-items: center;
   margin-top: 18px;
 }
 
-.planner-teaser-card img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 22px;
-  display: block;
+.planner-teaser .hero-badges li {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .planner-page-hero {
