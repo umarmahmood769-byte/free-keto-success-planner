@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Keto Diet — Start Your Keto Weight Loss Journey Today</title>
+<meta name="description" content="Discover the best keto meal plans, delicious recipes, beginner guides, shopping lists, and trusted keto resources — all in one place." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F7F5EC;
+    --surface: #FFFFFF;
+    --ink: #16241B;
+    --muted: #5B6B5E;
+    --forest: #1B4332;
+    --forest-deep: #0E2A1E;
+    --gold: #D4A017;
+    --gold-soft: #F3E3B8;
+    --coral: #EF6F53;
+    --line: rgba(27,67,50,0.14);
+    --shadow: 0 24px 60px rgba(14,42,30,0.14);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"Inter",sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:"Fraunces",serif;
+    line-height:1.08;
+    margin:0 0 14px;
+    letter-spacing:-0.01em;
+  }
+  p{margin:0 0 12px;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:.22em;
+    font-size:.72rem;
+    font-weight:800;
+    color:var(--gold);
+    margin-bottom:10px;
+    display:inline-block;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:15px 28px;
+    border-radius:999px;
+    font-weight:700;
+    text-decoration:none;
+    font-size:1rem;
+    transition:transform .18s ease, box-shadow .18s ease;
+    border:none;
+    cursor:pointer;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-coral{
+    background:var(--coral);
+    color:#fff;
+    box-shadow:0 14px 30px rgba(239,111,83,0.38);
+  }
+  .btn-gold{
+    background:var(--gold);
+    color:var(--forest-deep);
+    box-shadow:0 14px 30px rgba(212,160,23,0.35);
+  }
+  .btn-outline{
+    background:transparent;
+    border:2px solid rgba(255,255,255,0.55);
+    color:#fff;
+  }
+
+  /* ---- NAV ---- */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(247,245,236,0.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 24px;max-width:1180px;margin:0 auto;
+  }
+  .brand{
+    display:flex;align-items:center;gap:10px;
+    font-family:"Fraunces",serif;font-weight:700;font-size:1.25rem;
+    text-decoration:none;color:var(--forest-deep);
+  }
+  .brand-mark{
+    width:38px;height:38px;border-radius:11px;
+    background:var(--forest);display:grid;place-items:center;
+    font-size:1.1rem;
+  }
+  .nav-cta{font-size:.9rem;padding:11px 22px;}
+
+  /* ---- HERO ---- */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    color:#fff;
+    padding:110px 0 90px;
+    background:
+      linear-gradient(120deg, rgba(14,42,30,0.92), rgba(27,67,50,0.78)),
+      url('https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=1800&q=80');
+    background-size:cover;
+    background-position:center;
+  }
+  .hero-inner{
+    max-width:720px;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 5vw, 3.8rem);
+    font-weight:700;
+    color:#fff;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--gold);
+  }
+  .hero p.lead{
+    font-size:1.15rem;
+    color:rgba(255,255,255,0.86);
+    max-width:560px;
+  }
+  .hero-checks{
+    display:flex;flex-wrap:wrap;gap:10px 22px;
+    margin:22px 0 30px;
+  }
+  .hero-checks span{
+    font-size:.94rem;font-weight:600;
+    display:flex;align-items:center;gap:6px;
+    color:#fff;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;}
+
+  /* ---- SECTION HEAD ---- */
+  .section{padding:78px 0;}
+  .section-head{max-width:680px;margin:0 auto 46px;text-align:center;}
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.6rem);color:var(--forest-deep);}
+  .section-head p{color:var(--muted);font-size:1.05rem;}
+  .section-alt{background:var(--surface);}
+
+  /* ---- RESOURCE GRID ---- */
+  .resource-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+  }
+  .resource-card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:26px 22px;
+    box-shadow:var(--shadow);
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    transition:transform .2s ease;
+  }
+  .resource-card:hover{transform:translateY(-4px);}
+  .resource-card.featured{
+    background:linear-gradient(160deg, var(--forest), var(--forest-deep));
+    color:#fff;
+    border:none;
+  }
+  .resource-card.featured .resource-desc{color:rgba(255,255,255,0.82);}
+  .badge{
+    align-self:flex-start;
+    background:var(--gold);
+    color:var(--forest-deep);
+    font-size:.68rem;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    padding:5px 10px;
+    border-radius:999px;
+    margin-bottom:12px;
+  }
+  .resource-icon{font-size:2rem;margin-bottom:10px;}
+  .resource-card h3{font-size:1.15rem;margin-bottom:8px;}
+  .resource-desc{color:var(--muted);font-size:.93rem;flex-grow:1;margin-bottom:18px;}
+  .resource-card .btn{
+    width:100%;justify-content:center;
+    font-size:.88rem;padding:12px 18px;
+  }
+
+  /* ---- SPLIT SECTIONS ---- */
+  .split{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:56px;
+    align-items:center;
+  }
+  .split.reverse .split-img{order:2;}
+  .split-img img{
+    border-radius:24px;
+    box-shadow:var(--shadow);
+    height:340px;
+    width:100%;
+    object-fit:cover;
+  }
+  .split-copy .eyebrow{color:var(--coral);}
+  .split-copy h2{font-size:clamp(1.7rem,3vw,2.3rem);color:var(--forest-deep);}
+  .split-copy p{color:var(--muted);font-size:1.03rem;}
+
+  /* ---- BENEFITS ---- */
+  .benefits-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+  .benefit-card{
+    background:var(--surface);
+    border-radius:18px;
+    padding:26px 22px;
+    border:1px solid var(--line);
+  }
+  .benefit-icon{font-size:1.7rem;margin-bottom:10px;}
+  .benefit-card h3{font-family:"Inter",sans-serif;font-weight:800;font-size:1.02rem;margin-bottom:6px;color:var(--forest-deep);}
+  .benefit-card p{color:var(--muted);font-size:.92rem;margin:0;}
+
+  /* ---- WHO / INCLUDED ---- */
+  .two-col-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+  }
+  .list-card{
+    background:var(--surface);
+    border-radius:20px;
+    padding:30px 28px;
+    border:1px solid var(--line);
+  }
+  .list-card h3{font-size:1.3rem;color:var(--forest-deep);}
+  .list-card ul{list-style:none;margin:0;padding:0;}
+  .list-card li{
+    padding:10px 0;
+    border-bottom:1px dashed var(--line);
+    font-weight:600;
+    color:var(--ink);
+  }
+  .list-card li:last-child{border-bottom:none;}
+
+  /* ---- TESTIMONIALS ---- */
+  .testi-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+  }
+  .testi-card{
+    background:var(--surface);
+    border-radius:20px;
+    padding:28px;
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+  }
+  .stars{color:var(--gold);letter-spacing:2px;margin-bottom:10px;}
+  .testi-card p.quote{
+    font-family:"Fraunces",serif;
+    font-style:italic;
+    font-size:1.08rem;
+    color:var(--forest-deep);
+  }
+  .testi-name{font-weight:700;color:var(--muted);font-size:.9rem;}
+
+  .love-list{
+    display:flex;flex-wrap:wrap;gap:12px 26px;
+    justify-content:center;
+    margin:26px 0 34px;
+  }
+  .love-list span{font-weight:600;font-size:.96rem;}
+
+  /* ---- FINAL CTA ---- */
+  .cta-band{
+    background:
+      linear-gradient(120deg, rgba(14,42,30,0.93), rgba(27,67,50,0.85)),
+      url('https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=1800&q=80');
+    background-size:cover;
+    background-position:center;
+    color:#fff;
+    text-align:center;
+    padding:80px 24px;
+    border-radius:32px;
+    margin:0 24px;
+  }
+  .cta-band h2{color:#fff;font-size:clamp(1.9rem,3.6vw,2.6rem);}
+  .cta-band p{color:rgba(255,255,255,0.82);max-width:520px;margin:0 auto 26px;}
+
+  /* ---- FOOTER ---- */
+  footer{
+    background:var(--forest-deep);
+    color:rgba(255,255,255,0.78);
+    padding:60px 0 28px;
+    margin-top:78px;
+  }
+  footer .wrap{display:grid;gap:34px;grid-template-columns:1.3fr 1fr 1fr;}
+  footer h4{color:#fff;font-family:"Inter",sans-serif;font-size:.95rem;margin-bottom:12px;}
+  footer p, footer a{font-size:.88rem;color:rgba(255,255,255,0.68);text-decoration:none;}
+  footer a:hover{color:#fff;}
+  .footer-bottom{
+    max-width:1180px;margin:36px auto 0;padding:22px 24px 0;
+    border-top:1px solid rgba(255,255,255,0.12);
+    font-size:.8rem;color:rgba(255,255,255,0.5);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  }
+
+  @media (max-width: 980px){
+    .resource-grid{grid-template-columns:repeat(2,1fr);}
+    .split, .split.reverse{grid-template-columns:1fr;}
+    .split.reverse .split-img{order:0;}
+    .benefits-grid{grid-template-columns:repeat(2,1fr);}
+    .two-col-list, .testi-grid{grid-template-columns:1fr;}
+    footer .wrap{grid-template-columns:1fr;}
+  }
+  @media (max-width: 600px){
+    .resource-grid{grid-template-columns:1fr;}
+    .benefits-grid{grid-template-columns:1fr;}
+    .hero{padding:90px 0 60px;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="brand">
+      <span class="brand-mark">🥑</span>
+      The Keto Diet
+    </a>
+    <a href="#resources" class="btn btn-coral nav-cta">Get Started</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-inner">
+    <p class="eyebrow" style="color:var(--gold);">Your Keto Journey Starts Here</p>
+    <h1>Lose Weight Without <em>Giving Up</em> the Foods You Love</h1>
+    <p class="lead">
+      The best keto meal plans, delicious recipes, beginner guides, shopping lists,
+      and trusted resources — all in one place, so you never have to guess your next step.
+    </p>
+    <div class="hero-checks">
+      <span>✅ Beginner Friendly</span>
+      <span>✅ Easy Meal Plans</span>
+      <span>✅ Delicious Recipes</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#resources" class="btn btn-coral">🟢 Explore Keto Resources</a>
+      <a href="https://www.claudiacaldwell.com/oto-uf61a?el=splittest-1214-bradflow-control#aff=umarmahmood" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Get The Meal Plan →</a>
+    </div>
+  </div>
+</header>
+
+<!-- RESOURCES -->
+<section class="section" id="resources">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">8 Paths, One Goal</p>
+      <h2>Choose the Keto Resource That Fits Your Goals</h2>
+      <p>Whether you're just getting started or looking for something more specific, pick the resource that matches your lifestyle.</p>
+    </div>
+
+    <div class="resource-grid">
+
+      <div class="resource-card featured">
+        <span class="badge">⭐ Most Popular</span>
+        <div class="resource-icon">⭐</div>
+        <h3>The Keto Meal Plan</h3>
+        <p class="resource-desc">A complete keto roadmap for beginners — meal plans, shopping lists, recipes, and step-by-step guidance to get lasting results.</p>
+        <a href="https://www.claudiacaldwell.com/oto-uf61a?el=splittest-1214-bradflow-control#aff=umarmahmood" target="_blank" rel="noopener noreferrer" class="btn btn-gold">👉 Get The Meal Plan</a>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-icon">🍰</div>
+        <h3>Keto Desserts</h3>
+        <p class="resource-desc">Delicious low-carb cakes, cookies, and brownies — stay on track without giving up something sweet.</p>
+        <a href="https://www.digistore24.com/redir/292043/umarmahmood/" target="_blank" rel="noopener noreferrer" class="btn btn-coral">🍰 Get Keto Desserts</a>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-icon">🍲</div>
+        <h3>Instant Pot Keto</h3>
+        <p class="resource-desc">Simple Instant Pot recipes that get healthy keto meals on the table fast — built for busy people and families.</p>
+        <a href="https://ketosolution.net/ds/#aff=umarmahmood" target="_blank" rel="noopener noreferrer" class="btn btn-coral">🍲 Explore Instant Pot Keto</a>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-icon">🥖</div>
+        <h3>Keto Baking Bundle</h3>
+        <p class="resource-desc">Bake keto-friendly bread, pizza, cookies, and muffins with easy low-carb baking recipes.</p>
+        <a href="https://ketobreads.net/ds/bakery-bundle#aff=umarmahmood" target="_blank" rel="noopener noreferrer" class="btn btn-coral">🥖 Get Keto Baking Bundle</a>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-icon">🧬</div>
+        <h3>Keto DNA</h3>
+        <p class="resource-desc">A personalized keto approach based on your body type and metabolism, for smarter weight-loss planning.</p>
+        <a href="https://ketodna.app/d#aff=umarmahmood" target="_blank" rel="noopener noreferrer" class="btn btn-coral">🧬 Discover Keto DNA</a>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-icon">🤖</div>
+        <h3>AI Keto Diet</h3>
+        <p class="resource-desc">Intelligent keto recommendations, meal ideas, and personalized guidance powered by modern AI.</p>
+        <a href="http://www.ketoflow.app/d#aff=umarmahmood" target="_blank" rel="noopener noreferrer" class="btn btn-coral">🤖 Try AI Keto Diet</a>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-icon">🚀</div>
+        <h3>Keto Journey</h3>
+        <p class="resource-desc">Practical keto strategies, motivation, and resources that help you build habits and stay consistent.</p>
+        <a href="https://www.checkout-ds24.com/redir/650227/umarmahmood/" target="_blank" rel="noopener noreferrer" class="btn btn-coral">🚀 Start Your Keto Journey</a>
+      </div>
+
+      <div class="resource-card">
+        <div class="resource-icon">👨‍🦳</div>
+        <h3>Keto After 50</h3>
+        <p class="resource-desc">Built specifically for adults over 50 who want to lose weight, boost energy, and feel better — safely.</p>
+        <a href="https://www.digistore24.com/redir/292685/umarmahmood/" target="_blank" rel="noopener noreferrer" class="btn btn-coral">👨‍🦳 Explore Keto After 50</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WANT TO LOSE WEIGHT -->
+<section class="section section-alt">
+  <div class="wrap split">
+    <div class="split-copy">
+      <p class="eyebrow">The Keto Advantage</p>
+      <h2>Want to Lose Weight Without Feeling Hungry All the Time?</h2>
+      <p>The Keto Diet helps your body burn stored fat for energy instead of relying on sugar. Thousands of people have already used this simple approach to reach their weight loss goals — without the constant hunger that derails most diets.</p>
+    </div>
+    <div class="split-img">
+      <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=900&q=80" alt="Healthy keto meal with vegetables and eggs" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- WHY DIETS FAIL -->
+<section class="section">
+  <div class="wrap split reverse">
+    <div class="split-img">
+      <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=900&q=80" alt="Frustrated person with untouched salad, diet fatigue" loading="lazy">
+    </div>
+    <div class="split-copy">
+      <p class="eyebrow">The Problem</p>
+      <h2>Why Most Diets Fail</h2>
+      <p>Most diets focus on eating less and exercising more. That usually leads to hunger, low energy, frustration — and eventually gaining the weight right back.</p>
+      <p>The Keto Diet takes a different approach: instead of fighting your body, it teaches it to use fat as its primary fuel source.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Why Keto Works</p>
+      <h2>Key Benefits of the Keto Diet</h2>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">🔥</div>
+        <h3>Supports Healthy Weight Loss</h3>
+        <p>Helps your body burn stored fat more efficiently for natural weight management.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🩸</div>
+        <h3>Helps Balance Blood Sugar</h3>
+        <p>Supports more stable blood sugar levels by reducing excess carbohydrates.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">💪</div>
+        <h3>Boosts Daily Energy</h3>
+        <p>Provides long-lasting energy without the crashes caused by sugary foods.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🧠</div>
+        <h3>Improves Mental Focus &amp; Clarity</h3>
+        <p>Many people report better concentration and mental performance on a well-planned keto diet.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">❤️</div>
+        <h3>Supports Heart Health</h3>
+        <p>Encourages eating habits that may help maintain healthy cholesterol when followed appropriately.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🍽️</div>
+        <h3>Reduces Hunger &amp; Cravings</h3>
+        <p>High-fat, nutrient-rich meals help you stay full longer and make healthy eating easier.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW DOES KETO WORK -->
+<section class="section">
+  <div class="wrap split">
+    <div class="split-copy">
+      <p class="eyebrow">The Science, Simplified</p>
+      <h2>How Does Keto Work?</h2>
+      <p>When you significantly reduce carbohydrates, your body enters a natural metabolic state called <strong>ketosis</strong>.</p>
+      <p>During ketosis, your body shifts to burning stored fat for energy — helping support weight loss and steadier energy levels throughout the day.</p>
+    </div>
+    <div class="split-img">
+      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80" alt="Fresh low-carb keto ingredients" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- WHO CAN BENEFIT + WHATS INCLUDED -->
+<section class="section section-alt">
+  <div class="wrap two-col-list">
+    <div class="list-card">
+      <h3>👥 Who Can Benefit?</h3>
+      <ul>
+        <li>Men looking to lose weight</li>
+        <li>Women looking to lose weight</li>
+        <li>Busy professionals</li>
+        <li>Stay-at-home parents</li>
+        <li>Complete beginners</li>
+      </ul>
+    </div>
+    <div class="list-card">
+      <h3>📦 What's Included?</h3>
+      <ul>
+        <li>Complete keto diet guide</li>
+        <li>Easy-to-follow meal plans</li>
+        <li>Ready-made shopping lists</li>
+        <li>Step-by-step beginner instructions</li>
+        <li>Practical fat-loss tips</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Real Results</p>
+      <h2>Success Stories From Real Keto Users</h2>
+      <p>See how a keto lifestyle has helped people improve their health and build better eating habits. Individual experiences vary.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"I lost 18 pounds in just 8 weeks. The meal plans were easy to follow, and having everything organized made it much easier to stay consistent."</p>
+        <p class="testi-name">— Michael R.</p>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"After struggling with different diets, keto finally worked for me. I lost 27 pounds and felt more energetic throughout the day."</p>
+        <p class="testi-name">— Sarah L.</p>
+      </div>
+    </div>
+
+    <div class="love-list">
+      <span>✅ Easy Meal Planning</span>
+      <span>✅ Delicious Low-Carb Recipes</span>
+      <span>✅ Beginner Friendly</span>
+      <span>✅ Supports Healthy Weight Management</span>
+      <span>✅ Helps Build Better Eating Habits</span>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section style="padding-bottom:20px;">
+  <div class="cta-band">
+    <p class="eyebrow" style="color:var(--gold);">Ready When You Are</p>
+    <h2>Start Your Keto Journey Today</h2>
+    <p>Join thousands who've already found a simpler way to lose weight — without the hunger, the confusion, or the guesswork.</p>
+    <a href="https://www.claudiacaldwell.com/oto-uf61a?el=splittest-1214-bradflow-control#aff=umarmahmood" target="_blank" rel="noopener noreferrer" class="btn btn-gold">🟥 Start Your Keto Journey Today</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand" style="color:#fff;margin-bottom:10px;">
+        <span class="brand-mark">🥑</span> The Keto Diet
+      </div>
+      <p>Trusted keto meal plans, recipes, and resources to help you start — and stick with — your keto journey.</p>
+    </div>
+    <div>
+      <h4>📧 Contact</h4>
+      <p>Need help choosing the right keto resource? We aim to respond within 24–48 hours.</p>
+      <p><a href="mailto:support@ketodna.app">support@ketodna.app</a></p>
+      <p><a href="mailto:info@healinggourmet.com">info@healinggourmet.com</a></p>
+      <p><a href="mailto:contact@naturalnutritionhacks.com">contact@naturalnutritionhacks.com</a></p>
+    </div>
+    <div>
+      <h4>Disclosures</h4>
+      <p><strong>Affiliate Disclosure:</strong> This website contains affiliate links. If you purchase through these links, we may earn a commission at no additional cost to you.</p>
+      <p><strong>Medical Disclaimer:</strong> Information on this site is for educational purposes only and is not medical advice. Consult a qualified healthcare professional before making dietary changes.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 The Keto Diet. All Rights Reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>
