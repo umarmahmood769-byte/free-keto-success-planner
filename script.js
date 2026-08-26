@@ -1461,10 +1461,24 @@ const ketoQuestionRules = [
     product: "Leptozan – Natural Weight Support"
   },
   {
-    keys: ["why should i choose keto", "why choose keto", "benefits of keto", "keto benefits", "reasons to try keto", "advantages of keto", "why keto works", "why do keto", "why do people do keto", "why try keto", "what are the benefits", "is keto worth it", "should i do keto", "should i try keto", "pros of keto", "why start keto"],
+    keys: ["why should i choose keto", "why choose keto", "benefits of keto", "keto benefits", "reasons to try keto", "advantages of keto", "why keto works", "why do keto", "why do people do keto", "why try keto", "what are the benefits", "is keto worth it", "should i do keto", "should i try keto", "pros of keto", "why start keto", "why should i start keto", "why should i use keto diet", "why should i use keto", "how is keto good for me", "how keto is good for me", "why is keto good for me", "why is keto good", "is keto good for me", "keto good for me", "why use keto diet", "keto is useful", "why keto is useful", "how is keto useful", "usefulness of keto"],
     title: "Why people choose keto",
     answer: "People try keto mainly for steadier energy and fewer sugar cravings once fat-adapted, faster early water-weight and fat loss for many, better appetite control from higher fat and protein, and improvements some see in blood sugar stability. It also gives a clear, structured way to eat, which some people find easier to follow than counting calories alone.",
     tip: "It's a good fit if you can realistically cut carbs long-term and don't have a condition that needs medical supervision first. It's not the only path to weight loss — it's simply one structured option among several.",
+    product: "The Keto Meal Plan"
+  },
+  {
+    keys: ["what is keto", "what is the keto diet", "what does keto mean", "explain keto", "keto diet basics", "how does keto diet work", "how does keto work", "define keto", "keto diet explained", "keto 101", "keto meaning", "keto diet meaning"],
+    title: "What the keto diet actually is",
+    answer: "Keto (ketogenic) is a way of eating that's very low in carbohydrates and higher in fat, with moderate protein. Cutting carbs this low pushes your body to burn fat for fuel instead of glucose, producing ketones in the process — that shift is what people mean by 'ketosis'.",
+    tip: "In practice this means building meals around meat, fish, eggs, low-carb vegetables, healthy fats and full-fat dairy, while skipping bread, rice, pasta, sugar and most fruit.",
+    product: "The Keto Meal Plan"
+  },
+  {
+    keys: ["how to start keto", "get started with keto", "want to start keto", "want to join keto", "join keto", "how do i begin keto", "starting keto", "begin keto diet", "start keto diet", "getting started with keto", "i want to try keto", "how do i start keto", "new to keto", "keto for beginners"],
+    title: "Getting started with keto",
+    answer: "A simple way to start: clear out high-carb staples, plan your first week of meals around protein, low-carb vegetables and healthy fats, and stock your kitchen with keto-friendly basics so decisions are easy. Expect an adjustment period in the first week or two as your body shifts its main fuel source.",
+    tip: "Don't try to make it perfect on day one — a realistic, repeatable plan beats a strict one you abandon after a week.",
     product: "The Keto Meal Plan"
   },
   {
@@ -1682,7 +1696,7 @@ function findKetoQuestionMatch(question) {
     }
   });
 
-  return bestScore >= 2.2 ? bestRule : null;
+  return bestScore >= 2 ? bestRule : null;
 }
 
 const ketoQuestionProducts = {
@@ -1927,22 +1941,24 @@ function renderRecommendationCards() {
               ${card.description}
             </p>
 
-            <div class="best-for">
-              ${card.bestFor}
+            <div class="product-footer">
+              <div class="best-for">
+                ${card.bestFor}
+              </div>
+
+              <span class="pill">
+                ${card.accent}
+              </span>
+
+              <a
+                class="product-cta"
+                href="${card.url}"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Buy Now
+              </a>
             </div>
-
-            <span class="pill">
-              ${card.accent}
-            </span>
-
-            <a
-              class="product-cta"
-              href="${card.url}"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Buy Now
-            </a>
           </article>
         `;
       })
