@@ -1459,6 +1459,153 @@ const ketoQuestionRules = [
     answer: "Supplements are not a replacement for a balanced diet, appropriate calorie intake, sleep and activity. If you are considering a supplement, check its ingredients and discuss it with a healthcare professional if you take medicines or have health conditions.",
     tip: "Treat supplement claims carefully and do not assume a product will cause weight loss by itself.",
     product: "Leptozan – Natural Weight Support"
+  },
+  {
+    keys: ["why should i choose keto", "why choose keto", "benefits of keto", "keto benefits", "reasons to try keto", "advantages of keto", "why keto works", "why do keto", "why do people do keto", "why try keto", "what are the benefits", "is keto worth it", "should i do keto", "should i try keto", "pros of keto", "why start keto"],
+    title: "Why people choose keto",
+    answer: "People try keto mainly for steadier energy and fewer sugar cravings once fat-adapted, faster early water-weight and fat loss for many, better appetite control from higher fat and protein, and improvements some see in blood sugar stability. It also gives a clear, structured way to eat, which some people find easier to follow than counting calories alone.",
+    tip: "It's a good fit if you can realistically cut carbs long-term and don't have a condition that needs medical supervision first. It's not the only path to weight loss — it's simply one structured option among several.",
+    product: "The Keto Meal Plan"
+  },
+  {
+    keys: ["why is keto not good", "keto not good", "is keto bad", "keto bad for you", "downside", "downsides", "disadvantage", "disadvantages", "harmful", "unhealthy", "dangerous", "is keto safe", "risky", "risks", "side effect", "side effects", "cons of keto"],
+    title: "Keto downsides and things to watch for",
+    answer: "Like any eating style, keto has trade-offs. It can be hard to sustain socially, restrict fiber-rich foods if not planned well, cause short-term symptoms as your body adapts, and may not suit everyone — including people with certain medical conditions, on certain medications, or with a history of disordered eating. It isn't automatically 'bad', but it also isn't the right fit for every person.",
+    tip: "Before starting, review your overall health history. If you have kidney, liver, pancreatic or gallbladder issues, are pregnant or breastfeeding, or take medication for diabetes or blood pressure, talk to a doctor first.",
+    product: "Mindful Weight Loss"
+  },
+  {
+    keys: ["not effective for me", "not working for me", "isn't working for me", "not suitable for me", "suitable for anyone", "suitable for everyone", "works for everyone", "keto for everyone", "right for me", "is keto for me", "who should avoid keto", "who shouldn't try keto", "not for everyone", "everyone is different", "individual results", "not seeing results", "keto not working", "different for everyone"],
+    title: "Why keto doesn't work the same for everyone",
+    answer: "Keto isn't equally effective or suitable for every person, and that's normal — not a personal failure. Results depend on things like your starting metabolism, hormones, activity level, sleep quality, stress levels, how consistently you follow it, medications you take, and any underlying health conditions. Two people eating very similar meals can genuinely see different results.",
+    tip: "If keto truly isn't working after several consistent weeks, look closely at hidden carbs, portion sizes, sleep and stress first — and if it still isn't a fit, that's a valid reason to try a different, more sustainable approach instead of forcing one diet to work for everyone.",
+    product: "Mindful Weight Loss"
+  },
+  {
+    keys: ["keto flu", "headache", "fatigue", "tired", "tiredness", "dizzy", "dizziness", "brain fog", "low energy", "sluggish", "adaptation"],
+    title: "Keto flu and early adaptation symptoms",
+    answer: "Some people feel tired, foggy, irritable or get headaches in the first one to two weeks as the body shifts its main fuel source. This is often called the 'keto flu' and is usually temporary. It's frequently linked to lower water and electrolyte intake in the first days.",
+    tip: "Drink enough water, don't drastically under-eat, and get enough sodium, potassium and magnesium from food. If symptoms are severe or don't improve, check with a healthcare professional.",
+    product: "The Keto Meal Plan"
+  },
+  {
+    keys: ["cholesterol", "heart", "heart disease", "ldl", "hdl", "triglycerides", "blood pressure"],
+    title: "Keto and heart health",
+    answer: "Keto's effect on cholesterol and heart health can vary a lot between people, and food quality matters — leaning on whole foods, fish, olive oil and vegetables differs from a diet high in processed fatty foods. Some people see improved markers, others see increases in LDL cholesterol.",
+    tip: "If you have existing heart disease, high cholesterol or high blood pressure, get baseline bloodwork and follow up with a doctor while trying keto.",
+    product: "Mindful Weight Loss"
+  },
+  {
+    keys: ["what is ketosis", "ketosis", "ketones", "ketone", "fat burning", "fat adapted", "fat-adapted"],
+    title: "What ketosis actually means",
+    answer: "Ketosis is a metabolic state where, with very low carbohydrate intake, your body increasingly relies on fat for fuel and produces ketones as an alternative energy source. It typically takes a few days of consistently low carb intake to shift into this state, and it can be undone by a high-carb meal.",
+    tip: "Ketosis is a means to an end, not the goal itself — how you feel, your energy and your results matter more day to day than a strict number.",
+    product: "The Keto Meal Plan"
+  },
+  {
+    keys: ["macro", "macros", "ratio", "percentage", "fat protein carb", "how much fat", "how much protein"],
+    title: "Understanding keto macros",
+    answer: "A common starting approach uses roughly high fat, moderate protein and very low carbohydrate intake, but exact numbers depend on your body size, activity level and goals. Protein needs shouldn't be cut too low, since it helps preserve muscle.",
+    tip: "Rather than obsessing over exact percentages, focus on consistent whole-food meals and adjust based on how you feel and your progress over a few weeks.",
+    product: "The Keto Meal Plan"
+  },
+  {
+    keys: ["intermittent fasting", "fasting", "time restricted", "16 8", "18 6", "eating window"],
+    title: "Combining keto with intermittent fasting",
+    answer: "Some people combine keto with intermittent fasting, eating within a shorter daily window. This isn't required for keto to work, and it isn't right for everyone — some people find it easier to stay consistent, others find it adds unnecessary stress.",
+    tip: "If you try fasting, start with a modest window and stop if you feel unwell, overly hungry or irritable. It's optional, not mandatory.",
+    product: "Mindful Weight Loss"
+  },
+  {
+    keys: ["alcohol", "beer", "wine", "drink alcohol", "spirits", "vodka", "whiskey"],
+    title: "Alcohol on keto",
+    answer: "Beer and sweet cocktails are usually high in carbs. Dry wine and plain spirits (without sugary mixers) are lower-carb choices, but alcohol still affects fat burning while it's being processed by your body and adds empty calories.",
+    tip: "If you choose to drink, do so in moderation and be mindful that it can slow progress and affect appetite and decision-making around food.",
+    product: "The Keto Meal Plan"
+  },
+  {
+    keys: ["eating out", "restaurant", "restaurants", "dining", "fast food", "takeout", "take out"],
+    title: "Eating out on keto",
+    answer: "Most restaurants can accommodate keto with some adjustments: choose grilled or roasted protein, ask for extra vegetables instead of fries, rice or bread, and request sauces and dressings on the side since many contain added sugar.",
+    tip: "Look at the menu online ahead of time when possible, so you're not deciding under pressure at the table.",
+    product: "The Keto Meal Plan"
+  },
+  {
+    keys: ["plateau", "stalled", "not losing", "scale not moving", "stuck", "no progress", "weight loss stopped"],
+    title: "Dealing with a weight loss plateau",
+    answer: "Plateaus are common and don't always mean something is wrong. Causes can include hidden carbs, portion creep, less activity, stress, poor sleep or your body adjusting to a new weight. Water retention can also hide fat loss for a while.",
+    tip: "Review your food log honestly for two weeks, check sleep and stress, and consider that non-scale progress (energy, clothing fit, measurements) still counts.",
+    product: "Mindful Weight Loss"
+  },
+  {
+    keys: ["long term", "sustainable", "how long", "forever", "rest of my life", "maintain keto"],
+    title: "Is keto sustainable long term",
+    answer: "Some people stay on keto for years, others use it for a period and then move to a more moderate low-carb or balanced approach. What matters most for long-term success is finding an eating pattern you can realistically maintain without constant struggle.",
+    tip: "Reassess every few months — if strict keto feels unsustainable, a less strict low-carb approach may still preserve most of the benefits.",
+    product: "Mindful Weight Loss"
+  },
+  {
+    keys: ["diabetes", "diabetic", "diabetics", "blood sugar", "insulin", "type 2", "prediabetes", "pre-diabetes", "keto safe for diabetics", "keto for diabetics", "keto safe for diabetes"],
+    title: "Keto and blood sugar",
+    answer: "Lower carbohydrate intake can meaningfully affect blood sugar and insulin needs, which is exactly why this topic requires medical supervision rather than general guidance. Medication doses sometimes need adjustment when carb intake drops.",
+    tip: "If you have diabetes or take blood sugar medication, do not start keto without talking to your doctor first — this is important for your safety.",
+    product: "Mindful Weight Loss"
+  },
+  {
+    keys: ["pregnant", "pregnancy", "breastfeeding", "nursing", "child", "kids", "children", "teenager"],
+    title: "Keto during pregnancy, breastfeeding or for children",
+    answer: "Nutrition needs during pregnancy, breastfeeding and childhood are different from general adult guidance, and restrictive diets aren't appropriate to start without medical guidance in these situations.",
+    tip: "Please speak with a doctor, midwife or registered dietitian before starting keto if you are pregnant, breastfeeding, or considering it for a child.",
+    product: "Mindful Weight Loss"
+  },
+  {
+    keys: ["constipation", "digestion", "digestive", "stomach", "bloating", "gas", "bowel"],
+    title: "Digestive changes on keto",
+    answer: "Cutting carbs often means eating less fiber from grains and fruit unless you replace it deliberately, which can lead to constipation or bloating for some people. This usually improves once fiber-rich low-carb vegetables and enough water become a habit.",
+    tip: "Add leafy greens, broccoli, chia or flax seeds, and make sure you're drinking enough water throughout the day.",
+    product: "The Keto Meal Plan"
+  },
+  {
+    keys: ["bad breath", "keto breath", "smelly breath"],
+    title: "Keto breath",
+    answer: "A noticeable change in breath odor is a fairly common, harmless side effect linked to ketone production, especially in the first weeks. It usually fades as your body adjusts, though it doesn't disappear for everyone.",
+    tip: "Staying well hydrated and practicing normal oral hygiene can help reduce it.",
+    product: "The Keto Meal Plan"
+  },
+  {
+    keys: ["muscle", "muscle loss", "lean mass", "lose muscle", "strength loss"],
+    title: "Protecting muscle on keto",
+    answer: "Muscle loss on any weight-loss diet is more likely with too little protein and too little activity, not because of low carbs specifically. Adequate protein intake and some resistance training help protect lean mass while losing fat.",
+    tip: "Prioritize a protein source at each meal and include strength-based movement a couple of times a week if you're able to.",
+    product: "Mindful Weight Loss"
+  },
+  {
+    keys: ["cheat day", "cheat meal", "off track", "fell off", "messed up", "ate carbs", "broke keto"],
+    title: "Bouncing back after a slip-up",
+    answer: "One high-carb meal or day will not undo your progress. It may temporarily pause ketosis and cause some water weight fluctuation, but this is normal and not a sign of failure.",
+    tip: "Get back to your usual routine at the very next meal instead of waiting for 'Monday' — consistency over time matters far more than perfection.",
+    product: "Mindful Weight Loss"
+  },
+  {
+    keys: ["vegetarian", "vegan", "plant based", "plant-based", "no meat"],
+    title: "Vegetarian or vegan keto",
+    answer: "Keto is possible without meat by leaning on eggs, dairy, tofu, tempeh, nuts, seeds, low-carb vegetables and healthy oils, though it takes more planning to keep protein and micronutrients adequate — especially for a fully vegan version.",
+    tip: "Track your protein sources for the first couple of weeks to make sure you're getting enough without relying only on fat.",
+    product: "The Keto Meal Plan"
+  },
+  {
+    keys: ["fruit", "fruits", "banana", "apple", "berries"],
+    title: "Fruit on keto",
+    answer: "Most fruit is fairly high in natural sugar and carbs, so it's used sparingly on keto. Berries such as raspberries, blackberries and strawberries are lower-carb options in small portions compared to bananas, grapes or dried fruit.",
+    tip: "If you include fruit, treat it like a portioned treat rather than a free food.",
+    product: "The Keto Meal Plan"
+  },
+  {
+    keys: ["coffee", "tea", "caffeine", "bulletproof coffee"],
+    title: "Coffee, tea and caffeine on keto",
+    answer: "Plain black coffee and unsweetened tea are keto-friendly. Adding heavy cream, butter or MCT oil is common on keto, but these add calories quickly, and sweetened syrups or flavored creamers usually add hidden carbs.",
+    tip: "Watch portion sizes on high-fat coffee add-ins if weight loss is your main goal, not just staying in ketosis.",
+    product: "The Keto Meal Plan"
   }
 ];
 
@@ -1470,6 +1617,21 @@ function normalizeQuestionText(text) {
     .trim();
 }
 
+const KETO_QUESTION_STOPWORDS = new Set([
+  "a", "an", "the", "is", "are", "was", "were", "be", "been", "being",
+  "to", "of", "in", "on", "for", "so", "much", "why", "what", "how",
+  "do", "does", "did", "i", "my", "me", "it", "this", "that", "and",
+  "or", "but", "if", "can", "will", "would", "should", "could", "am",
+  "you", "your", "yours", "we", "us", "our", "as", "at", "with",
+  "keto", "diet"
+]);
+
+function getSignificantWords(text) {
+  return normalizeQuestionText(text)
+    .split(" ")
+    .filter((word) => word.length > 1 && !KETO_QUESTION_STOPWORDS.has(word));
+}
+
 function findKetoQuestionMatch(question) {
   const normalized = normalizeQuestionText(question);
 
@@ -1477,27 +1639,50 @@ function findKetoQuestionMatch(question) {
     return null;
   }
 
+  const questionWords = new Set(getSignificantWords(question));
+
   let bestRule = null;
   let bestScore = 0;
 
   ketoQuestionRules.forEach((rule) => {
-    let score = 0;
+    // Use the single strongest-matching key for this rule, rather than
+    // summing every key, so rules with more example phrases don't win
+    // just by volume.
+    let ruleScore = 0;
 
     rule.keys.forEach((key) => {
       const normalizedKey = normalizeQuestionText(key);
+      let keyScore = 0;
 
-      if (normalized.includes(normalizedKey)) {
-        score += normalizedKey.includes(" ") ? 3 : 2;
+      // Direct phrase match (strongest signal)
+      if (normalizedKey && normalized.includes(normalizedKey)) {
+        keyScore += normalizedKey.includes(" ") ? 3.5 : 2;
+      }
+
+      // Fuzzy word-overlap match, so rephrased or personalized
+      // questions ("why isn't keto working for me?") still land
+      // on the closest relevant topic even without an exact phrase.
+      const keyWords = getSignificantWords(key);
+      if (keyWords.length) {
+        const overlap = keyWords.filter((word) => questionWords.has(word)).length;
+        if (overlap) {
+          const overlapRatio = overlap / keyWords.length;
+          keyScore += overlap * 1.1 + overlapRatio * 1.4;
+        }
+      }
+
+      if (keyScore > ruleScore) {
+        ruleScore = keyScore;
       }
     });
 
-    if (score > bestScore) {
-      bestScore = score;
+    if (ruleScore > bestScore) {
+      bestScore = ruleScore;
       bestRule = rule;
     }
   });
 
-  return bestRule;
+  return bestScore >= 2.2 ? bestRule : null;
 }
 
 const ketoQuestionProducts = {
@@ -1565,13 +1750,22 @@ function showKetoQuestionAnswer(rule) {
     <div class="keto-product-match">
       <div class="keto-product-match-copy">
         <strong>Recommended from this website</strong>
-        <span>${product.image} ${product.name} — ${product.bestFor}</span>
+        <span>
+          ${product.image}
+          <a
+            class="keto-product-link"
+            href="${product.url}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >${product.name}</a>
+          — ${product.bestFor}
+        </span>
       </div>
       <a
         class="btn cta-green"
         href="${product.url}"
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
       >
         Explore Match
       </a>
@@ -1595,12 +1789,15 @@ function showKetoQuestionFallback() {
     <p class="keto-answer-label">Try one of these topics</p>
     <h3 class="keto-answer-title">I can help with common keto questions</h3>
     <p class="keto-answer-text">
-      Try asking about keto breakfast, lunch or dinner, snacks, cravings,
-      carbs, weight loss, hydration, electrolytes, exercise, smoothies,
-      baking, meal planning or keto supplements.
+      Try asking about keto meals (breakfast, lunch, dinner, snacks), carbs and macros,
+      ketosis, weight loss and plateaus, keto flu and side effects, cholesterol and heart
+      health, hydration and electrolytes, exercise and muscle, intermittent fasting, alcohol,
+      eating out, digestion, vegetarian keto, fruit, coffee, baking, smoothies, diabetes,
+      pregnancy, cheat days, or supplements.
     </p>
     <p class="keto-disclaimer">
-      This is a predefined website guide, not an AI chatbot or medical advice service.
+      This is a predefined website guide covering 30+ common keto topics — not an AI chatbot
+      or medical advice service. Try rephrasing your question with a simpler keyword.
     </p>
   `;
 
