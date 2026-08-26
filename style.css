@@ -42,8 +42,16 @@ body {
   background: radial-gradient(circle at top left, var(--bg-accent), var(--bg) 72%);
   color: var(--text);
   min-height: 100vh;
-  line-height: 1.6;
+  line-height: 1.68;
+  font-size: 16px;
+  letter-spacing: 0.005em;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+p {
+  line-height: 1.7;
 }
 
 /*
@@ -183,13 +191,26 @@ body[data-theme="dark"] .seo-intro {
   align-items: center;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 26px 60px rgba(71, 34, 155, 0.18);
 }
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.14), rgba(56, 189, 248, 0.12));
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.16), rgba(56, 189, 248, 0.13));
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: -90px;
+  right: -70px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.22), transparent 70%);
   pointer-events: none;
 }
 
@@ -200,33 +221,63 @@ body[data-theme="dark"] .seo-intro {
 }
 
 .eyebrow {
-  margin: 0 0 6px;
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0 10px;
   text-transform: uppercase;
-  letter-spacing: 0.3em;
-  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  font-size: 0.7rem;
   color: var(--accent);
   font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(124, 58, 237, 0.10);
+  border: 1px solid rgba(124, 58, 237, 0.16);
 }
 
 h1,
 h2,
 h3 {
   margin: 0 0 8px;
-  line-height: 1.1;
+  line-height: 1.16;
+  font-family: "Poppins", "Segoe UI", "Inter", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--text);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 2.6vw, 1.95rem);
+  font-weight: 800;
+}
+
+h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
 }
 
 .hero h1 {
-  font-size: clamp(2.4rem, 5vw, 3.6rem);
-  font-weight: 900;
+  font-size: clamp(1.85rem, 3.3vw, 2.55rem);
+  font-weight: 800;
   letter-spacing: -0.02em;
+  line-height: 1.2;
   margin-bottom: 14px;
 }
 
-.hero h1 .highlight {
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.hero-line {
+  display: block;
+}
+
+.hero-line-accent {
+  color: var(--accent);
+}
+
+.hero-line-dark {
+  color: #16241b;
+}
+
+body[data-theme="dark"] .hero-line-dark {
+  color: var(--text);
 }
 
 .hero p {
@@ -903,9 +954,13 @@ h3 {
 }
 
 .btn.primary {
-  background: linear-gradient(135deg, #16a34a, #22c55e);
+  background: linear-gradient(135deg, #0f9d58, #10b981);
   color: white;
-  box-shadow: 0 12px 24px rgba(34, 197, 94, 0.24);
+  box-shadow: 0 12px 24px rgba(16, 185, 129, 0.28);
+}
+
+.btn.primary:hover {
+  box-shadow: 0 16px 30px rgba(16, 185, 129, 0.34);
 }
 
 .btn.cta-green {
@@ -1795,6 +1850,42 @@ padding:4px;
 .keto-question-card {
   position: relative;
   overflow: hidden;
+  background:
+    linear-gradient(160deg, rgba(124, 58, 237, 0.07), rgba(56, 189, 248, 0.05)),
+    var(--surface-strong);
+  border: 1px solid rgba(124, 58, 237, 0.16);
+  box-shadow: 0 20px 45px rgba(71, 34, 155, 0.14);
+}
+
+.keto-question-card::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.14), transparent 70%);
+  pointer-events: none;
+}
+
+.keto-question-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.keto-question-icon {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  font-size: 1.2rem;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.18), rgba(56, 189, 248, 0.16));
+  border: 1px solid rgba(124, 58, 237, 0.2);
 }
 
 .helper-intro {
@@ -1805,6 +1896,8 @@ padding:4px;
 .keto-question-form {
   display: grid;
   gap: 10px;
+  position: relative;
+  z-index: 1;
 }
 
 .keto-question-form textarea {
@@ -1817,11 +1910,13 @@ padding:4px;
   background: var(--surface-strong);
   color: var(--text);
   outline: none;
+  box-shadow: inset 0 1px 3px rgba(71, 34, 155, 0.06);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .keto-question-form textarea:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.14);
 }
 
 .question-form-actions {
@@ -1839,10 +1934,11 @@ padding:4px;
 .keto-question-result {
   display: none;
   margin-top: 18px;
-  padding: 20px;
-  border: 1px solid var(--border);
+  padding: 22px;
+  border: 1px solid rgba(124, 58, 237, 0.18);
   border-radius: 20px;
   background: var(--surface-strong);
+  box-shadow: 0 14px 34px rgba(71, 34, 155, 0.10);
 }
 
 .keto-question-result.is-visible {
@@ -1892,6 +1988,20 @@ padding:4px;
 .keto-product-match-copy span {
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+.keto-product-link {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(124, 58, 237, 0.35);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.keto-product-link:hover,
+.keto-product-link:focus-visible {
+  color: var(--accent-2);
+  border-color: var(--accent-2);
 }
 
 .keto-disclaimer {
