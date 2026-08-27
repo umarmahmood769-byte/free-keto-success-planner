@@ -2296,3 +2296,243 @@ padding:4px;
     width: 100%;
   }
 }
+
+/* ===========================
+   SITE EXPLAINER (auto-playing intro widget)
+=========================== */
+
+.site-explainer {
+  position: relative;
+  overflow: hidden;
+}
+
+.explainer-toggle {
+  flex: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+  color: var(--text);
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.explainer-toggle:hover,
+.explainer-toggle:focus-visible {
+  background: rgba(124, 58, 237, 0.12);
+  transform: scale(1.06);
+}
+
+.explainer-progress {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 22px;
+}
+
+.explainer-segment {
+  flex: 1;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(124, 58, 237, 0.14);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+
+.explainer-segment i {
+  position: absolute;
+  inset: 0;
+  width: 0%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  display: block;
+}
+
+.explainer-segment.is-complete i {
+  width: 100%;
+}
+
+.explainer-segment.is-active i {
+  width: 0%;
+  animation: explainerFill 4.5s linear forwards;
+}
+
+.site-explainer.is-paused .explainer-segment.is-active i {
+  animation-play-state: paused;
+}
+
+@keyframes explainerFill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.explainer-viewport {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.explainer-nav {
+  flex: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+  color: var(--text);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.explainer-nav:hover,
+.explainer-nav:focus-visible {
+  background: rgba(124, 58, 237, 0.12);
+  transform: scale(1.06);
+}
+
+.explainer-slides {
+  position: relative;
+  flex: 1;
+  min-height: 240px;
+}
+
+.explainer-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateX(28px);
+  pointer-events: none;
+  transition: opacity 0.45s ease, transform 0.45s ease;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  padding: 6px 10px;
+}
+
+.explainer-slide.is-prev {
+  transform: translateX(-28px);
+}
+
+.explainer-slide.is-active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.explainer-media {
+  flex: none;
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 34px rgba(71, 34, 155, 0.22);
+  border: 1px solid rgba(124, 58, 237, 0.18);
+}
+
+.explainer-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.explainer-copy {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.explainer-icon {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+.explainer-label {
+  margin: 0 0 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.explainer-slide h3 {
+  margin-bottom: 8px;
+}
+
+.explainer-text {
+  color: var(--muted);
+  max-width: 480px;
+  margin: 0;
+}
+
+.explainer-cta {
+  margin-top: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .explainer-segment.is-active i {
+    animation: none;
+    width: 100%;
+  }
+
+  .explainer-slide {
+    transition: opacity 0.2s ease;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .explainer-slide {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+    overflow-y: auto;
+  }
+
+  .explainer-media {
+    width: 100%;
+    max-width: 260px;
+    height: 160px;
+  }
+
+  .explainer-copy {
+    text-align: center;
+  }
+
+  .explainer-text {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .explainer-nav {
+    width: 32px;
+    height: 32px;
+    font-size: 1.1rem;
+  }
+
+  .explainer-slides {
+    min-height: 360px;
+  }
+
+  .explainer-icon {
+    font-size: 2rem;
+  }
+}
