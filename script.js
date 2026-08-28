@@ -194,6 +194,13 @@ if (ketoOptinForm && ketoOptinEmail && ketoOptinButton) {
             "success"
           );
           ketoOptinForm.reset();
+
+          if (typeof pintrk === "function") {
+            pintrk("track", "signup", {
+              event_id: "keto-optin-" + Date.now(),
+              lead_type: "Free Keto Planner Email Opt-in",
+            });
+          }
         } else {
           throw new Error(result || "Unknown response from server");
         }
