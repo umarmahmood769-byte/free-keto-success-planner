@@ -50,7 +50,7 @@ const plannerDays = [
   "Sunday"
 ];
 
-const GOOGLE_DRIVE_PDF_LINK = "https://drive.google.com/file/d/14Eb9INTTOEIRIDJQswKarruQsqklwF8l/view?usp=sharing";
+const KETO_7DAY_PLAN_LINK = "7-Day-Keto-Starter-Plan.pdf";
 const plannerPopupStorageKey = "free-7-day-planner-popup-dismissed";
 
 // ================================
@@ -83,7 +83,7 @@ function closePlannerPopup() {
 }
 
 if (plannerPopup && plannerPopupDownload) {
-  plannerPopupDownload.setAttribute("href", GOOGLE_DRIVE_PDF_LINK);
+  plannerPopupDownload.setAttribute("href", KETO_7DAY_PLAN_LINK);
 
   const shouldShowPopup = !localStorage.getItem(plannerPopupStorageKey);
   const showPopupAfterDelay = () => {
