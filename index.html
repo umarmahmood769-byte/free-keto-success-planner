@@ -481,25 +481,30 @@
     📥 Get the Free eBook
   </a>
 </section>
-        <section class="card seo-intro">
-          <div class="section-head">
-            <div>
-              <p class="eyebrow">Keto Meal Planning Made Simple</p>
-              <h2>Every Other Keto Guide Dumps 50 Rules On You. This One Doesn't.</h2>
-            </div>
-          </div>
+        <section class="keto-checker card">
+          <h2>🥑 Can I Eat This on Keto?</h2>
 
           <p>
-            No walls of theory. No "figure it out yourself." This planner tells
-            you exactly what to eat, what to buy, and how you're tracking — today,
-            not someday.
+            Type a food name to see if it's keto-friendly.
           </p>
 
-          <p>
-            Week one or year three of keto — you'll never stare at your fridge
-            wondering what's next again.
-          </p>
+          <input
+            type="text"
+            id="foodInput"
+            placeholder="Example: Banana"
+          />
+
+          <button
+            id="checkFoodBtn"
+            class="btn cta-green"
+            type="button"
+          >
+            🔍 Check Food
+          </button>
+
+          <div id="foodResult"></div>
         </section>
+
 
         <section class="card keto-question-card" id="keto-question-helper">
           <div class="section-head">
@@ -1531,29 +1536,6 @@
         </section>
 
 
-        <section class="keto-checker card">
-          <h2>🥑 Can I Eat This on Keto?</h2>
-
-          <p>
-            Type a food name to see if it's keto-friendly.
-          </p>
-
-          <input
-            type="text"
-            id="foodInput"
-            placeholder="Example: Banana"
-          />
-
-          <button
-            id="checkFoodBtn"
-            class="btn cta-green"
-            type="button"
-          >
-            🔍 Check Food
-          </button>
-
-          <div id="foodResult"></div>
-        </section>
 
 
         <footer class="footer card">
