@@ -1150,11 +1150,6 @@ body[data-theme="dark"] .hero-line-dark {
   color: #cbd5f5;
 }
 
-.footer-copyright {
-  margin-bottom: 0;
-  color: #8b94ba;
-}
-
 .footer-links {
   display: flex;
   gap: 10px;
@@ -2660,4 +2655,15 @@ padding:4px;
   }
 }
 
+/* ===========================
+   SITE COPYRIGHT (bottom of page, below the shell)
+=========================== */
 
+.site-copyright {
+  text-align: center;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 22px 16px;
+  margin: 0;
+}
